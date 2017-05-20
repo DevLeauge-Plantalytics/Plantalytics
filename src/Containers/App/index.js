@@ -25,7 +25,6 @@ class App extends Component {
     return (
       <div id="view">
         <h1>Plantalytics</h1>
-        <Header/>
       </div>
     )
   }
