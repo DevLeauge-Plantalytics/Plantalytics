@@ -5,6 +5,10 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
+    },
+    delivery: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
     }
   }, {
     classMethods: {
