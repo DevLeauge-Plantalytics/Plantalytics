@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 import {createStore} from 'redux';
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Link, Redirect} from 'react-router-dom';
 import reducer from './Reducers';
 
 import './css/styles.css';
@@ -32,6 +32,7 @@ ReactDOM.render(
   <Provider store={store}>
     <Router>
       <div>
+        <Route path="/" render={()=>(<Redirect to="/plantalytics"/>)}/>
         <Route exact path="/plantalytics" component={App}/>
       </div>
     </Router>

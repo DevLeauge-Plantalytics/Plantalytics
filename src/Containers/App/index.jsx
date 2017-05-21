@@ -20,21 +20,12 @@ class App extends Component {
   //     this.props.___(___);
   //   });
   // }
-
-<<<<<<< HEAD:src/Containers/App/index.jsx
-render(){
-  return (
-    <div id="view">
-      <h1>Plantalytics</h1>
-      <Header/>
-    </div>
-=======
   render(){
     return (
       <div id="view">
         <h1>Plantalytics</h1>
+        <Header/>
       </div>
->>>>>>> master:src/Containers/App/index.js
     )
   }
 }
