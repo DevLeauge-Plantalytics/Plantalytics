@@ -1,6 +1,6 @@
-/*jshint esversion: 6*/
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import Header from '../../Components/Header/Header';
 // import ___ from '../../Components/___/index.js';
 // import ___ from '../../Components/___/index.js';
 // import ___ from '../../Components/___/index.js';
@@ -21,12 +21,12 @@ class App extends Component {
   //   });
   // }
 
-  render(){
-    return (
-      <div id="view">
-        <h1>Plantalytics</h1>
-        <Header/>
-      </div>
+render(){
+  return (
+    <div id="view">
+      <h1>Plantalytics</h1>
+      <Header/>
+    </div>
     )
   }
 }
