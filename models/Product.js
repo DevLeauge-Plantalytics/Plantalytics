@@ -3,8 +3,9 @@ module.exports = function(sequelize, DataTypes) {
   var Product = sequelize.define("Product",
   {
     type: {
-      type: DataTypes.ENUM('tomato','banana','watermelon'),
+      type: DataTypes.STRING,
       allowNull: false,
+      unique: true,
     }
   },{
     classMethods: {

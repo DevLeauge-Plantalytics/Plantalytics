@@ -56,18 +56,18 @@ module.exports = function(sequelize, DataTypes) {
             allowNull: false,
           },
         });
-        // User.hasMany(models.Request, {
-        //   foreignKey:{
-        //     name: 'Sender',
-        //     allowNull: false,
-        //   },
-        // });
-        // User.hasMany(models.Request, {
-        //   foreignKey:{
-        //     name: 'Receiver',
-        //     allowNull: false,
-        //   },
-        // });
+        User.hasMany(models.Message, {
+          foreignKey:{
+            name: 'Sender',
+            allowNull: false,
+          },
+        });
+        User.hasMany(models.Message, {
+          foreignKey:{
+            name: 'Receiver',
+            allowNull: false,
+          },
+        });
       }
     }
   });
