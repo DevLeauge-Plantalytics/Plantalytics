@@ -29,7 +29,7 @@ module.exports = function(sequelize, DataTypes) {
         });
         Message.belongsTo(models.Request, {
           foreignKey:{
-            name: 'Message_Id',
+            name: 'Request_Id',
             allowNull: false,
           },
         });

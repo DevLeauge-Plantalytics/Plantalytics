@@ -34,7 +34,7 @@ module.exports = function(sequelize, DataTypes) {
         );
         Request.hasMany(models.Message, {
           foreignKey:{
-            name: 'Message_Id',
+            name: 'Request_Id',
             allowNull: false,
           },
         });
