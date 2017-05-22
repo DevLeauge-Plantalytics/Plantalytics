@@ -6,5 +6,8 @@ const Router = express.Router();
 Router.use('/users', require('./users'));
 Router.use('/products', require('./products'));
 Router.use('/requests', require('./requests'));
+Router.use('/messages', require('./requests'));
+Router.use('/posts', require('./posts'));
+
 
 module.exports = Router;
