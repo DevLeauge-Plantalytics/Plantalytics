@@ -5,6 +5,10 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
+    },
+    delivery: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
     }
   }, {
     classMethods: {
@@ -28,6 +32,12 @@ module.exports = function(sequelize, DataTypes) {
             through:{ model: 'Req_Prod', unique: false}
           }
         );
+        Request.hasMany(models.Message, {
+          foreignKey:{
+            name: 'Message_Id',
+            allowNull: false,
+          },
+        });
       }
     }
   });
