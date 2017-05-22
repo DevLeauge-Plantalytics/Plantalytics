@@ -1,6 +1,6 @@
 /*jshint esversion:6*/
 module.exports = function(sequelize, DataTypes) {
-  var Post = sequelize.define("Message",
+  var Post = sequelize.define("Post",
   {
     subject: {
       type: DataTypes.STRING(40),
@@ -24,5 +24,5 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
-  return Message;
+  return Post;
 };
