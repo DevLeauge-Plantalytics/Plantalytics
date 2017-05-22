@@ -15,6 +15,11 @@ module.exports = function(sequelize, DataTypes) {
             through:{ model: 'Req_Prod', unique: false}
           }
         );
+        Product.belongsToMany(models.User,
+          {
+            through:{ model: 'Use_Prod', unique: false}
+          }
+        );
       }
     }
   });

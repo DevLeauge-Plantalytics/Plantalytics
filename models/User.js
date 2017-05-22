@@ -68,6 +68,17 @@ module.exports = function(sequelize, DataTypes) {
             allowNull: false,
           },
         });
+        User.hasMany(models.Message, {
+          foreignKey:{
+            name: 'writer',
+            allowNull: false,
+          },
+        });
+        User.belongsToMany(models.Product,
+          {
+            through:{ model: 'Use_Prod', unique: false}
+          }
+        );
       }
     }
   });
