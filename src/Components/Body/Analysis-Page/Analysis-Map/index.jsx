@@ -5,6 +5,9 @@ class AnalysisMap extends Component {
   }
   render(){
     return (
+      <div id="analysis-map">
+        <img src="map"/>
+      </div>
     )
   }
 }

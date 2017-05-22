@@ -5,6 +5,13 @@ class SuggestedSuppliers extends Component {
   }
   render(){
     return (
+      <div id="suggested-sups">
+        <ul>
+        <li>Crop1</li>
+        <li>Crop2</li>
+        <li>Crop3</li>
+        </ul>
+      </div>
     )
   }
 }

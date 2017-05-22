@@ -5,6 +5,9 @@ class SearchBar extends Component {
   }
   render(){
     return (
+      <div id="analysis-search">
+        <input id="analysis-search-bar" type="text" placeholder="Search Plantalytics"/>
+      </div>
     )
   }
 }

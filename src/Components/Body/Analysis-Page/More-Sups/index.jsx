@@ -5,6 +5,9 @@ class MoreSuppliers extends Component {
   }
   render(){
     return (
+      <div id="more-sups">
+        <button id="get-more-sups">More Suppliers</button>
+      </div>
     )
   }
 }

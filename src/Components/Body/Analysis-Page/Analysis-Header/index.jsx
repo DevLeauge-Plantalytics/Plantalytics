@@ -5,6 +5,10 @@ class AnalysisHeader extends Component {
   }
   render(){
     return (
+      <div id="analysis-header">
+        <button id="find-sup">Find A Supplier</button>
+        <button id="share-save">Share/Save</button>
+      </div>
     )
   }
 }
