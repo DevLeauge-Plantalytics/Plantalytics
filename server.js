@@ -1,33 +1,21 @@
-/*jshint esversion: 6*/
+/*jshint esversion:6*/
 const express = require('express');
-const methodOverride = require('method-override');
-const bodyParser = require('body-parser');
-
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 5000;
+const bodyParser = require('body-parser');
+const db = require('./models');
+const fs = require('fs');
 
-const locationRoute = require('./routes/articles.js');
-const userRoute = require('./routes/articles.js');
-const suppliersRoute = require('./routes/products.js');
-const messagesRoute = require('./routes/products.js');
+const methodOverride = require('method-override');
 
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(methodOverride('_method'));
-app.use(analyticsLog);
+app.use( bodyParser.json() );
 
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(methodOverride('_method'));
-app.use(analyticsLog);
+app.use(express.static('./public') );
 
-app.use(express.static('public'));
-app.use('/articles', articlesRoute);
-app.use('/products', productsRoute);
-app.get('/',(req, res) => {
-  res.render('home');
+app.use('/api', require('./api'));
+
+// db.sequelize.sync({force:true});
+
+app.listen(PORT, () =>{
+  console.log(`Listening on ${PORT}`);
 });
-
-app.get('*', function(req, res){
-  res.render('error404');
-});
-
-const server = app.listen(PORT);
