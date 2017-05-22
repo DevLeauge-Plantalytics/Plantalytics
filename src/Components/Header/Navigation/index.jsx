@@ -1,11 +1,11 @@
-import React from 'react';
-const Navigation = () => (
-  <nav>
-    <ul>
-      <li>Download the app</li>
-      <li>Become a supplier</li>
-      <li>Sign Up/Login</li>
-    </ul>
-  </nav>
-)
+import React, {Component} from 'react';
+class Navigation extends Component {
+  constructor(props) {
+    super(props);
+  }
+  render(){
+    return (
+    )
+  }
+}
 export default Navigation;

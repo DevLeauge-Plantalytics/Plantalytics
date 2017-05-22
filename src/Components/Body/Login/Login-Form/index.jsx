@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-class LocationMap extends Component {
+class LoginForm extends Component {
   constructor(props) {
     super(props);
   }
@@ -8,4 +8,4 @@ class LocationMap extends Component {
     )
   }
 }
-export default LocationMap;
+export default LoginForm;
