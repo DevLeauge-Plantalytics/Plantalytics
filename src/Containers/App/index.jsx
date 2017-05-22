@@ -20,7 +20,6 @@ class App extends Component {
   //     this.props.___(___);
   //   });
   // }
-
 render(){
   return (
     <div id="view">
