@@ -68,7 +68,7 @@ module.exports = function(sequelize, DataTypes) {
             allowNull: false,
           },
         });
-        User.hasMany(models.Message, {
+        User.hasMany(models.Post, {
           foreignKey:{
             name: 'writer',
             allowNull: false,

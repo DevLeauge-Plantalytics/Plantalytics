@@ -3,11 +3,11 @@ module.exports = function(sequelize, DataTypes) {
   var Quotation = sequelize.define("Quotation",
     {
       type: {
-        type: DataTypes.ENUM("money", "trade"),
+        type: DataTypes.ENUM("money", "trade", "both"),
         allowNull: false,
       },
       price: {
-        type: DataTypes.FLOAT(4,2),
+        type: DataTypes.FLOAT,
         allowNull: false,
       },
       delivery: {
@@ -15,7 +15,11 @@ module.exports = function(sequelize, DataTypes) {
         allowNull: false,
       },
       delivery_price: {
-        type: DataTypes.FLOAT(4,2),
+        type: DataTypes.FLOAT,
+        allowNull: false,
+      },
+      accepted: {
+        type: DataTypes.BOOLEAN,
         allowNull: false,
       },
     },{
