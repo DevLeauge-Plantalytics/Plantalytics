@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+
 class SendMessage extends Component {
   constructor(props) {
     super(props);
@@ -6,7 +7,7 @@ class SendMessage extends Component {
   render(){
     return (
       <div id="compose-message">
-        <input id="message-body" type="text">
+        <input id="message-body" type="text"/>
         <button id="send-message">Send</button>
       </div>
     )
