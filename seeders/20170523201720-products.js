@@ -17,12 +17,25 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
+      {
+        name: "Apple",
+        quantity: "75",
+        Owner_Id:"2",
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        name: "Salad",
+        quantity: "200",
+        Owner_Id:"3",
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
       ], {});
 
   },
 
   down: function (queryInterface, Sequelize) {
-
       return queryInterface.bulkDelete('Products', null, {});
   }
 };
