@@ -29,12 +29,12 @@ products.get('/', (req,res) => {
 });
 
 products.get('/:id', (req,res) => {
-  Product.findOne({
-    where: {id: req.params.id},
+  Product.findAll({
     include: [
       {
         model:User,
         as:'Owner',
+        where: {id: req.params.id},
       }
     ],
   })
