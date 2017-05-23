@@ -2,7 +2,7 @@
 
 const express = require('express');
 const requests = express.Router();
-const {Request, Product, Req_Prod} = require('../../models');
+const {Request, Product, Req_Prod_Requested, Req_Prod_Offered} = require('../../models');
 
 requests.get('/', (req,res) => {
   Request.all({
@@ -28,12 +28,41 @@ requests.post('/', (req,res) =>{
     {
       "Buyer": req.body.buyer,
       "Supplier": req.body.supplier,
-      // "Products": [1],
     }
   ).then( (request) => {
-    return Product.findAll().then( (products) => {
-      return request.addProduct(products,{through:Req_Prod});
-    });
+    return Promise.all([
+      Product.findAll({where: {id: {$in: req.body.request_products.map(p => p.id)}}}).then( (requested_products) => {
+        // add the quantity
+        requested_products = requested_products.map(p => {
+          let quantity = req.body.request_products.filter(rp => rp.id === p.id).reduce(( _, rp ) => rp, null).quantity;
+          p.quantity = quantity;
+          return p;
+        });
+        return Promise.all(requested_products.map( rp => {
+          return Req_Prod_Requested.create({
+            quantity: rp.quantity,
+            ProductId: rp.id,
+            RequestId: request.id
+          });
+        }));
+      }),
+      Product.findAll({where: {id: {$in: req.body.offered_products.map(p => p.id)}}}).then( (offered_products) => {
+        // add the quantity
+        offered_products = offered_products.map(p => {
+          let quantity = req.body.offered_products.filter(rp => rp.id === p.id).reduce(( _, rp ) => rp, null).quantity; // { id, quantity }
+          p.quantity = quantity;
+          return p;
+        });
+        console.log(offered_products);
+        return Promise.all(offered_products.map( rp => {
+          return Req_Prod_Offered.create({
+            quantity: rp.quantity,
+            ProductId: rp.id,
+            RequestId: request.id
+          });
+        }));
+      })
+    ]);
   })
     .then(res.json.bind(res))
     .catch(res.json.bind(res));
@@ -46,6 +75,5 @@ requests.delete('/:id', (req,res) =>{
     console.log(error);
   });
 });
-
 
 module.exports = requests;
