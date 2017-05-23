@@ -5,6 +5,9 @@ class ProfilePic extends Component {
   }
   render(){
     return (
+      <div id="user-profile-pic">
+        <img src="profile-pic"/>
+      </div>
     )
   }
 }

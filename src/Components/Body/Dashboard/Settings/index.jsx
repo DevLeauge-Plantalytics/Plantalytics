@@ -5,6 +5,9 @@ class Settings extends Component {
   }
   render(){
     return (
+      <div id="settings-edit">
+        <button>Settings/Edit</button>
+      </div>
     )
   }
 }

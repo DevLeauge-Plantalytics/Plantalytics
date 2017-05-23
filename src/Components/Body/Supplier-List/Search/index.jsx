@@ -5,6 +5,11 @@ class Search extends Component {
   }
   render(){
     return (
+      <div id-"supplier-search">
+        <img src="peechure"/>
+        <input type="text"/>
+        <button>Go!</button>
+      </div>
     )
   }
 }

@@ -5,6 +5,10 @@ class SocialLogin extends Component {
   }
   render(){
     return (
+      <div id="social-login">
+        <button id="facebook-login">Facebook Login</button>
+        <button id="google-login">Google Login</button>
+      </div>
     )
   }
 }

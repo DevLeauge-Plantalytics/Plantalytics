@@ -5,6 +5,9 @@ class OtherUser extends Component {
   }
   render(){
     return (
+      <div id="other-user">
+        <img src="other-profile-pic"/>
+      </div>
     )
   }
 }

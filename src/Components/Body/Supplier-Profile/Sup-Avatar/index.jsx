@@ -5,6 +5,9 @@ class SupplierAvatar extends Component {
   }
   render(){
     return (
+      <div id="supplier-avatar">
+        <img id="supplier-profile-pic"/>
+      </div>
     )
   }
 }

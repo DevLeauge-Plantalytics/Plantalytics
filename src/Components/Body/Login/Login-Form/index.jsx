@@ -5,6 +5,11 @@ class LoginForm extends Component {
   }
   render(){
     return (
+      <form id="login-form">
+        <input type="text" placeholder="Email Address"/>
+        <input type="password" placeholder="Password"/>
+        <button type="submit">Sign In</button>
+      </form>
     )
   }
 }

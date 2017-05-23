@@ -5,6 +5,14 @@ class Messages extends Component {
   }
   render(){
     return (
+      <div id="user-messages">
+        <h2>Messages</h2>
+        <ul>
+          <li>Message1</li>
+          <li>Message2</li>
+          <li>Message3</li>
+        </ul>
+      </div>
     )
   }
 }

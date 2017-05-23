@@ -5,6 +5,10 @@ class SocialSignUp extends Component {
   }
   render(){
     return (
+      <div id="social-sign-up">
+        <button id="facebook-sign-up">Sign up with Facebook</button>
+        <button id="google-sign-up">Sign up with Google</button>
+      </div>
     )
   }
 }

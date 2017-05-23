@@ -5,6 +5,9 @@ class SupHeader extends Component {
   }
   render(){
     return (
+      <div id="supplier-header">
+        <button id="message-supplier">Message Me!<button>
+      </div>
     )
   }
 }

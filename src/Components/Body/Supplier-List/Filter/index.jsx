@@ -5,11 +5,11 @@ class Filter extends Component {
   }
   render(){
     return (
-      <div id="inbox-filter">
+      <div id="supplier-filter">
         <select name="filterType" id="filterType">
-          <option value="Date">When</option>
-          <option value="Sender">Who</option>
-          <option value="Importance">Why</option>
+          <option value="Date">Joined</option>
+          <option value="Name">Alphabetical</option>
+          <option value="Score">Rating</option>
         </select>
       </div>
     )

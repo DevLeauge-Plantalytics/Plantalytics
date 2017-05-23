@@ -7,9 +7,9 @@ class DataVisuals extends Component {
     return (
       <div id="data-visuals">
         <ul>
-          <li class="data-visual">Data1</li>
-          <li class="data-visual">Data2</li>
-          <li class="data-visual">Data3</li>
+          <li className="data-visual">Data1</li>
+          <li className="data-visual">Data2</li>
+          <li className="data-visual">Data3</li>
         </ul>
       </div>
     )

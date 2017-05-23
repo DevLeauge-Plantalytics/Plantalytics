@@ -5,6 +5,10 @@ class SendMessage extends Component {
   }
   render(){
     return (
+      <div id="compose-message">
+        <input id="message-body" type="text">
+        <button id="send-message">Send</button>
+      </div>
     )
   }
 }
