@@ -9,9 +9,9 @@ import reducer from './Reducers';
 import './css/styles.css';
 
 import App from './Containers/App';
-//import SiteAnalysis from './Components/Body/Location/SiteAnlysis'
+//import SiteAnalysis from './Components/Body/Analysis-Page'
 //import UserLogin from './Components/Overlays/User_Login'
-//import UserSignUp from './Components/Overlays/User_SignUp'
+import UserSignUp from 'Sign-Up-Form'
 //import Dashboard from './Components/Body/User/User_Dashboard'
 //import UserProfile from './Components/Body/User/User_Profile'
 //import UserSavedLocations from './Components/Body/User/User_Saved_Locations'
@@ -34,6 +34,7 @@ ReactDOM.render(
       <div>
         <Route path="/" render={()=>(<Redirect to="/plantalytics"/>)}/>
         <Route exact path="/plantalytics" component={App}/>
+        <Route exact path="/plantalytics/users/sign-up" component={UserSignUp}/>
       </div>
     </Router>
   </Provider>,

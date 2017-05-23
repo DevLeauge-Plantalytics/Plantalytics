@@ -1,12 +1,8 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import Header from '../../Components/Header/Header';
-// import ___ from '../../Components/___/index.js';
-// import ___ from '../../Components/___/index.js';
-// import ___ from '../../Components/___/index.js';
-// import ___ from '../../Containers/___/index.js';
-// import ___ from '../../Containers/___/index.js';
-// import ___ from '../../Containers/___/index.js';
+// import Header from '../../Components/Header';
+// import Body from '../../Components/Body';
+
 // import {} from '../../API';
 // import {} from '../../Actions';
 
@@ -24,7 +20,6 @@ render(){
   return (
     <div id="view">
       <h1>Plantalytics</h1>
-      <Header/>
     </div>
     )
   }
