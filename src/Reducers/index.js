@@ -5,25 +5,34 @@ const initialState = {
   users: []
 };
 const plants = (action, state = initialState) => {
-  switch(action.type){
-    case LOAD_USERS: {
-      return Object.assign({}, state, {users: action.users});
-    }
-    case GET_USER: {
-      return Object.assign({}, state, {users: action.user});
-    }
-    case ADD_USER: {
-      return Object.assign({}, state, {users: [action.user].concat(state.users)});
-    }
-    case UPDATE_USER: {
-      return Object.assign({}, state, {users: action.users});
-    }
-    case DELETE_USER: {
-      return Object.assign({}, state, {users: action.users});
-    }
-    default: {
+  switch(action){
+    case LOAD_USERS:
+      return Object.assign({}, state, {
+        users: action.users
+      });
+
+    case GET_USER:
+      return Object.assign({}, state, {
+        users: action.user
+      });
+
+    case ADD_USER:
+      return Object.assign({}, state, {
+        users: [action.user].concat(state.users)
+      });
+
+    case UPDATE_USER:
+      return Object.assign({}, state, {
+        users: action.users
+      });
+
+    case DELETE_USER:
+      return Object.assign({}, state, {
+        users: action.users
+      });
+
+    default:
       return state;
-    }
   }
 };
 

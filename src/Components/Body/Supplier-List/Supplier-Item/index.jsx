@@ -8,15 +8,15 @@ class SupplierItem extends Component {
       <div id="supplier-items-list">
         <ul>
           <li>
-            <img src="sup1-prof-pic">
+            <img src="sup1-prof-pic"></img>
             <p>Supplier Name1</p>
           </li>
           <li>
-            <img src="sup2-prof-pic">
+            <img src="sup2-prof-pic"></img>
             <p>Supplier Name2</p>
           </li>
           <li>
-            <img src="sup3-prof-pic">
+            <img src="sup3-prof-pic"></img>
             <p>Supplier Name3</p>
           </li>
         </ul>
