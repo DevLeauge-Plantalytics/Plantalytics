@@ -9,7 +9,7 @@ class SignUp extends Component {
     return (
       <div id="sign-up">
         <SocialSignUp/>
-        <SignUpForm/>
+        <SignUpForm addUser={this.props.addUser}/>
       </div>
     )
   }
