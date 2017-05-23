@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import Filter from '/Filter';
-import Search from '/Search';
-import SupplierItemList from '/Supplier-Item';
+import Filter from './Filter';
+import Search from './Search';
+import SupplierItemList from './Supplier-Item';
 import Header from '../Header/index';
 class SupplierList extends Component {
   constructor(props) {

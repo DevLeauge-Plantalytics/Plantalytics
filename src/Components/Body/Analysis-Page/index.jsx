@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
-import AnalysisHeader from '/Analysis-Header';
-import AnalysisMap from '/Analysis-Map';
-import DataVisuals from '/Data-Visuals';
-import MoreSuppliers from '/More-Sups';
-import SearchBar from '/Search-Bar';
-import SuggestedCrops from '/Suggested-Crops';
-import SuggestedSuppliers from '/Suggested-Sups';
+import AnalysisHeader from './Analysis-Header';
+import AnalysisMap from './Analysis-Map';
+import DataVisuals from './Data-Visuals';
+import MoreSuppliers from './More-Sups';
+import SearchBar from './Search-Bar';
+import SuggestedCrops from './Suggested-Crops';
+import SuggestedSuppliers from './Suggested-Sups';
 import Header from '../Header/index';
 class AnalysisPage extends Component {
   constructor(props) {
