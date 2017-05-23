@@ -2,7 +2,24 @@
 
 const express = require('express');
 const products = express.Router();
-const {Product} = require('../../models');
+const {Product, User} = require('../../models');
+
+products.get('/suppliers', (req,res) => {
+  Product.findAll({
+    include:[
+      {
+        model:User,
+        as:'Owner',
+        where: {supplier: true}
+      }
+    ],
+    where: {quantity:{$gt: 0}}
+  })
+  .then((products) => {
+    res.json(products);
+  })
+  .catch(res.json.bind(res));
+});
 
 products.get('/', (req,res) => {
   Product.all()
@@ -13,8 +30,16 @@ products.get('/', (req,res) => {
 
 products.get('/:id', (req,res) => {
   Product.findOne({
-      where: {id: req.params.id}
-    });
+    where: {id: req.params.id},
+    include: [
+      {
+        model:User,
+        as:'Owner',
+      }
+    ],
+  })
+  .then(res.json.bind(res))
+  .catch(res.json.bind(res));
 });
 
 products.post('/', (req,res) =>{
