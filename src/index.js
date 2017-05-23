@@ -18,13 +18,9 @@ import Dashboard from './Components/Body/Dashboard'
 import EditUser from './Containers/Body/Edit-User-Form';
 import UserProfile from './Components/Body/User-Profile';
 import SavedLocations from './Components/Body/Save-Locations';
-import UserSignUp from './Containers/Body/Sign-Up';
-//import Dashboard from './Components/Body/User/User_Dashboard'
-//import UserProfile from './Components/Body/User/User_Profile'
-//import UserSavedLocations from './Components/Body/User/User_Saved_Locations'
-//import SupplierSignUp from './Components/Body/Suppliers/Supplier_Sign_Up'
-//import SupplierProfile from './Components/Body/Suppliers/Supplier_Profile'
-//import SupplierList from './Components/Body/Suppliers/Supplier_List'
+// import SupplierSignUp from './Components/Body/Suppliers/Supplier_Sign_Up'
+import Supplier_Profile from './Components/Body/Supplier-Profile'
+import Supplier_List from './Components/Body/Supplier-List'
 //import Conversation from '.Componenst/Body/Messages/Message_Conversation'
 //import Inbox from '.Componenst/Body/Messages/Message_Inbox'
 
@@ -33,7 +29,7 @@ const reactContainer = document.getElementById('root');
 const store = createStore(
   reducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
-  applyMiddleware(ReduxThunk);
+  applyMiddleware(ReduxThunk)
 );
 
 ReactDOM.render(
@@ -46,25 +42,21 @@ ReactDOM.render(
         <Route path="/plantalytics/login" component={UserLogin}/>
         <Route path="/plantalytics/users/:id/profile" component={UserProfile}/>
         <Route path="/plantalytics/users/:id/edit" component={EditUser}/>
-        <Route exact path="/plantalytics/users/:id/dashboard" component={Dashboard}/>
-        <Route exact path="/plantalytics/users/:id/locations" component={SavedLocations}/>
+        <Route path="/plantalytics/users/:id/dashboard" component={Dashboard}/>
+        <Route path="/plantalytics/users/:id/locations" component={SavedLocations}/>
         <Route path="/plantalytics/location/:address" component={AnalysisPage}/>
+        <Route path="/plantalytics/supplier/listing" component={Supplier_List}/>
+        <Route path="/plantalytics/supplier/:id/profile" component={Supplier_Profile}/>
       </div>
     </Router>
   </Provider>,
   reactContainer
 );
 
-//Site-Analysis Routes
 
-// User Routes
-
-
-
-
-// Supplier Routes
 //<Route exact path="/plantalytics/supplier/sign-up" component={SupplierSignUp}/>
-//<Route exact path="/plantalytics/supplier/listing" component={Supplier_List}/>
+// Supplier Routes
+
 //<Route exact path="/plantalytics/supplier/:id/profile" component={Supplier_Profile}/>
 
 // Messages Routes
