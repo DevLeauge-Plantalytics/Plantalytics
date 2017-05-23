@@ -2,7 +2,7 @@
 
 const express = require('express');
 const messages = express.Router();
-const {Message} = require('../../models');
+const {Message, User, Request} = require('../../models');
 
 messages.get('/', (req,res) => {
   Message.all()
@@ -10,6 +10,38 @@ messages.get('/', (req,res) => {
       res.json(posts);
     })
     .catch(res.json.bind(res));
+});
+
+messages.get('/:id', (req,res) => {
+  Message.findall({
+    include: [
+      {
+        model:User,
+        as:'Author',
+        where: {id: req.params.id},
+      },
+      {
+        model:User,
+        as:'Listener',
+        where: {id: req.params.id},
+      }
+    ],
+  })
+  .then(res.json.bind(res))
+  .catch(res.json.bind(res));
+});
+
+messages.get('/requests/:id', (req,res) => {
+  Message.findAll({
+    include: [
+      {
+        model:Request,
+        where: {id: req.params.id},
+      }
+    ],
+  })
+  .then(res.json.bind(res))
+  .catch(res.json.bind(res));
 });
 
 messages.post('/', (req,res) =>{
