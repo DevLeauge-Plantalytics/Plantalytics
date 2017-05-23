@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import Feed from '/Feed';
-import Filter from '/Filter';
+import Feed from './Feed';
+import Filter from './Filter';
 import Header from '../Header/index';
 class Inbox extends Component {
   constructor(props) {

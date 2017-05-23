@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 // import Header from '../../Components/Header/index.jsx';
-import SignUp from '../../Components/Sign-Up/index.jsx';
+import SignUpForm from '../../Components/Body/Sign-Up/index.jsx';
 // import ___ from '../../Components/___/index.js';
 // import ___ from '../../Components/___/index.js';
 // import ___ from '../../Containers/___/index.js';

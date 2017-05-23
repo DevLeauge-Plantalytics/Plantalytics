@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import LocationMap from '/Loc-Map';
-import LocationItem from '/Location-Item';
+import LocationMap from './Loc-Map';
+import LocationItem from './Location-Item';
 import Header from '../Header/index';
 class SaveLocations extends Component {
   constructor(props) {
