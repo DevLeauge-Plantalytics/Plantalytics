@@ -7,6 +7,7 @@ class SocialSignUp extends Component {
     return (
       <div id="social-sign-up">
         <button id="facebook-sign-up">Sign up with Facebook</button>
+        <br/>
         <button id="google-sign-up">Sign up with Google</button>
       </div>
     )
