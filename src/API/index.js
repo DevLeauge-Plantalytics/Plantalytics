@@ -23,9 +23,53 @@ const makeRequest = (method, url, body) => {
     (body) ? xhr.send(body) : xhr.send();
   });
 };
-export const postUser = (body) => {
+export const getUsers = () => {
+  return new Promise(function (resolve, reject) {
+    makeRequest('GET', `/api/users/`)
+    .then (users => {
+      resolve(JSON.parse(users));
+    })
+    .catch (err => {
+      reject(err);
+    });
+  });
+};
+export const getUserById = id => {
+  return new Promise(function (resolve, reject) {
+    makeRequest('GET', `/api/users/${id}`)
+    .then (users => {
+      resolve(JSON.parse(users));
+    })
+    .catch (err => {
+      reject(err);
+    });
+  });
+};
+export const postUser = body => {
   return new Promise(function (resolve, reject) {
     makeRequest('POST', `/api/users/`, body)
+    .then (users => {
+      resolve(JSON.parse(users));
+    })
+    .catch (err => {
+      reject(err);
+    });
+  });
+};
+export const putUser = (id, body) => {
+  return new Promise(function (resolve, reject) {
+    makeRequest('PUT', `/api/users/${id}`, body)
+    .then (users => {
+      resolve(JSON.parse(users));
+    })
+    .catch (err => {
+      reject(err);
+    });
+  });
+};
+export const deleteUser = id => {
+  return new Promise(function (resolve, reject) {
+    makeRequest('DELETE', `/api/users/${id}`)
     .then (users => {
       resolve(JSON.parse(users));
     })

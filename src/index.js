@@ -2,7 +2,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
-import {createStore} from 'redux';
+import {createStore, applyMiddleware} from 'redux';
+import ReduxThunk from 'redux-thunk';
 import {BrowserRouter as Router, Route, Link, Redirect} from 'react-router-dom';
 import reducer from './Reducers';
 
@@ -11,7 +12,7 @@ import './css/styles.css';
 import App from './Containers/App';
 //import SiteAnalysis from './Components/Body/Location/SiteAnlysis'
 //import UserLogin from './Components/Overlays/User_Login'
-import UserSignUp from './Containers/Body/Sign-Up'
+import UserSignUp from './Containers/Body/Sign-Up';
 //import Dashboard from './Components/Body/User/User_Dashboard'
 //import UserProfile from './Components/Body/User/User_Profile'
 //import UserSavedLocations from './Components/Body/User/User_Saved_Locations'
@@ -25,7 +26,8 @@ const reactContainer = document.getElementById('root');
 
 const store = createStore(
   reducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+  applyMiddleware(ReduxThunk);
 );
 
 ReactDOM.render(
