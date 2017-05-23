@@ -11,6 +11,12 @@ products.get('/', (req,res) => {
     });
 });
 
+products.get('/:id', (req,res) => {
+  Product.findOne({
+      where: {id: req.params.id}
+    });
+});
+
 products.post('/', (req,res) =>{
   Product.create(req.body)
     .then(res.json.bind(res))

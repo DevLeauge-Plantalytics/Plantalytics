@@ -10,16 +10,18 @@ module.exports = function(sequelize, DataTypes) {
   },{
     classMethods: {
       associate: function(models) {
-        Product.belongsToMany(models.Request,
-          {
-            through:{ model: 'Req_Prod', unique: false}
+        Product.belongsToMany(models.Request, {
+          through:{ model: 'Req_Prod_Offered', unique: false}
+        });
+        Product.belongsToMany(models.Request, {
+            through:{ model: 'Req_Prod_Requested', unique: false}
+        });
+        Product.belongsTo(models.User, {
+          foreignKey:{
+            name: 'Owner_Id',
+            allowNull: false,
           }
-        );
-        Product.belongsToMany(models.User,
-          {
-            through:{ model: 'Use_Prod', unique: false}
-          }
-        );
+        });
       }
     }
   });

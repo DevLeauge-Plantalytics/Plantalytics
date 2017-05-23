@@ -74,11 +74,12 @@ module.exports = function(sequelize, DataTypes) {
             allowNull: false,
           },
         });
-        User.belongsToMany(models.Product,
-          {
-            through:{ model: 'Use_Prod', unique: false}
-          }
-        );
+        User.hasMany(models.Product, {
+            foreignKey:{
+              name: 'Owner_Id',
+              allowNull: false,
+            }
+        });
       }
     }
   });
