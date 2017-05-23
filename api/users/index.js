@@ -3,8 +3,6 @@
 const express = require('express');
 const users = express.Router();
 const {User} = require('../../models');
-//const db = require('../../models');
-//const User = db.User;
 
 //password hashing
 const saltRounds = 10;
@@ -19,7 +17,7 @@ users.get('/', (req,res) => {
 });
 
 // New User -- this will come from the New User form
-users.post('/new', (req,res) =>{
+users.post('/', (req,res) =>{
   bcrypt.genSalt(saltRounds, function(err, salt) {
     bcrypt.hash(req.body.password, salt, function(err, hash) {
       User.create(req.body)
@@ -59,11 +57,9 @@ users.put('/:id', (req, res)=> {
 });
 // Delete User -- this will come from a button on the Profile page
 users.delete('/:id', (req,res) =>{
-  User.destroy({where: {"username": req.params.username}})
+  User.destroy({where: {"id": req.params.id}})
   .then(res.json.bind(res))
-  .catch(error => {
-    console.log(error);
-  });
+  .catch(error => {console.log(error);});
 });
 
 //Users by :id/ --> location/all
@@ -123,6 +119,5 @@ users.get('suppliers/:product', (req,res) => {
     });
 
 });
-
 
 module.exports = users;
