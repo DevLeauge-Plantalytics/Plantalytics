@@ -8,9 +8,9 @@ class LocationItem extends Component {
       <div id="saved-location-list">
         <button>Add1</button>
         <ul>
-          <li className="location-item">Location1<li>
-          <li className="location-item">Location2<li>
-          <li className="location-item">Location3<li>
+          <li className="location-item">Location1</li>
+          <li className="location-item">Location2</li>
+          <li className="location-item">Location3</li>
         </ul>
       </div>
     )

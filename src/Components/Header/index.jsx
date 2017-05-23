@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import Navigation from '/Navigation';
-import ProfilePic from '/Profile-Pic';
+import Navigation from './Navigation';
+import ProfilePic from './Profile-Pic';
 class Header extends Component {
   constructor(props) {
     super(props);

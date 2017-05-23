@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import SignUpForm from './Sign-Up-Form';
 import SocialSignUp from './Social-Sign-Up';
 import {addUser} from '../../../Actions';
+
 class SignUp extends Component {
   constructor(props) {
     super(props);
@@ -20,6 +21,7 @@ class SignUp extends Component {
     )
   }
 }
+
 const mapStateToProps = (state) => {
   return {
     plants: state.plants

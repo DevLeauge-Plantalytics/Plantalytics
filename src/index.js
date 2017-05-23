@@ -10,8 +10,14 @@ import reducer from './Reducers';
 import './css/styles.css';
 
 import App from './Containers/App';
-//import SiteAnalysis from './Components/Body/Location/SiteAnlysis'
-//import UserLogin from './Components/Overlays/User_Login'
+
+import AnalysisPage from './Components/Body/Analysis-Page'
+import UserLogin from './Containers/Body/Login';
+import UserSignUp from './Containers/Body/Sign-Up';
+import Dashboard from './Components/Body/Dashboard'
+import EditUser from './Containers/Body/Edit-User-Form';
+import UserProfile from './Components/Body/User-Profile';
+import SavedLocations from './Components/Body/Save-Locations';
 import UserSignUp from './Containers/Body/Sign-Up';
 //import Dashboard from './Components/Body/User/User_Dashboard'
 //import UserProfile from './Components/Body/User/User_Profile'
@@ -37,6 +43,12 @@ ReactDOM.render(
         <Route exact path="/" render={()=>(<Redirect to="/plantalytics"/>)}/>
         <Route path="/plantalytics" component={App}/>
         <Route path="/plantalytics/sign-up" component={UserSignUp}/>
+        <Route path="/plantalytics/login" component={UserLogin}/>
+        <Route path="/plantalytics/users/:id/profile" component={UserProfile}/>
+        <Route path="/plantalytics/users/:id/edit" component={EditUser}/>
+        <Route exact path="/plantalytics/users/:id/dashboard" component={Dashboard}/>
+        <Route exact path="/plantalytics/users/:id/locations" component={SavedLocations}/>
+        <Route path="/plantalytics/location/:address" component={AnalysisPage}/>
       </div>
     </Router>
   </Provider>,
@@ -44,14 +56,10 @@ ReactDOM.render(
 );
 
 //Site-Analysis Routes
-//<Route exact path="/plantalytics/:location/site-analysis" component={SiteAnalysis}/>
 
 // User Routes
-//<Route exact path="/plantalytics/users/log-in" component={UserLogin}/>
-//<Route exact path="/plantalytics/users/sign-up" component={UserSignUp}/>
-//<Route exact path="/plantalytics/users/:id/dashboard" component={Dashboard}/>
-//<Route exact path="/plantalytics/users/:id/account" component={UserProfile}/>
-//<Route exact path="/plantalytics/users/:id/locations" component={UserSavedLocations}/>
+
+
 
 
 // Supplier Routes
