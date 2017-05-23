@@ -5,9 +5,17 @@ module.exports = {
 
       return queryInterface.bulkInsert('Products', [{
         type: 'Tomato',
+        Owner_Id:"1",
         createdAt: new Date(),
         updatedAt: new Date()
-      }], {});
+      },
+      {
+        type: 'Banana',
+        Owner_Id:"2",
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      ], {});
 
   },
 

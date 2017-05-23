@@ -27,11 +27,12 @@ module.exports = function(sequelize, DataTypes) {
             allowNull: false,
           },
         });
-        Request.belongsToMany(models.Product,
-          {
-            through:{ model: 'Req_Prod', unique: false}
-          }
-        );
+        Request.belongsToMany(models.Product, {
+            through:{ model: 'Req_Prod_Offered', unique: false}
+        });
+        Request.belongsToMany(models.Product, {
+            through:{ model: 'Req_Prod_Requested', unique: false}
+        });
         Request.hasMany(models.Message, {
           foreignKey:{
             name: 'Request_Id',

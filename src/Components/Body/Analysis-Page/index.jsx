@@ -6,7 +6,7 @@ import MoreSuppliers from './More-Sups';
 import SearchBar from './Search-Bar';
 import SuggestedCrops from './Suggested-Crops';
 import SuggestedSuppliers from './Suggested-Sups';
-import Header from '../Header/index';
+import Header from '../../Header';
 class AnalysisPage extends Component {
   constructor(props) {
     super(props);
@@ -21,7 +21,7 @@ class AnalysisPage extends Component {
         <MoreSuppliers/>
         <SearchBar/>
         <SuggestedCrops/>
-        <SuggestedSupplier/>
+        <SuggestedSuppliers/>
       </div>
     )
   }
