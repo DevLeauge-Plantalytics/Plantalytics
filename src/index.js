@@ -11,7 +11,7 @@ import './css/styles.css';
 import App from './Containers/App';
 //import SiteAnalysis from './Components/Body/Location/SiteAnlysis'
 //import UserLogin from './Components/Overlays/User_Login'
-//import UserSignUp from './Components/Overlays/User_SignUp'
+import UserSignUp from './Containers/Body/Sign-Up'
 //import Dashboard from './Components/Body/User/User_Dashboard'
 //import UserProfile from './Components/Body/User/User_Profile'
 //import UserSavedLocations from './Components/Body/User/User_Saved_Locations'
@@ -32,8 +32,9 @@ ReactDOM.render(
   <Provider store={store}>
     <Router>
       <div>
-        <Route path="/" render={()=>(<Redirect to="/plantalytics"/>)}/>
-        <Route exact path="/plantalytics" component={App}/>
+        <Route exact path="/" render={()=>(<Redirect to="/plantalytics"/>)}/>
+        <Route path="/plantalytics" component={App}/>
+        <Route path="/plantalytics/sign-up" component={UserSignUp}/>
       </div>
     </Router>
   </Provider>,
