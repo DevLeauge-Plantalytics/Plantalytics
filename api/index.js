@@ -8,6 +8,7 @@ Router.use('/products', require('./products'));
 Router.use('/requests', require('./requests'));
 Router.use('/messages', require('./messages'));
 Router.use('/posts', require('./posts'));
+Router.use('/locations', require('./locations'));
 
 
 module.exports = Router;
