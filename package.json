@@ -1,4 +1,5 @@
 {
+  "proxy": "http://localhost:9000/",
   "name": "Plantalytalytics",
   "version": "1.0.0",
   "description": "finalProject(); // Changing the world one yard at a time",

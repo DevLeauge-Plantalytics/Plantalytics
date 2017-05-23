@@ -6,9 +6,14 @@ import ProfilePic from './Profile-Pic';
 import Settings from './Settings';
 import UserNav from './User-Nav';
 import Header from '../Header/index';
+import {getUser} from '../../../Actions';
 class Dashboard extends Component {
   constructor(props) {
     super(props);
+    this.getUser = this.getUser.bind(this);
+  }
+  getUser(user){
+    this.props.getUser(user);
   }
   render(){
     return (
@@ -25,4 +30,23 @@ class Dashboard extends Component {
     )
   }
 }
-export default Dashboard;
+const mapStateToProps = (state) => {
+  return {
+    state
+  };
+}
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    getUser: id => {
+      dispatch(getUser(id))
+    }
+  }
+}
+
+const ConnectedDashboard = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Dashboard);
+
+export default ConnectedDashboard;
