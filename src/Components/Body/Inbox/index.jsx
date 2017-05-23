@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import Feed from './Feed';
 import Filter from './Filter';
-import Header from '../Header/index';
+import Header from '../../Header';
+
 class Inbox extends Component {
   constructor(props) {
     super(props);
@@ -17,4 +18,5 @@ class Inbox extends Component {
     )
   }
 }
+
 export default Inbox;

@@ -21,8 +21,8 @@ import SavedLocations from './Components/Body/Save-Locations';
 // import SupplierSignUp from './Components/Body/Suppliers/Supplier_Sign_Up'
 import Supplier_Profile from './Components/Body/Supplier-Profile'
 import Supplier_List from './Components/Body/Supplier-List'
-//import Conversation from '.Componenst/Body/Messages/Message_Conversation'
-//import Inbox from '.Componenst/Body/Messages/Message_Inbox'
+import Conversation from './Components/Body/Conversation'
+import Inbox from './Components/Body/Inbox'
 
 const reactContainer = document.getElementById('root');
 
@@ -47,19 +47,12 @@ ReactDOM.render(
         <Route path="/plantalytics/location/:address" component={AnalysisPage}/>
         <Route path="/plantalytics/supplier/listing" component={Supplier_List}/>
         <Route path="/plantalytics/supplier/:id/profile" component={Supplier_Profile}/>
+        <Route path="/plantalytics/messages/conversation" component={Conversation}/>
+        <Route path="/plantalytics/messages/:user_id/inbox" component={Inbox}/>
       </div>
     </Router>
   </Provider>,
   reactContainer
 );
 
-
-//<Route exact path="/plantalytics/supplier/sign-up" component={SupplierSignUp}/>
-// Supplier Routes
-
-//<Route exact path="/plantalytics/supplier/:id/profile" component={Supplier_Profile}/>
-
-// Messages Routes
-//<Route exact path="/plantalytics/messages/:user_id/inbox" component={Conversation}/>
-//<Route exact path="/plantalytics/messages/conversation" component={Inbox}/>
 

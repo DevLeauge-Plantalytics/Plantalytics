@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import MessageFeed from './Message-Feed';
 import OtherUser from './Other-Prof';
 import SendMessage from './Send-Message';
-import Header from '../Header/index';
+import Header from '../../Header';
 class Conversation extends Component {
   constructor(props) {
     super(props);
