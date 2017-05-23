@@ -2,13 +2,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
-import {createStore} from 'redux';
+import {createStore, applyMiddleware} from 'redux';
+import ReduxThunk from 'redux-thunk';
 import {BrowserRouter as Router, Route, Link, Redirect} from 'react-router-dom';
 import reducer from './Reducers';
 
 import './css/styles.css';
 
 import App from './Containers/App';
+
 import AnalysisPage from './Components/Body/Analysis-Page'
 import UserLogin from './Containers/Body/Login';
 import UserSignUp from './Containers/Body/Sign-Up';
@@ -16,6 +18,10 @@ import Dashboard from './Components/Body/Dashboard'
 import EditUser from './Containers/Body/Edit-User-Form';
 import UserProfile from './Components/Body/User-Profile';
 import SavedLocations from './Components/Body/Save-Locations';
+import UserSignUp from './Containers/Body/Sign-Up';
+//import Dashboard from './Components/Body/User/User_Dashboard'
+//import UserProfile from './Components/Body/User/User_Profile'
+//import UserSavedLocations from './Components/Body/User/User_Saved_Locations'
 //import SupplierSignUp from './Components/Body/Suppliers/Supplier_Sign_Up'
 //import SupplierProfile from './Components/Body/Suppliers/Supplier_Profile'
 //import SupplierList from './Components/Body/Suppliers/Supplier_List'
@@ -26,7 +32,8 @@ const reactContainer = document.getElementById('root');
 
 const store = createStore(
   reducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+  applyMiddleware(ReduxThunk);
 );
 
 ReactDOM.render(

@@ -4,13 +4,15 @@ module.exports = {
   up: function (queryInterface, Sequelize) {
 
       return queryInterface.bulkInsert('Products', [{
-        type: 'Tomato',
+        name: "Tomato",
+        quantity: "100",
         Owner_Id:"1",
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        type: 'Banana',
+        name: "Banana",
+        quantity: "50",
         Owner_Id:"2",
         createdAt: new Date(),
         updatedAt: new Date()

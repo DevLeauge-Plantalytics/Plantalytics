@@ -2,11 +2,14 @@
 module.exports = function(sequelize, DataTypes) {
   var Product = sequelize.define("Product",
   {
-    type: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true,
-    }
+    },
+    quantity: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
   },{
     classMethods: {
       associate: function(models) {
@@ -17,6 +20,7 @@ module.exports = function(sequelize, DataTypes) {
             through:{ model: 'Req_Prod_Requested', unique: false}
         });
         Product.belongsTo(models.User, {
+          as: 'Owner',
           foreignKey:{
             name: 'Owner_Id',
             allowNull: false,
