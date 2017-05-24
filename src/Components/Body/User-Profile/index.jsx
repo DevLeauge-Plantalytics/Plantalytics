@@ -3,15 +3,22 @@ import {connect} from 'react-redux';
 import Header from '../../Header'
 import UserAvatar from './UserAvatar';
 import UserInfo from './UserInfo';
+import {getUserById} from '../../../API'
 import {getUser} from '../../../Actions'
 
 class UserProfile extends Component {
   constructor(props) {
     super(props);
-    this.getUser = this.getUser.bind(this);
+  }
+  componentWillMount() {
+    getUserById()
+    .then(user => {
+      getUser(user);
+    });
   }
 
   render(){
+    console.error(this.props);
     return (
       <div id="user-profile">
         <Header/>
@@ -25,7 +32,7 @@ class UserProfile extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    plants: state.plants
+    users: state.users
   };
 }
 

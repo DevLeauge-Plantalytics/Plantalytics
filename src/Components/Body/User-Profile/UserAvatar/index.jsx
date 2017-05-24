@@ -6,7 +6,7 @@ class UserAvatar extends Component {
   render(){
     return (
       <div id="user-avatar">
-        <img id="user-profile-pic"/>
+        <img src="profile-pic" id="user-profile-pic"/>
       </div>
     )
   }
