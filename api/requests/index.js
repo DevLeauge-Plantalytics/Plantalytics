@@ -29,8 +29,7 @@ requests.post('/', (req,res) =>{
   .then(data => {
     for(let i = 0; i < req.body.request_products.length; i++){
       if(data.map(x => { return x.dataValues;})[i] === undefined || data.map(x => { return x.dataValues;})[i].Owner_Id !== Number(req.body.supplier)){
-        console.log("test 1");
-        res.json({err: "requested products must belong to the suppliert"});
+        throw new Error("requested products must belong to the supplier");
       }
     }
   })
@@ -40,8 +39,7 @@ requests.post('/', (req,res) =>{
       .then(data => {
         for(let i = 0; i < req.body.offered_products.length; i++){
           if(data.map(x => { return x.dataValues;})[i] === undefined || data.map(x => { return x.dataValues;})[i].Owner_Id !== Number(req.body.buyer)){
-            console.log("test 2");
-            res.json({err: "products offered must belong to me"});
+            throw new Error("products offered must belong to me");
           }
         }
       });
@@ -86,9 +84,11 @@ requests.post('/', (req,res) =>{
           }));
         })
       ]);
-    })
-    .then(res.json.bind(res))
-    .catch(res.json.bind(res));
+    });
+  })
+  .then(res.json.bind(res))
+  .catch((err) => {
+    console.log(err);
   });
 });
 
