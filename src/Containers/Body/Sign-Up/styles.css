@@ -1,21 +1,73 @@
 #sign-up-form {
-  border: 3px solid #333;
-  width: 33%;
-  height: 500px;
+  font-family: 'Futura';
+  background-color: #dfdfdf;
+  border-width: 0 3px 3px 3px;
+  width: 45%;
+  height: 525px;
   margin: 0 auto;
 }
 .sign-up-info {
-  margin: 10px 0px;
-  border-width: 1px 1px 1px 0px;
+  font-family: 'Futura';
+  display: block;
+  margin: 0 auto 10px auto;
+  border: none;
   padding-left: 2.5%;
-  width: 97%;
+  width: 75%;
   height: 30px;
-  font-size: 24px;
+  font-size: 20px;
+  border-radius: 15px;
+  text-align: center;
+  color: #555;
+}
+.sign-up-info:focus {
+  outline: none;
+}
+.sign-up-info::placeholder {
+  color: #b8b8b8;
 }
 .sign-up-check {
-  margin: 10px 10px;
+  cursor: pointer;
+  margin: 15px;
+  transform: scale(2);
 }
 #sign-up-btn {
+  font-family: 'Futura';
+  width: 50%;
+  height: 50px;
   margin: 15px auto;
   display: block;
+  background-color: #8db500;
+  border: none;
+  border-radius: 15px;
+  color: #fff;
+  cursor: pointer;
+}
+#sign-up-btn:focus {
+  outline: none;
+}
+#social-sign-up {
+  background-color: #dfdfdf;
+  width: 45%;
+  height: 115px;
+  border-width: 3px 3px 0 3px;
+  margin: 25px auto 0 auto;
+}
+#facebook-sign-up {
+  font-family: 'Futura';
+  margin: 15px;
+  width: 50%;
+  height: 50px;
+  display: inline-block;
+}
+#google-sign-up {
+  font-family: 'Futura';
+  margin: 15px;
+  width: 35%;
+  height: 50px;
+  display: inline-block;
+}
+#divider {
+  margin: 0;
+  text-align: center;
+  font-family: 'Futura';
 }

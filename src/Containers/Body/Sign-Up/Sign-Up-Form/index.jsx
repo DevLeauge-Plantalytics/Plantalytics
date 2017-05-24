@@ -6,9 +6,10 @@ class SignUpForm extends Component {
     this.state = {
       username: "",
       firstname: "",
-      lastname: "",
+      lasname: "",
       email: "",
       password: "",
+      confirmpass:"",
       address: "",
       zipcode: "",
       supplier: false,
@@ -20,22 +21,33 @@ class SignUpForm extends Component {
     this.handleLastNameChange = this.handleLastNameChange.bind(this);
     this.handleEmailChange = this.handleEmailChange.bind(this);
     this.handlePasswordChange = this.handlePasswordChange.bind(this);
+    this.handleConfirmPassChange = this.handleConfirmPassChange.bind(this);
     this.handleAddressChange = this.handleAddressChange.bind(this);
     this.handleZipcodeChange = this.handleZipcodeChange.bind(this);
     this.handleSupplierChange = this.handleSupplierChange.bind(this);
     this.handleAgreedChange = this.handleAgreedChange.bind(this);
   }
   addUser(user){
-    if (user.username !== "" && user.firstname !== "" && user.lastname !== "" && user.email !== "" && user.password !== "" && user.address !== "" && user.zipcode !== "") {
-      if (user.agreed === true) {
-        this.props.addUser(user);
-        this.setState({username: "", firstname: "", lastname: "", email: "",password: "", address: "", zipcode: "", supplier: false, agreed: false});
+    if (user.username !== "" && user.firstname !== "" && user.lastname !== "" && user.email !== "" && user.password !== "" && user.confirmpass !== "" && user.address !== "" && user.zipcode !== "") {
+      if (user.password === user.confirmpass) {
+        if (user.agreed === true) {
+          this.props.addUser(user);
+        } else {
+          alert('Please accept the terms of aggreement');
+        }
       } else {
-        alert('Please accept the terms of aggreement');
+        alert('Passwords do not match');
+        this.reset();
       }
     } else {
       alert('Fill out all fields please');
     }
+  }
+  reset(){
+    this.setState({
+      password: "",
+      confirmpass: ""
+    });
   }
   handleSubmit(event) {
     event.preventDefault();
@@ -55,6 +67,9 @@ class SignUpForm extends Component {
   }
   handlePasswordChange(event) {
     this.setState({password: event.target.value});
+  }
+  handleConfirmPassChange(event) {
+    this.setState({confirmpass: event.target.value});
   }
   handleAddressChange(event) {
     this.setState({address: event.target.value});
@@ -79,23 +94,18 @@ class SignUpForm extends Component {
   render(){
     return (
       <form id="sign-up-form" onSubmit={this.handleSubmit}>
-        <input className="sign-up-info" type="text" placeholder="Username" onChange={this.handleUsernameChange}/>
-        <br/>
-        <input className="sign-up-info" type="text" placeholder="First Name" onChange={this.handleFirstNameChange}/>
-        <br/>
-        <input className="sign-up-info" type="text" placeholder="Last Name" onChange={this.handleLastNameChange}/>
-        <br/>
         <input className="sign-up-info" type="text" placeholder="Email" onChange={this.handleEmailChange}/>
+        <input className="sign-up-info" type="text" placeholder="Username" onChange={this.handleUsernameChange}/>
+        <input className="sign-up-info" type="text" placeholder="First Name" onChange={this.handleFirstNameChange}/>
+        <input className="sign-up-info" type="text" placeholder="Last Name" onChange={this.handleLastNameChange}/>
+        <input className="sign-up-info" type="password" placeholder="Password" value={this.state.password} onChange={this.handlePasswordChange}/>
+        <input className="sign-up-info" type="password" placeholder="Confirm Password" value={this.state.confirmpass} onChange={this.handleConfirmPassChange}/>
         <br/>
-        <input className="sign-up-info" type="password" placeholder="Password" onChange={this.handlePasswordChange}/>
-        <br/>
-        <input className="sign-up-info" type="text" placeholder="Home Address" onChange={this.handleAddressChange}/>
-        <br/>
+        <input className="sign-up-info" type="text" placeholder="ADDRESS" onChange={this.handleAddressChange}/>
         <input className="sign-up-info" type="text" placeholder="Zipcode" onChange={this.handleZipcodeChange}/>
+        <input className="sign-up-check" type="checkbox" onClick={this.handleSupplierChange}/><span id="sup-opt">I would like to be a supplier</span>
         <br/>
-        <input className="sign-up-check" type="checkbox" onClick={this.handleSupplierChange}/>I want to be a supplier!
-        <br/>
-        <input className="sign-up-check" type="checkbox" onClick={this.handleAgreedChange}/>I accept the terms of aggreement.
+        <input className="sign-up-check" type="checkbox" onClick={this.handleAgreedChange}/><span id="term-accept">I accept the terms of aggreement.</span>
         <br/>
         <button id="sign-up-btn" type="submit">Sign Up</button>
       </form>
