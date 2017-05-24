@@ -78,25 +78,25 @@ class SignUpForm extends Component {
   render(){
     return (
       <form id="sign-up-form" onSubmit={this.handleSubmit}>
-        <input type="text" placeholder="Username" onChange={this.handleUsernameChange}/>
+        <input className="sign-up-info" type="text" placeholder="Username" onChange={this.handleUsernameChange}/>
         <br/>
-        <input type="text" placeholder="First Name" onChange={this.handleFirstNameChange}/>
+        <input className="sign-up-info" type="text" placeholder="First Name" onChange={this.handleFirstNameChange}/>
         <br/>
-        <input type="text" placeholder="Last Name" onChange={this.handleLastNameChange}/>
+        <input className="sign-up-info" type="text" placeholder="Last Name" onChange={this.handleLastNameChange}/>
         <br/>
-        <input type="text" placeholder="Email" onChange={this.handleEmailChange}/>
+        <input className="sign-up-info" type="text" placeholder="Email" onChange={this.handleEmailChange}/>
         <br/>
-        <input type="password" placeholder="Password" onChange={this.handlePasswordChange}/>
+        <input className="sign-up-info" type="password" placeholder="Password" onChange={this.handlePasswordChange}/>
         <br/>
-        <input type="text" placeholder="Home Address" onChange={this.handleAddressChange}/>
+        <input className="sign-up-info" type="text" placeholder="Home Address" onChange={this.handleAddressChange}/>
         <br/>
-        <input type="text" placeholder="Zipcode" onChange={this.handleZipcodeChange}/>
+        <input className="sign-up-info" type="text" placeholder="Zipcode" onChange={this.handleZipcodeChange}/>
         <br/>
-        <input type="checkbox" onClick={this.handleSupplierChange}/>I want to be a supplier!
+        <input className="sign-up-check" type="checkbox" onClick={this.handleSupplierChange}/>I want to be a supplier!
         <br/>
-        <input type="checkbox" onClick={this.handleAgreedChange}/>I accept the terms of aggreement.
+        <input className="sign-up-check" type="checkbox" onClick={this.handleAgreedChange}/>I accept the terms of aggreement.
         <br/>
-        <button type="submit">Sign Up</button>
+        <button id="sign-up-btn" type="submit">Sign Up</button>
       </form>
     )
   }

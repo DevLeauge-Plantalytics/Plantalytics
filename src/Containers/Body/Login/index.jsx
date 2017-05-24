@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import LoginForm from './Login-Form';
 import SignUpBtn from './Sign-Up-Btn';
 import SocialLogin from './Social-Login';
+import './styles.css';
 class Login extends Component {
   constructor(props) {
     super(props);
