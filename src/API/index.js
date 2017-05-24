@@ -46,6 +46,7 @@ export const getUserById = id => {
   });
 };
 export const postUser = body => {
+  console.log('test');
   return new Promise(function (resolve, reject) {
     makeRequest('POST', `/api/users/`, body)
     .then (users => {

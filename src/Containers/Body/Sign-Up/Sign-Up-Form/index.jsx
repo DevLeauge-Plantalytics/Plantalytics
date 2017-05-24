@@ -25,7 +25,6 @@ class SignUpForm extends Component {
     this.handleAgreedChange = this.handleAgreedChange.bind(this);
   }
   addUser(user){
-    console.log(user);
     if (user.username !== "" && user.firstName !== "" && user.lastName !== "" && user.email !== "" && user.password !== "" && user.address !== "" && user.zipcode !== "") {
       if (user.agreed === true) {
         this.props.addUser(user);

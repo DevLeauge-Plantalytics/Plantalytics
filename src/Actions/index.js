@@ -25,7 +25,7 @@ export const getUser = id => {
 };
 export const addUser = user => {
   return dispatch => {
-    return postUser(user)
+    return postUser(JSON.stringify(user))
     .then(user => {
       dispatch({type: ADD_USER, user});
     });
