@@ -14,7 +14,6 @@ class Login extends Component {
     this.props.signIn(user);
   }
   render(){
-    console.log(this.props)
     return (
       <div id="login-page">
         <SocialLogin/>

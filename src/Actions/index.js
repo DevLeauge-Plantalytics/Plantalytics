@@ -52,6 +52,8 @@ export const signIn = user => {
   return dispatch => {
     return signinPassport(JSON.stringify(user))
     .then( () => {
+      localStorage.setItem('loggedIn', true);
+      localStorage.setItem('username', user.username);
       dispatch({type: LOGIN });
     });
   };

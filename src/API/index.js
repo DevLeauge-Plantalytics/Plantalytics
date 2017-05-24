@@ -8,6 +8,7 @@ const makeRequest = (method, url, body) => {
     }
     xhr.onload = function () {
       if (this.status >= 200 && this.status < 300) {
+
         resolve(xhr.response);
       } else {
         reject({
@@ -80,13 +81,13 @@ export const deleteUser = id => {
     });
   });
 };
+
 export const signinPassport = user => {
   let userloggedin = user;
   return new Promise(function (resolve, reject) {
     makeRequest('POST', `/login/`, user)
-    .then (() => {
-      localStorage.setItem('logged', true);
-      localStorage.setItem('username', JSON.parse(userloggedin).username);
+    .then (users => {
+      resolve(JSON.parse(users));
     })
     .catch (err => {
       reject(err);

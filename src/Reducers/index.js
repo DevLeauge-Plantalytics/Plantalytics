@@ -6,8 +6,9 @@ const initialState = {
   username: localStorage.username,
   loggedIn: localStorage.logged,
 };
-const plants = (action, state = initialState) => {
-  switch(action){
+
+const plants = (state = initialState, action) => {
+  switch(action.type){
     case LOAD_USERS:
       return Object.assign({}, state, {
         users: action.users

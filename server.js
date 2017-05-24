@@ -94,7 +94,7 @@ app.get('/api/logout', function (req, res){
 });
 
 app.post('/login', passport.authenticate('local'), (req, res) => {
-  res.redirect('/api/users/');
+  res.json({id: req.user.id, username: req.user.username});
 });
 
 app.use(express.static('./public') );
