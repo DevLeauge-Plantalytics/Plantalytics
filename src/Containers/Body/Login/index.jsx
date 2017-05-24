@@ -1,19 +1,48 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import LoginForm from './Login-Form';
 import SignUpBtn from './Sign-Up-Btn';
 import SocialLogin from './Social-Login';
+import {signIn} from '../../../Actions';
+
 class Login extends Component {
   constructor(props) {
     super(props);
+    this.signIn = this.signIn.bind(this);
+  }
+  signIn(user){
+    this.props.signIn(user);
   }
   render(){
+    console.log(this.props)
     return (
       <div id="login-page">
         <SocialLogin/>
-        <LoginForm/>
+        <LoginForm signIn={this.signIn}/>
         <SignUpBtn/>
       </div>
     )
   }
 }
-export default Login;
+
+const mapStateToProps = (state) => {
+  return {
+    loggedIn: state.loggedIn,
+    username: state.username
+  };
+}
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    signIn: (user) => {
+      dispatch(signIn(user))
+    }
+  }
+}
+
+const ConnectedLogin = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Login);
+
+export default ConnectedLogin;

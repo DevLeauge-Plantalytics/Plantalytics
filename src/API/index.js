@@ -48,7 +48,6 @@ export const getUserById = id => {
   });
 };
 export const postUser = body => {
-  console.log(body);
   return new Promise(function (resolve, reject) {
     makeRequest('POST', `/api/users/`, body)
     .then (users => {
@@ -75,6 +74,19 @@ export const deleteUser = id => {
     makeRequest('DELETE', `/api/users/${id}`)
     .then (users => {
       resolve(JSON.parse(users));
+    })
+    .catch (err => {
+      reject(err);
+    });
+  });
+};
+export const signinPassport = user => {
+  let userloggedin = user;
+  return new Promise(function (resolve, reject) {
+    makeRequest('POST', `/login/`, user)
+    .then (() => {
+      localStorage.setItem('logged', true);
+      localStorage.setItem('username', JSON.parse(userloggedin).username);
     })
     .catch (err => {
       reject(err);

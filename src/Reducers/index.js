@@ -1,8 +1,10 @@
 /*jshint esversion: 6*/
-import {LOAD_USERS, GET_USER, ADD_USER, UPDATE_USER, DELETE_USER} from '../Actions';
+import {LOAD_USERS, GET_USER, ADD_USER, UPDATE_USER, DELETE_USER, LOGIN} from '../Actions';
 const initialState = {
   plants: [],
-  users: []
+  users: [],
+  username: localStorage.username,
+  loggedIn: localStorage.logged,
 };
 const plants = (action, state = initialState) => {
   switch(action){
@@ -29,6 +31,12 @@ const plants = (action, state = initialState) => {
     case DELETE_USER:
       return Object.assign({}, state, {
         users: action.users
+      });
+
+    case LOGIN:
+      return Object.assign({}, state, {
+        loggedIn: true,
+        username: localStorage.username,
       });
 
     default:
