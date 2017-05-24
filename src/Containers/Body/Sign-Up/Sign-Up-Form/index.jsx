@@ -4,8 +4,8 @@ class SignUpForm extends Component {
     super(props);
     this.state = {
       username: "",
-      firstName: "",
-      lastName: "",
+      firstname: "",
+      lastname: "",
       email: "",
       password: "",
       address: "",
@@ -25,10 +25,10 @@ class SignUpForm extends Component {
     this.handleAgreedChange = this.handleAgreedChange.bind(this);
   }
   addUser(user){
-    if (user.username !== "" && user.firstName !== "" && user.lastName !== "" && user.email !== "" && user.password !== "" && user.address !== "" && user.zipcode !== "") {
+    if (user.username !== "" && user.firstname !== "" && user.lastname !== "" && user.email !== "" && user.password !== "" && user.address !== "" && user.zipcode !== "") {
       if (user.agreed === true) {
         this.props.addUser(user);
-        this.setState({username: "", firstName: "", lastName: "", email: "",password: "", address: "", zipcode: "", supplier: false, agreed: false});
+        this.setState({username: "", firstname: "", lastname: "", email: "",password: "", address: "", zipcode: "", supplier: false, agreed: false});
       } else {
         alert('Please accept the terms of aggreement');
       }
@@ -44,10 +44,10 @@ class SignUpForm extends Component {
     this.setState({username: event.target.value});
   }
   handleFirstNameChange(event) {
-    this.setState({firstName: event.target.value});
+    this.setState({firstname: event.target.value});
   }
   handleLastNameChange(event) {
-    this.setState({lastName: event.target.value});
+    this.setState({lastname: event.target.value});
   }
   handleEmailChange(event) {
     this.setState({email: event.target.value});

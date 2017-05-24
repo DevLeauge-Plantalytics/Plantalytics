@@ -60,6 +60,7 @@ users.post('/', (req,res) =>{
 });
 
 users.put('/:id', (req, res)=> {
+  console.log(req.body);
   User.update(req.body,
     {where: {'id': req.params.id}}
     )
