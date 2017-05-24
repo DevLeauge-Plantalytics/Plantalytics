@@ -1,5 +1,4 @@
 {
-  "proxy": "http://localhost:9000/",
   "name": "Plantalytalytics",
   "version": "1.0.0",
   "description": "finalProject(); // Changing the world one yard at a time",
@@ -44,5 +43,6 @@
   "devDependencies": {
     "react-scripts": "^1.0.1",
     "sequelize-cli": "^2.7.0"
-  }
+  },
+  "proxy": "http://localhost:5000/"
 }

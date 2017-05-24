@@ -52,7 +52,16 @@ users.get('/', (req,res) => {
 users.post('/', (req,res) =>{
   bcrypt.genSalt(saltRounds, function(err, salt) {
     bcrypt.hash(req.body.password, salt, function(err, hash) {
-      User.create(req.body)
+      User.create({
+        "username": req.body.username,
+        "firstname": req.body.firstname,
+        "lastname": req.body.lastname,
+        "email": req.body.email,
+        "password": hash,
+        "address": req.body.address,
+        "zipcode": req.body.zipcode,
+        "supplier": req.body.supplier
+      })
         .then(res.json.bind(res))
         .catch(res.json.bind(res));
     });
@@ -60,6 +69,7 @@ users.post('/', (req,res) =>{
 });
 
 users.put('/:id', (req, res)=> {
+  console.log(req.body);
   User.update(req.body,
     {where: {'id': req.params.id}}
     )

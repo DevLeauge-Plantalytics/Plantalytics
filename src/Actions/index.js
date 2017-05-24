@@ -1,10 +1,11 @@
 /*jshint esversion: 6*/
-import {getUsers, getUserById, postUser, putUser, deleteUser} from '../API';
+import {getUsers, getUserById, postUser, putUser, deleteUser, signinPassport} from '../API';
 export const LOAD_USERS = 'LOAD_USERS';
 export const GET_USER = 'GET_USER';
 export const ADD_USER = 'ADD_USER';
 export const UPDATE_USER = 'UPDATE_USER';
 export const DELETE_USER = 'DELETE_USER';
+export const LOGIN = 'LOGIN';
 
 
 export const loadUsers = id => {
@@ -25,7 +26,7 @@ export const getUser = id => {
 };
 export const addUser = user => {
   return dispatch => {
-    return postUser(user)
+    return postUser(JSON.stringify(user))
     .then(user => {
       dispatch({type: ADD_USER, user});
     });
@@ -44,6 +45,16 @@ export const destroyUser = id => {
     return deleteUser(id)
     .then(users => {
       dispatch({type: DELETE_USER, users});
+    });
+  };
+};
+export const signIn = user => {
+  return dispatch => {
+    return signinPassport(JSON.stringify(user))
+    .then( () => {
+      localStorage.setItem('loggedIn', true);
+      localStorage.setItem('username', user.username);
+      dispatch({type: LOGIN });
     });
   };
 };

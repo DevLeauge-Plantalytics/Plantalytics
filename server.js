@@ -51,6 +51,7 @@ passport.use(new LocalStrategy (
       else {
         bcrypt.compare(password, user.password)
         .then(res => {
+          console.log(res);
           if (res) { return done(null, user); }
           else {
             return done(null, false, {message: 'bad password'});
@@ -92,15 +93,15 @@ app.get('/api/logout', function (req, res){
   res.send({success : true});
 });
 
-app.post('/api/login', passport.authenticate('local'), (req, res) => {
-  res.redirect('/api/users/');
+app.post('/login', passport.authenticate('local'), (req, res) => {
+  res.json({id: req.user.id, username: req.user.username});
 });
 
 app.use(express.static('./public') );
 
 app.use('/api', require('./api'));
 
-db.sequelize.sync({force:true});
+// db.sequelize.sync({force:true});
 
 app.listen(PORT, () =>{
   console.log(`Listening on ${PORT}`);

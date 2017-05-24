@@ -3,9 +3,12 @@ const makeRequest = (method, url, body) => {
   return new Promise(function (resolve, reject) {
     var xhr = new XMLHttpRequest();
     xhr.open(method, url);
-    if (body) xhr.setRequestHeader("content-type", "application/json");
+    if (body) {
+      xhr.setRequestHeader("Content-type", "application/json");
+    }
     xhr.onload = function () {
       if (this.status >= 200 && this.status < 300) {
+
         resolve(xhr.response);
       } else {
         reject({
@@ -70,6 +73,19 @@ export const putUser = (id, body) => {
 export const deleteUser = id => {
   return new Promise(function (resolve, reject) {
     makeRequest('DELETE', `/api/users/${id}`)
+    .then (users => {
+      resolve(JSON.parse(users));
+    })
+    .catch (err => {
+      reject(err);
+    });
+  });
+};
+
+export const signinPassport = user => {
+  let userloggedin = user;
+  return new Promise(function (resolve, reject) {
+    makeRequest('POST', `/login/`, user)
     .then (users => {
       resolve(JSON.parse(users));
     })

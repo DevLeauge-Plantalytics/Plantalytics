@@ -7,8 +7,6 @@ import ReduxThunk from 'redux-thunk';
 import {BrowserRouter as Router, Route, Link, Redirect} from 'react-router-dom';
 import reducer from './Reducers';
 
-import './css/styles.css';
-
 import App from './Containers/App';
 
 import AnalysisPage from './Components/Body/Analysis-Page'
@@ -40,15 +38,15 @@ ReactDOM.render(
         <Route path="/plantalytics" component={App}/>
         <Route path="/plantalytics/sign-up" component={UserSignUp}/>
         <Route path="/plantalytics/login" component={UserLogin}/>
-        <Route path="/plantalytics/users/:id/profile" component={UserProfile}/>
-        <Route path="/plantalytics/users/:id/edit" component={EditUser}/>
-        <Route path="/plantalytics/users/:id/dashboard" component={Dashboard}/>
-        <Route path="/plantalytics/users/:id/locations" component={SavedLocations}/>
-        <Route path="/plantalytics/location/:address" component={AnalysisPage}/>
-        <Route path="/plantalytics/supplier/listing" component={Supplier_List}/>
-        <Route path="/plantalytics/supplier/:id/profile" component={Supplier_Profile}/>
-        <Route path="/plantalytics/messages/conversation" component={Conversation}/>
-        <Route path="/plantalytics/messages/:user_id/inbox" component={Inbox}/>
+        <Route path="/plantalytics/profile" component={UserProfile}/>
+        <Route path="/plantalytics/edit-profile" component={EditUser}/>
+        <Route path="/plantalytics/dashboard" component={Dashboard}/>
+        <Route path="/plantalytics/saved-locations" component={SavedLocations}/>
+        <Route path="/plantalytics/location" component={AnalysisPage}/>
+        <Route path="/plantalytics/supplier-listing" component={Supplier_List}/>
+        <Route path="/plantalytics/supplier-profile" component={Supplier_Profile}/>
+        <Route path="/plantalytics/conversation" component={Conversation}/>
+        <Route path="/plantalytics/inbox" component={Inbox}/>
       </div>
     </Router>
   </Provider>,
