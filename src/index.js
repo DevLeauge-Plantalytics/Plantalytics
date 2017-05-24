@@ -7,8 +7,6 @@ import ReduxThunk from 'redux-thunk';
 import {BrowserRouter as Router, Route, Link, Redirect} from 'react-router-dom';
 import reducer from './Reducers';
 
-import './css/styles.css';
-
 import App from './Containers/App';
 
 import AnalysisPage from './Components/Body/Analysis-Page'
