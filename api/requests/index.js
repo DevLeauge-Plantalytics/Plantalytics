@@ -4,6 +4,46 @@ const express = require('express');
 const requests = express.Router();
 const {Request, Product, Req_Prod_Requested, Req_Prod_Offered} = require('../../models');
 
+requests.get('/buyer/:id', (req,res) => {
+  Request.all({
+    include: [
+      {
+        model:User,
+        as:"Purchaser"
+      },
+      {
+        model:User,
+        as:"Vendor"
+      }
+    ],
+    where: {Buyer: req.params.id},
+    order: [['createdAt','DESC']]
+  })
+    .then((requests) => {
+      res.json(requests);
+    });
+});
+
+requests.get('/supplier/:id', (req,res) => {
+  Request.all({
+    include: [
+      {
+        model:User,
+        as:"Purchaser"
+      },
+      {
+        model:User,
+        as:"Vendor"
+      }
+    ],
+    where: {Supplier: req.params.id},
+    order: [['createdAt','DESC']]
+  })
+    .then((requests) => {
+      res.json(requests);
+    });
+});
+
 requests.get('/', (req,res) => {
   Request.all({
     include: [

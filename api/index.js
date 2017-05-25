@@ -9,6 +9,6 @@ Router.use('/requests', require('./requests'));
 Router.use('/messages', require('./messages'));
 Router.use('/posts', require('./posts'));
 Router.use('/locations', require('./locations'));
-
+Router.use('/quotations', require('./quotations'));
 
 module.exports = Router;

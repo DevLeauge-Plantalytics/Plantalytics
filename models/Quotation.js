@@ -5,9 +5,9 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.ENUM("money", "trade", "both"),
       allowNull: false,
     },
-    price: {
+    products_price: {
       type: DataTypes.FLOAT,
-      allowNull: false,
+      allowNull: true,
     },
     delivery: {
       type: DataTypes.BOOLEAN,
@@ -15,7 +15,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     delivery_price: {
       type: DataTypes.FLOAT,
-      allowNull: false,
+      allowNull: true,
     },
     accepted: {
       type: DataTypes.BOOLEAN,
@@ -25,6 +25,7 @@ module.exports = function(sequelize, DataTypes) {
       classMethods: {
         associate: function(models) {
           Quotation.belongsTo(models.Request, {
+            as: 'Contract',
             foreignKey:{
               name: 'Request_Id',
               allowNull: false,
