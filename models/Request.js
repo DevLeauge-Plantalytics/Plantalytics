@@ -9,7 +9,12 @@ module.exports = function(sequelize, DataTypes) {
     delivery: {
       type: DataTypes.BOOLEAN,
       defaultValue: false,
-    }
+    },
+    accepted: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: true,
+    },
   }, {
     classMethods: {
       associate: function(models) {
