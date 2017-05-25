@@ -31,7 +31,7 @@
 }
 #sup-check {
   cursor: pointer;
-  margin: 0 15px 0 100px;
+  margin: 0 20px 0 100px;
   width: 30px;
   height: 30px;
   line-height: 30px;
@@ -45,7 +45,7 @@
 }
 #agree-check {
   cursor: pointer;
-  margin: 0 15px 0 100px;
+  margin: 0 20px 0 100px;
   width: 30px;
   height: 30px;
   line-height: 30px;
@@ -106,12 +106,10 @@
   font-weight: 900;
   font-size: 20px;
   display: inline-block;
-  text-align: center;
 }
 #term-accept {
   width: 50%;
   font-family: 'Futura';
   font-size: 10px;
   display: inline-block;
-  text-align: center;
 }
