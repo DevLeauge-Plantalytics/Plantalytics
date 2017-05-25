@@ -1,5 +1,4 @@
 #sign-up-form {
-  font-family: 'Futura';
   background-color: #dfdfdf;
   border-width: 0 3px 3px 3px;
   width: 45%;
@@ -26,9 +25,37 @@
   color: #b8b8b8;
 }
 .sign-up-check {
+  height: 20px;
+  display: block;
+  margin: 10px 0 0 0;
+}
+#sup-check {
   cursor: pointer;
-  margin: 15px;
-  transform: scale(2);
+  margin: 0 15px 0 100px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 15px;
+  background-color: white;
+  color: white;
+  font-size: 24px;
+  text-align: center;
+  display: inline-block;
+  vertical-align: top;
+}
+#agree-check {
+  cursor: pointer;
+  margin: 0 15px 0 100px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 15px;
+  background-color: white;
+  color: white;
+  font-size: 24px;
+  text-align: center;
+  display: inline-block;
+  vertical-align: top;
 }
 #sign-up-btn {
   font-family: 'Futura';
@@ -41,6 +68,7 @@
   border-radius: 15px;
   color: #fff;
   cursor: pointer;
+  font-size: 20px;
 }
 #sign-up-btn:focus {
   outline: none;
@@ -48,20 +76,20 @@
 #social-sign-up {
   background-color: #dfdfdf;
   width: 45%;
-  height: 115px;
+  height: 100px;
   border-width: 3px 3px 0 3px;
   margin: 25px auto 0 auto;
 }
 #facebook-sign-up {
   font-family: 'Futura';
-  margin: 15px;
+  margin: 15px 15px 5px 15px;
   width: 50%;
   height: 50px;
   display: inline-block;
 }
 #google-sign-up {
   font-family: 'Futura';
-  margin: 15px;
+  margin: 15px 15px 5px 15px;
   width: 35%;
   height: 50px;
   display: inline-block;
@@ -70,4 +98,20 @@
   margin: 0;
   text-align: center;
   font-family: 'Futura';
+}
+#sup-opt {
+  width: 50%;
+  font-family: 'Futura';
+  color: #8db500;
+  font-weight: 900;
+  font-size: 20px;
+  display: inline-block;
+  text-align: center;
+}
+#term-accept {
+  width: 50%;
+  font-family: 'Futura';
+  font-size: 10px;
+  display: inline-block;
+  text-align: center;
 }

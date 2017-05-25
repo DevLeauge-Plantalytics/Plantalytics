@@ -28,26 +28,30 @@ class SignUpForm extends Component {
     this.handleAgreedChange = this.handleAgreedChange.bind(this);
   }
   addUser(user){
-    if (user.username !== "" && user.firstname !== "" && user.lastname !== "" && user.email !== "" && user.password !== "" && user.confirmpass !== "" && user.address !== "" && user.zipcode !== "") {
-      if (user.password === user.confirmpass) {
-        if (user.agreed === true) {
-          this.props.addUser(user);
-        } else {
-          alert('Please accept the terms of aggreement');
-        }
+    let confirmed = document.getElementById('confirmed');
+    console.error(user);
+    if (user.password === user.confirmpass) {
+      if (user.agreed === true) {
+        this.props.addUser(user);
       } else {
-        alert('Passwords do not match');
-        this.reset();
+        alert('Please Accept the Terms of Aggreement');
       }
     } else {
-      alert('Fill out all fields please');
+      alert("PASSWORDS DON'T MATCH");
+      this.reset('password');
     }
   }
-  reset(){
-    this.setState({
-      password: "",
-      confirmpass: ""
-    });
+  reset(a){
+    if (a === 'password') {
+      this.setState({
+        password: "",
+        confirmpass: ""
+      });
+    } else if (a === 'email') {
+      this.setState({
+        email: ""
+      });
+    }
   }
   handleSubmit(event) {
     event.preventDefault();
@@ -78,34 +82,46 @@ class SignUpForm extends Component {
     this.setState({zipcode: event.target.value});
   }
   handleSupplierChange(event) {
+    let checkBox = document.getElementById('sup-check');
     if (this.state.supplier === false) {
+      checkBox.style.backgroundColor = '#8db500';
       this.setState({supplier: true});
     } else if (this.state.supplier === true) {
+      checkBox.style.backgroundColor = 'white';
       this.setState({supplier: false});
     }
   }
   handleAgreedChange(event) {
+    let checkBox = document.getElementById('agree-check');
     if (this.state.agreed === false) {
+      checkBox.style.backgroundColor = '#8db500';
       this.setState({agreed: true});
     } else if (this.state.agreed === true) {
+      checkBox.style.backgroundColor = 'white';
       this.setState({agreed: false});
     }
   }
   render(){
     return (
       <form id="sign-up-form" onSubmit={this.handleSubmit}>
-        <input className="sign-up-info" type="text" placeholder="Email" onChange={this.handleEmailChange}/>
-        <input className="sign-up-info" type="text" placeholder="Username" onChange={this.handleUsernameChange}/>
-        <input className="sign-up-info" type="text" placeholder="First Name" onChange={this.handleFirstNameChange}/>
-        <input className="sign-up-info" type="text" placeholder="Last Name" onChange={this.handleLastNameChange}/>
-        <input className="sign-up-info" type="password" placeholder="Password" value={this.state.password} onChange={this.handlePasswordChange}/>
-        <input className="sign-up-info" type="password" placeholder="Confirm Password" value={this.state.confirmpass} onChange={this.handleConfirmPassChange}/>
+        <input className="sign-up-info" type="email" placeholder="Email" value={this.state.email} onChange={this.handleEmailChange} required/>
+        <input className="sign-up-info" type="text" placeholder="Username" onChange={this.handleUsernameChange} required/>
+        <input className="sign-up-info" type="text" placeholder="First Name" onChange={this.handleFirstNameChange} required/>
+        <input className="sign-up-info" type="text" placeholder="Last Name" onChange={this.handleLastNameChange} required/>
+        <input className="sign-up-info" type="password" placeholder="Password" value={this.state.password} onChange={this.handlePasswordChange} required/>
+        <input className="sign-up-info" type="password" id="confirmed" placeholder="Confirm Password" value={this.state.confirmpass} onChange={this.handleConfirmPassChange} required/>
         <br/>
-        <input className="sign-up-info" type="text" placeholder="ADDRESS" onChange={this.handleAddressChange}/>
-        <input className="sign-up-info" type="text" placeholder="Zipcode" onChange={this.handleZipcodeChange}/>
-        <input className="sign-up-check" type="checkbox" onClick={this.handleSupplierChange}/><span id="sup-opt">I would like to be a supplier</span>
+        <input className="sign-up-info" type="text" placeholder="ADDRESS" onChange={this.handleAddressChange} required/>
+        <input className="sign-up-info" type="text" placeholder="Zipcode" onChange={this.handleZipcodeChange} required/>
+        <div className="sign-up-check">
+          <div id="sup-check" onClick={this.handleSupplierChange}>✔</div>
+          <span id="sup-opt">I would like to be a supplier</span>
+        </div>
         <br/>
-        <input className="sign-up-check" type="checkbox" onClick={this.handleAgreedChange}/><span id="term-accept">I accept the terms of aggreement.</span>
+        <div className="sign-up-check">
+          <div id="agree-check" onClick={this.handleAgreedChange}>✔</div>
+          <span id="term-accept">I agree to the Terms of Service, and to the Payment, Privacy, and Nondiscrimination Policies applicable.</span>
+        </div>
         <br/>
         <button id="sign-up-btn" type="submit">Sign Up</button>
       </form>
