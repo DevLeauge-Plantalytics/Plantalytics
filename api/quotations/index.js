@@ -113,6 +113,7 @@ quotations.post('/', (req,res) =>{
           let purchaser = request.Buyer;
           for(let i = 0; i < req.body.request_products.length; i++){
             if(data.map(x => { return x.dataValues;})[i] === undefined || data.map(x => { return x.dataValues;})[i].Owner_Id !== Number(purchaser)){
+              console.log("test");
               throw new Error("products requested must belong to the person requested");
             }
           }
@@ -171,7 +172,7 @@ quotations.post('/', (req,res) =>{
     })
     .then(res.json.bind(res))
     .catch((err) => {
-      res.send(400, err);
+      res.status(400).send({error: err.message});
     });
   }
 });
@@ -261,7 +262,7 @@ if(req.body.type !== "trade" || req.body.products_price !== "0" || req.body.deli
     })
     .then(res.json.bind(res))
     .catch((err) => {
-      res.send(400, err);
+      res.status(400).send({success: err});
     });
   }
 });
