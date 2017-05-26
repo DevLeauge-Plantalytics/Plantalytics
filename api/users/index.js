@@ -15,8 +15,8 @@ users.get('/suppliers', (req,res) => {
   .then((users) => {
       res.json(users);
   })
-  .catch(err => {
-    console.log(err);
+  .catch((err) => {
+    res.status(400).send({error: err.message});
   });
 });
 
@@ -29,7 +29,9 @@ users.get('/:id', (req,res) => {
     .then((user) => {
       res.json(user);
     })
-    .catch(console.log);
+    .catch((err) => {
+      res.status(400).send({error: err.message});
+    });
   } else {
     User.findOne({
       where: {username: req.params.id},
@@ -37,16 +39,21 @@ users.get('/:id', (req,res) => {
     .then((user) => {
       res.json(user);
     })
-    .catch(console.log);
+    .catch((err) => {
+      res.status(400).send({error: err.message});
+    });
   }
 });
 
 // Get all Users
 users.get('/', (req,res) => {
   User.all()
-    .then((users) => {
-      res.json(users);
-    });
+  .then((users) => {
+    res.json(users);
+  })
+  .catch((err) => {
+    res.status(400).send({error: err.message});
+  });
 });
 
 users.post('/', (req,res) =>{
@@ -62,8 +69,10 @@ users.post('/', (req,res) =>{
         "zipcode": req.body.zipcode,
         "supplier": req.body.supplier
       })
-        .then(res.json.bind(res))
-        .catch(res.json.bind(res));
+      .then(res.json.bind(res))
+      .catch((err) => {
+        res.status(400).send({error: err.message});
+      });
     });
   });
 });
@@ -73,14 +82,18 @@ users.put('/:id', (req, res)=> {
   User.update(req.body,
     {where: {'id': req.params.id}}
     )
-    .then(res.json.bind(res))
-    .catch(res.json.bind(res));
+  .then(res.json.bind(res))
+  .catch((err) => {
+    res.status(400).send({error: err.message});
+  });
 });
 
 users.delete('/:id', (req,res) =>{
   User.destroy({where: {"id": req.params.id}})
   .then(res.json.bind(res))
-  .catch(error => {console.log(error);});
+  .catch((err) => {
+    res.status(400).send({error: err.message});
+  });
 });
 
 module.exports = users;

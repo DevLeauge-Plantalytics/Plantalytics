@@ -6,10 +6,12 @@ const {Message, User, Request} = require('../../models');
 
 messages.get('/', (req,res) => {
   Message.all()
-    .then((posts) => {
-      res.json(posts);
-    })
-    .catch(res.json.bind(res));
+  .then((posts) => {
+    res.json(posts);
+  })
+  .catch((err) => {
+    res.status(400).send({error: err.message});
+  });
 });
 
 messages.get('/:id', (req,res) => {
@@ -28,7 +30,9 @@ messages.get('/:id', (req,res) => {
     ],
   })
   .then(res.json.bind(res))
-  .catch(res.json.bind(res));
+  .catch((err) => {
+    res.status(400).send({error: err.message});
+  });
 });
 
 messages.get('/requests/:id', (req,res) => {
@@ -41,27 +45,35 @@ messages.get('/requests/:id', (req,res) => {
     ],
   })
   .then(res.json.bind(res))
-  .catch(res.json.bind(res));
+  .catch((err) => {
+    res.status(400).send({error: err.message});
+  });
 });
 
 messages.post('/', (req,res) =>{
   Message.create(req.body)
-    .then(res.json.bind(res))
-    .catch(res.json.bind(res));
+  .then(res.json.bind(res))
+  .catch((err) => {
+    res.status(400).send({error: err.message});
+  });
 });
 
 messages.put('/:id', (req,res) =>{
   Message.update(req.body,
     {where: {"id": req.params.id}}
     )
-    .then(res.json.bind(res))
-    .catch(res.json.bind(res));
+  .then(res.json.bind(res))
+  .catch((err) => {
+    res.status(400).send({error: err.message});
+  });
 });
 
 messages.delete('/:id', (req,res) =>{
   Message.destroy({where: {"id": req.params.id}})
   .then(res.json.bind(res))
-  .catch(res.json.bind(res));
+  .catch((err) => {
+    res.status(400).send({error: err.message});
+  });
 });
 
 module.exports = messages;
