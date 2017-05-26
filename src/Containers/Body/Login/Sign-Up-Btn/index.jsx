@@ -1,4 +1,7 @@
 import React, {Component} from 'react';
+import {
+  Link
+} from 'react-router-dom';
 
 class SignUpButton extends Component {
   constructor(props) {
@@ -7,10 +10,9 @@ class SignUpButton extends Component {
   render(){
     return (
       <div id="sign-up-from-login">
-        <p id="sufl-Q">Don't have an account?</p>
-        <button id="sufl-btn">Sign Up</button>
+        <p id="sufl-Q">Dont have an account?</p>
+        <Link to="/plantalytics/sign-up"> <button id="sufl-btn">Sign Up</button></Link>
       </div>
-
     )
   }
 }
