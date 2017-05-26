@@ -5,6 +5,7 @@ module.exports = function(sequelize, DataTypes) {
     username: {
       type: DataTypes.STRING,
       allowNull: false,
+      unique: true
     },
     firstname: {
       type: DataTypes.STRING,
@@ -17,6 +18,7 @@ module.exports = function(sequelize, DataTypes) {
     email: {
       type: DataTypes.STRING,
       allowNull: false,
+      unique: true,
       validate: {
         isEmail:true,
       }

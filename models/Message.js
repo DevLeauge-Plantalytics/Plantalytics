@@ -30,12 +30,11 @@ module.exports = function(sequelize, DataTypes) {
         Message.belongsTo(models.Request, {
           foreignKey:{
             name: 'Request_Id',
-            allowNull: false,
+            allowNull: true,
           },
         });
       }
     }
   });
-
   return Message;
 };

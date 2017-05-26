@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import SignUpForm from './Sign-Up-Form';
 import SocialSignUp from './Social-Sign-Up';
 import {addUser} from '../../../Actions';
+import './styles.css';
 
 class SignUp extends Component {
   constructor(props) {
