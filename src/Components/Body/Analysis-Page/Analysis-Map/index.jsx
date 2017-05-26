@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import SearchBar from '../Search-Bar';
+
 class AnalysisMap extends Component {
   constructor(props) {
     super(props);
@@ -6,7 +8,7 @@ class AnalysisMap extends Component {
   render(){
     return (
       <div id="analysis-map">
-        <img src="map"/>
+        <SearchBar/>
       </div>
     )
   }
