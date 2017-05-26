@@ -1,18 +1,33 @@
 import React, {Component} from 'react';
+import MoreSuppliers from '../More-Sups'
 class SuggestedSuppliers extends Component {
   constructor(props) {
     super(props);
   }
   render(){
     return (
-      <div id="suggested-sups">
-        <ul>
-        <li>Crop1</li>
-        <li>Crop2</li>
-        <li>Crop3</li>
-        </ul>
+      <div id="suggested-supplier">
+        <div className="supplier-thumbnail">Supplier One</div>
+        <div className="supplier-thumbnail">Supplier Two</div>
+        <MoreSuppliers/>
       </div>
     )
   }
 }
 export default SuggestedSuppliers;
+
+// <ul id="suggested-sups">
+// {
+//   supplier.map( ({ firstname, lastname, address, zipcode, listedCrops }) =>
+//     (
+//       <SupplierThumbnail
+//         firstname={firstname}
+//         lastname={lastname}
+//         address={address}
+//         zipcode={zipcode}
+//         listedCrops={listedCrops}
+//       />
+//     )
+//   )
+// }
+// </ul>

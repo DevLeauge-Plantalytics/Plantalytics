@@ -21,8 +21,7 @@ class App extends Component {
   // }
 render(){
   return (
-    <div id="view">
-    </div>
+    <div id="view"></div>
     )
   }
 }
