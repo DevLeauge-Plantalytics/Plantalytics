@@ -78,13 +78,26 @@ users.post('/', (req,res) =>{
 });
 
 users.put('/:id', (req, res)=> {
-  console.log(req.body);
-  User.update(req.body,
-    {where: {'id': req.params.id}}
-    )
-  .then(res.json.bind(res))
-  .catch((err) => {
-    res.status(400).send({error: err.message});
+  bcrypt.genSalt(saltRounds, function(err, salt) {
+    bcrypt.hash(req.body.password, salt, function(err, hash) {
+      User.update(
+      {
+        "username": req.body.username,
+        "firstname": req.body.firstname,
+        "lastname": req.body.lastname,
+        "email": req.body.email,
+        "password": hash,
+        "address": req.body.address,
+        "zipcode": req.body.zipcode,
+        "supplier": req.body.supplier
+      },{
+        where: {'id': req.params.id}
+      })
+      .then(res.json.bind(res))
+      .catch((err) => {
+        res.status(400).send({error: err.message});
+      });
+    });
   });
 });
 
