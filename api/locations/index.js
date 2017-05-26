@@ -17,14 +17,19 @@ locations.get('/suppliers', (req,res) => {
   .then((locations) => {
     res.json(locations);
   })
-  .catch(res.json.bind(res));
+  .catch((err) => {
+    res.status(400).send({error: err.message});
+  });
 });
 
 locations.get('/', (req,res) => {
-  Location.all()
-    .then((users) => {
-      res.json(locations);
-    });
+  Location.findAll()
+  .then((users) => {
+    res.json(locations);
+  })
+  .catch((err) => {
+    res.status(400).send({error: err.message});
+  });
 });
 
 locations.get('/:id', (req,res) => {
@@ -38,7 +43,9 @@ locations.get('/:id', (req,res) => {
     ],
   })
   .then(res.json.bind(res))
-  .catch(res.json.bind(res));
+  .catch((err) => {
+    res.status(400).send({error: err.message});
+  });
 });
 
 locations.post('/', (req,res) =>{
@@ -50,8 +57,8 @@ locations.post('/', (req,res) =>{
 locations.delete('/:id', (req,res) =>{
   Location.destroy({where: {"id": req.params.id}})
   .then(res.json.bind(res))
-  .catch(error => {
-    console.log(error);
+  .catch((err) => {
+    res.status(400).send({error: err.message});
   });
 });
 

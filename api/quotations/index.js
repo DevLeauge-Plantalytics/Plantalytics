@@ -15,7 +15,9 @@ quotations.get('/buyer/:id', (req,res) => {
     ],
   })
   .then(res.json.bind(res))
-  .catch(res.json.bind(res));
+  .catch((err) => {
+    res.status(400).send({error: err.message});
+  });
 });
 
 quotations.get('/supplier/:id', (req,res) => {
@@ -29,7 +31,9 @@ quotations.get('/supplier/:id', (req,res) => {
     ],
   })
   .then(res.json.bind(res))
-  .catch(res.json.bind(res));
+  .catch((err) => {
+    res.status(400).send({error: err.message});
+  });
 });
 
 quotations.get('/contract-buyer/:id', (req,res) => {
@@ -44,7 +48,9 @@ quotations.get('/contract-buyer/:id', (req,res) => {
     where: {accepted: true}
   })
   .then(res.json.bind(res))
-  .catch(res.json.bind(res));
+  .catch((err) => {
+    res.status(400).send({error: err.message});
+  });
 });
 
 quotations.get('/contract-supplier/:id', (req,res) => {
@@ -59,7 +65,9 @@ quotations.get('/contract-supplier/:id', (req,res) => {
     where: {accepted: true}
   })
   .then(res.json.bind(res))
-  .catch(res.json.bind(res));
+  .catch((err) => {
+    res.status(400).send({error: err.message});
+  });
 });
 
 quotations.get('/', (req,res) => {
@@ -84,8 +92,61 @@ quotations.get('/', (req,res) => {
   .then((quotations) => {
     res.json(quotations);
   })
-  .catch(res.json.bind(res));
+  .catch((err) => {
+    res.status(400).send({error: err.message});
+  });
 });
+
+const updateIntTable = (req, res) => {
+  return Promise.all([
+    Product.findAll({where: {id: {$in: req.body.request_products.map(p => p.id)}}}).then( (requested_products) => {
+      requested_products = requested_products.map(p => {
+        let quantity = req.body.request_products.filter(rp => rp.id === p.id).reduce(( _, rp ) => rp, null).quantity;
+        p.quantity = quantity;
+        return p;
+      });
+      return Req_Prod_Offered.findAll({limit:1, where:{RequestId: req.body.Request_Id}, order: [['createdAt', 'DESC']]})
+      .then( (lastRequest) => {
+        return Promise.all(requested_products.map( rp => {
+          return Req_Prod_Offered.create({
+            quantity: rp.quantity,
+            ProductId: rp.id,
+            RequestId: Number(req.body.Request_Id),
+            version: Number(lastRequest[0].dataValues.version) + 1
+          });
+        }));
+      });
+    }),
+    Product.findAll({where: {id: {$in: req.body.offered_products.map(p => p.id)}}}).then( (offered_products) => {
+      // add the quantity
+      offered_products = offered_products.map(p => {
+        let quantity = req.body.offered_products.filter(rp => rp.id === p.id).reduce(( _, rp ) => rp, null).quantity; // { id, quantity }
+        p.quantity = quantity;
+        return p;
+      });
+      return Req_Prod_Offered.findAll({limit:1, where:{RequestId: req.body.Request_Id}, order: [['createdAt', 'DESC']]})
+      .then( (lastRequest) => {
+        return Promise.all(offered_products.map( rp => {
+          return Req_Prod_Requested.create({
+            quantity: rp.quantity,
+            ProductId: rp.id,
+            RequestId: Number(req.body.Request_Id),
+            version: Number(lastRequest[0].dataValues.version) + 1
+          });
+        }));
+      });
+    }),
+    Request.update({
+      "accepted": false,
+    },{
+      where: {id: Number(req.body.Request_Id)},
+    })
+  ])
+  .then(res.json.bind(res))
+  .catch((err) => {
+    res.status(400).send({error: err.message});
+  });
+};
 
 quotations.post('/', (req,res) =>{
 
@@ -133,44 +194,8 @@ quotations.post('/', (req,res) =>{
       );
     })
     .then( () => {
-      return Promise.all([
-        Product.findAll({where: {id: {$in: req.body.request_products.map(p => p.id)}}}).then( (requested_products) => {
-          requested_products = requested_products.map(p => {
-            let quantity = req.body.request_products.filter(rp => rp.id === p.id).reduce(( _, rp ) => rp, null).quantity;
-            p.quantity = quantity;
-            return p;
-          });
-          return Promise.all(requested_products.map( rp => {
-            return Req_Prod_Offered.create({
-              quantity: rp.quantity,
-              ProductId: rp.id,
-              RequestId: Number(req.body.Request_Id)
-            });
-          }));
-        }),
-        Product.findAll({where: {id: {$in: req.body.offered_products.map(p => p.id)}}}).then( (offered_products) => {
-          // add the quantity
-          offered_products = offered_products.map(p => {
-            let quantity = req.body.offered_products.filter(rp => rp.id === p.id).reduce(( _, rp ) => rp, null).quantity; // { id, quantity }
-            p.quantity = quantity;
-            return p;
-          });
-          return Promise.all(offered_products.map( rp => {
-            return Req_Prod_Requested.create({
-              quantity: rp.quantity,
-              ProductId: rp.id,
-              RequestId: Number(req.body.Request_Id)
-            });
-          }));
-        }),
-        Request.update({
-          "accepted": false,
-        },{
-          where: {id: Number(req.body.Request_Id)},
-        })
-      ]);
+      updateIntTable(req, res);
     })
-    .then(res.json.bind(res))
     .catch((err) => {
       res.status(400).send({error: err.message});
     });
@@ -223,46 +248,10 @@ if(req.body.type !== "trade" || req.body.products_price !== "0" || req.body.deli
       );
     })
     .then( () => {
-      return Promise.all([
-        Product.findAll({where: {id: {$in: req.body.request_products.map(p => p.id)}}}).then( (requested_products) => {
-          requested_products = requested_products.map(p => {
-            let quantity = req.body.request_products.filter(rp => rp.id === p.id).reduce(( _, rp ) => rp, null).quantity;
-            p.quantity = quantity;
-            return p;
-          });
-          return Promise.all(requested_products.map( rp => {
-            return Req_Prod_Offered.create({
-              quantity: rp.quantity,
-              ProductId: rp.id,
-              RequestId: Number(req.body.Request_Id)
-            });
-          }));
-        }),
-        Product.findAll({where: {id: {$in: req.body.offered_products.map(p => p.id)}}}).then( (offered_products) => {
-          // add the quantity
-          offered_products = offered_products.map(p => {
-            let quantity = req.body.offered_products.filter(rp => rp.id === p.id).reduce(( _, rp ) => rp, null).quantity; // { id, quantity }
-            p.quantity = quantity;
-            return p;
-          });
-          return Promise.all(offered_products.map( rp => {
-            return Req_Prod_Requested.create({
-              quantity: rp.quantity,
-              ProductId: rp.id,
-              RequestId: Number(req.body.Request_Id)
-            });
-          }));
-        }),
-        Request.update({
-          "accepted": false,
-        },{
-          where: {id: Number(req.body.Request_Id)},
-        })
-      ]);
+       updateIntTable(req, res);
     })
-    .then(res.json.bind(res))
     .catch((err) => {
-      res.status(400).send({success: err});
+      res.status(400).send({error: err.message});
     });
   }
 });
@@ -270,8 +259,8 @@ if(req.body.type !== "trade" || req.body.products_price !== "0" || req.body.deli
 quotations.delete('/:id', (req,res) =>{
   Quotation.destroy({where: {"id": req.params.id}})
   .then(res.json.bind(res))
-  .catch(error => {
-    console.log(error);
+  .catch((err) => {
+    res.status(400).send({error: err.message});
   });
 });
 

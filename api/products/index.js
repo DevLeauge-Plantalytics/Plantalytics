@@ -18,14 +18,19 @@ products.get('/suppliers', (req,res) => {
   .then((products) => {
     res.json(products);
   })
-  .catch(res.json.bind(res));
+  .catch((err) => {
+    res.status(400).send({error: err.message});
+  });
 });
 
 products.get('/', (req,res) => {
   Product.all()
-    .then((users) => {
-      res.json(products);
-    });
+  .then((users) => {
+    res.json(products);
+  })
+  .catch((err) => {
+    res.status(400).send({error: err.message});
+  });
 });
 
 products.get('/:id', (req,res) => {
@@ -39,20 +44,24 @@ products.get('/:id', (req,res) => {
     ],
   })
   .then(res.json.bind(res))
-  .catch(res.json.bind(res));
+  .catch((err) => {
+    res.status(400).send({error: err.message});
+  });
 });
 
 products.post('/', (req,res) =>{
   Product.create(req.body)
-    .then(res.json.bind(res))
-    .catch(res.json.bind(res));
+  .then(res.json.bind(res))
+  .catch((err) => {
+    res.status(400).send({error: err.message});
+  });
 });
 
 products.delete('/:id', (req,res) =>{
   Product.destroy({where: {"id": req.params.id}})
   .then(res.json.bind(res))
-  .catch(error => {
-    console.log(error);
+  .catch((err) => {
+    res.status(400).send({error: err.message});
   });
 });
 
