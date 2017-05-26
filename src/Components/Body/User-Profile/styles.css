@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+}
+#user-nav {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  background-color: #97a91a;
+}
+#user-nav-items {
+  width: 50%;
+  margin: 0 auto;
+}
+.user-nav-item {
+  display: inline-block;
+  font-family: 'Futura';
+  margin: 0 42.5px;
+  color: white;
+}
+#user-avatar {
+  text-align: center;
+  border: 1px solid blue;
+  width: 20%;
+  margin: 5% 0 0 10%;
+  display: inline-block;
+}
+#user-info {
+  position: relative;
+  top: -157.5px;
+  border: 1px solid #999;
+  width: 33%;
+  text-align: center;
+  height: 350px;
+  display: inline-block;
+  margin-left: 25px;
+}
+#user-profile-pic {
+  border: 1px solid black;
+  border-radius: 100px;
+  height: 150px;
+  width: 150px;
+  margin: 25px auto;
+}

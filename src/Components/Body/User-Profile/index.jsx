@@ -3,8 +3,10 @@ import {connect} from 'react-redux';
 import Header from '../../Header'
 import UserAvatar from './UserAvatar';
 import UserInfo from './UserInfo';
-import {getUserById} from '../../../API'
-import {getUser} from '../../../Actions'
+import UserNav from './User-Nav';
+import {getUserById} from '../../../API';
+import {getUser} from '../../../Actions';
+import './styles.css';
 
 class UserProfile extends Component {
   constructor(props) {
@@ -22,7 +24,7 @@ class UserProfile extends Component {
     return (
       <div id="user-profile">
         <Header/>
-        <h1>User Profile</h1>
+        <UserNav/>
         <UserAvatar/>
         <UserInfo/>
       </div>
