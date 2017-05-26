@@ -32,6 +32,36 @@ quotations.get('/supplier/:id', (req,res) => {
   .catch(res.json.bind(res));
 });
 
+quotations.get('/contract-buyer/:id', (req,res) => {
+  Quotation.findAll({
+    include:[
+      {
+        model: Request,
+        as:'Contract',
+        where: {Buyer: req.params.id, accepted: true}
+      }
+    ],
+    where: {accepted: true}
+  })
+  .then(res.json.bind(res))
+  .catch(res.json.bind(res));
+});
+
+quotations.get('/contract-supplier/:id', (req,res) => {
+  Quotation.findAll({
+    include:[
+      {
+        model: Request,
+        as:'Contract',
+        where: {Supplier: req.params.id, accepted: true}
+      }
+    ],
+    where: {accepted: true}
+  })
+  .then(res.json.bind(res))
+  .catch(res.json.bind(res));
+});
+
 quotations.get('/', (req,res) => {
   Quotation.findAll({
     include:[
