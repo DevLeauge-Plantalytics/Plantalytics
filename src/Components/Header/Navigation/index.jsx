@@ -5,15 +5,10 @@ class Navigation extends Component {
   }
   render(){
     return (
-      <div id="main-nav">
-        <nav>
-          <ul>
-            <li>Option1</li>
-            <li>Option2</li>
-            <li>Option3</li>
-          </ul>
-        </nav>
-      </div>
+        <ul id="main-nav-items">
+          <li className="header-nav-item">Download the App</li>
+          <li className="header-nav-item">Become a Supplier</li>
+        </ul>
     )
   }
 }

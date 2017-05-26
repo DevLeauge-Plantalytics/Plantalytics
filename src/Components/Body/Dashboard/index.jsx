@@ -6,7 +6,6 @@ import Messages from './Messages';
 import Newsfeed from './Newsfeed';
 import ProfilePic from './Profile-Pic';
 import Settings from './Settings';
-import UserNav from './User-Nav';
 
 import Header from '../../Header';
 import {getUser} from '../../../Actions';
@@ -25,7 +24,6 @@ class Dashboard extends Component {
       <div id="dashboard">
         <Header/>
         <h1>User Name</h1>
-        <UserNav/>
         <ProfilePic/>
         <Settings/>
         <LocationCrops/>

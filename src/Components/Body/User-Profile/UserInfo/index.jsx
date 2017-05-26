@@ -8,11 +8,10 @@ class UserInfo extends Component {
   render(){
     return (
       <div id="user-info">
-        <h3>Username</h3>
-        <h3>FirstName</h3>
-        <h3>LastName</h3>
-        <h3>Address</h3>
-        <h3>Zipcode</h3>
+        <h2>Username</h2>
+        <h3>FirstName LastName</h3>
+        <h4>Address</h4>
+        <h4>Zipcode</h4>
         <button type="edit-profile">Edit Profile</button>
       </div>
     )
