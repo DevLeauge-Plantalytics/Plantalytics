@@ -3,18 +3,22 @@ import MessageFeed from './Message-Feed';
 import OtherUser from './Other-Prof';
 import SendMessage from './Send-Message';
 import Header from '../../Header';
+import UserNav from '../User-Profile/User-Nav';
+import './styles.css';
 class Conversation extends Component {
   constructor(props) {
     super(props);
   }
   render(){
     return (
-      <div id="conversation">
+      <div>
         <Header/>
-        <h2>Conversation with User Name</h2>
-        <OtherUser/>
-        <SendMessage/>
-        <MessageFeed/>
+        <UserNav/>
+        <div id="conversation">
+          <OtherUser/>
+          <MessageFeed/>
+          <SendMessage/>
+        </div>
       </div>
     )
   }
