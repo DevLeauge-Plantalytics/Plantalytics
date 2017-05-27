@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {signIn} from '../../Actions';
-import './styles.css';
 
 class LoginForm extends Component {
   constructor(props){

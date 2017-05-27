@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {addUser} from '../../Actions';
-import './styles.css';
 
 class SignUpForm extends Component {
   constructor(props) {
