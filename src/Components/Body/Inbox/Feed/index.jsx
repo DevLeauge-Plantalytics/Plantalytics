@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import Message from '../Message';
+
 class Feed extends Component {
   constructor(props) {
     super(props);
@@ -7,9 +9,7 @@ class Feed extends Component {
     return (
       <div id="inbox-feed">
         <ul>
-          <li>Message1</li>
-          <li>Message2</li>
-          <li>Message3</li>
+          <Message/>
         </ul>
       </div>
     )

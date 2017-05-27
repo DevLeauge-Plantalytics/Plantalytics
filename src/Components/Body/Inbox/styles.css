@@ -1,0 +1,37 @@
+#inbox {
+  display: flex;
+
+}
+
+#inbox-filter {
+  align-self: right;
+
+}
+
+#filter-type {
+
+}
+
+#inbox-feed {
+
+
+}
+
+#inbox-message {
+  border: 1px solid #black;
+
+
+}
+
+#created-at {
+
+}
+
+#from {
+
+}
+
+#snippet {
+
+
+}

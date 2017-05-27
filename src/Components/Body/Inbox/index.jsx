@@ -12,8 +12,8 @@ class Inbox extends Component {
       <div id="inbox">
         <Header/>
         <h1>Inbox</h1>
+        <Filter id="filter"/>
         <Feed/>
-        <Filter/>
       </div>
     )
   }
