@@ -5,7 +5,6 @@ const initialState = {
 };
 
 const messages = (state = initialState, action) => {
-  console.log(action);
   switch(action.type){
     case LOAD_MESSAGES:
       return Object.assign({}, state, {
