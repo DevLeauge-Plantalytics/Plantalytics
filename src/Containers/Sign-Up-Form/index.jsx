@@ -1,4 +1,7 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {addUser} from '../../Actions';
+import './styles.css';
 
 class SignUpForm extends Component {
   constructor(props) {
@@ -15,17 +18,6 @@ class SignUpForm extends Component {
       supplier: false,
       agreed: false
     };
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleUsernameChange = this.handleUsernameChange.bind(this);
-    this.handleFirstNameChange = this.handleFirstNameChange.bind(this);
-    this.handleLastNameChange = this.handleLastNameChange.bind(this);
-    this.handleEmailChange = this.handleEmailChange.bind(this);
-    this.handlePasswordChange = this.handlePasswordChange.bind(this);
-    this.handleConfirmPassChange = this.handleConfirmPassChange.bind(this);
-    this.handleAddressChange = this.handleAddressChange.bind(this);
-    this.handleZipcodeChange = this.handleZipcodeChange.bind(this);
-    this.handleSupplierChange = this.handleSupplierChange.bind(this);
-    this.handleAgreedChange = this.handleAgreedChange.bind(this);
   }
   addUser(user){
     let confirmed = document.getElementById('confirmed');
@@ -53,35 +45,35 @@ class SignUpForm extends Component {
       });
     }
   }
-  handleSubmit(event) {
+  handleSubmit = (event) => {
     event.preventDefault();
     this.addUser(this.state);
   }
-  handleUsernameChange(event) {
+  handleUsernameChange = (event) => {
     this.setState({username: event.target.value});
   }
-  handleFirstNameChange(event) {
+  handleFirstNameChange = (event) => {
     this.setState({firstname: event.target.value});
   }
-  handleLastNameChange(event) {
+  handleLastNameChange = (event) => {
     this.setState({lastname: event.target.value});
   }
-  handleEmailChange(event) {
+  handleEmailChange = (event) => {
     this.setState({email: event.target.value});
   }
-  handlePasswordChange(event) {
+  handlePasswordChange = (event) => {
     this.setState({password: event.target.value});
   }
-  handleConfirmPassChange(event) {
+  handleConfirmPassChange = (event) => {
     this.setState({confirmpass: event.target.value});
   }
-  handleAddressChange(event) {
+  handleAddressChange = (event) => {
     this.setState({address: event.target.value});
   }
-  handleZipcodeChange(event) {
+  handleZipcodeChange = (event) => {
     this.setState({zipcode: event.target.value});
   }
-  handleSupplierChange(event) {
+  handleSupplierChange = (event) => {
     let checkBox = document.getElementById('sup-check');
     if (this.state.supplier === false) {
       checkBox.style.backgroundColor = '#8db500';
@@ -91,7 +83,7 @@ class SignUpForm extends Component {
       this.setState({supplier: false});
     }
   }
-  handleAgreedChange(event) {
+  handleAgreedChange = (event) => {
     let checkBox = document.getElementById('agree-check');
     if (this.state.agreed === false) {
       checkBox.style.backgroundColor = '#8db500';
@@ -128,4 +120,20 @@ class SignUpForm extends Component {
     )
   }
 }
-export default SignUpForm;
+
+const mapStateToProps = (state) => {
+  return {};
+}
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    addUser: user => {
+      dispatch(addUser(user))
+    }
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(SignUpForm);

@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import {signIn} from '../../Actions';
+import './styles.css';
 
 class LoginForm extends Component {
   constructor(props){
@@ -9,21 +11,17 @@ class LoginForm extends Component {
       username: "",
       password: "",
     };
-
-    this.handleUsernameChange = this.handleUsernameChange.bind(this);
-    this.handlePasswordChange = this.handlePasswordChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleUsernameChange(event) {
+  handleUsernameChange = (event) => {
     this.setState({ username : event.target.value });
   }
 
-  handlePasswordChange(event) {
+  handlePasswordChange = (event) => {
     this.setState({ password : event.target.value });
   }
 
-  handleSubmit(event) {
+  handleSubmit = (event) => {
     event.preventDefault();
     this.props.signIn(this.state)
   }
@@ -41,4 +39,19 @@ class LoginForm extends Component {
 
 }
 
-export default LoginForm;
+const mapStateToProps = (state) => {
+  return {};
+}
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    signIn: (user) => {
+      dispatch(signIn(user))
+    }
+  }
+}
+
+export default  connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(LoginForm);
