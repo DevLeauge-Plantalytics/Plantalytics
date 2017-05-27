@@ -81,13 +81,33 @@ export const deleteUser = id => {
     });
   });
 };
-
 export const signinPassport = user => {
-  let userloggedin = user;
   return new Promise(function (resolve, reject) {
     makeRequest('POST', `/login/`, user)
     .then (users => {
       resolve(JSON.parse(users));
+    })
+    .catch (err => {
+      reject(err);
+    });
+  });
+};
+export const getMessages = () => {
+  return new Promise(function (resolve, reject) {
+    makeRequest('GET', `/api/messages/`)
+    .then (messages => {
+      resolve(JSON.parse(messages));
+    })
+    .catch (err => {
+      reject(err);
+    });
+  });
+};
+export const postMessage = (body) => {
+  return new Promise(function (resolve, reject) {
+    makeRequest('POST', `/api/messages/`, body)
+    .then (message => {
+      resolve(JSON.parse(message));
     })
     .catch (err => {
       reject(err);

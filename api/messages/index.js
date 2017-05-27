@@ -5,7 +5,9 @@ const messages = express.Router();
 const {Message, User, Request} = require('../../models');
 
 messages.get('/', (req,res) => {
-  Message.all()
+  Message.all({
+    order: [['createdAt','DESC']]
+  })
   .then((posts) => {
     res.json(posts);
   })
@@ -25,7 +27,6 @@ messages.get('/:id', (req,res) => {
       {
         model:User,
         as:'Listener',
-        where: {id: req.params.id},
       }
     ],
   })
