@@ -4,6 +4,7 @@ const initialState = {
   users: [],
   username: localStorage.username,
   loggedIn: localStorage.logged,
+  id: localStorage.id,
 };
 
 const users = (state = initialState, action) => {
@@ -37,6 +38,7 @@ const users = (state = initialState, action) => {
       return Object.assign({}, state, {
         loggedIn: true,
         username: localStorage.username,
+        id: localStorage.id,
       });
 
     default:

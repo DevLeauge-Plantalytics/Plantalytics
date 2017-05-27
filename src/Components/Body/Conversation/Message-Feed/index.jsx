@@ -1,20 +1,48 @@
+import { loadMessages } from '../../../../Actions';
+import { connect } from 'react-redux';
 import React, {Component} from 'react';
-class MessageFeed extends Component {
+import Message from './Message';
+
+class Messages extends Component {
   constructor(props) {
     super(props);
   }
+
+  componentWillMount(){
+    this.props.loadMessages();
+  }
+
   render(){
     return (
       <div id="message-feed">
-        <ul id="conversation-feed">
-          <li className="your-message">Hey, Joe, how are your family bananas going?</li>
-          <li className="other-user-message">Hey, Kanoa! They're doing alright, we'll keep you updated if anything happens.</li>
-          <li className="your-message">Awesome, glad to hear it.</li>
-          <li className="your-message">I'm always available to help out!</li>
-          <li className="other-user-message">Thanks man, it's been a ride.</li>
-        </ul>
+        <h1>List of messages</h1>
+        { this.props.messages
+          .filter(message => (message.Sender === Number(localStorage.id) && message.Receiver === Number(this.props.userConversed)) || (message.Sender === Number(this.props.userConversed) && message.Receiver === Number(localStorage.id)))
+          .map( message => <Message message={message} key={message.id} ></Message> )
+        }
+
       </div>
     )
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    messages: state.messages.messages
+  };
+}
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    loadMessages: () => {
+      dispatch(loadMessages())
+    }
+  }
+}
+
+const MessageFeed = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Messages);
+
 export default MessageFeed;

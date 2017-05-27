@@ -4,7 +4,7 @@ module.exports = function(sequelize, DataTypes) {
   {
     subject: {
       type: DataTypes.STRING(40),
-      allowNull: false,
+      allowNull: true,
     },
     body: {
       type: DataTypes.STRING(300),

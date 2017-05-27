@@ -1,11 +1,14 @@
 /*jshint esversion: 6*/
-import {getUsers, getUserById, postUser, putUser, deleteUser, signinPassport} from '../API';
+import {getUsers, getUserById, postUser, putUser, deleteUser, signinPassport, getMessages, postMessage} from '../API';
 export const LOAD_USERS = 'LOAD_USERS';
 export const GET_USER = 'GET_USER';
 export const ADD_USER = 'ADD_USER';
 export const UPDATE_USER = 'UPDATE_USER';
 export const DELETE_USER = 'DELETE_USER';
 export const LOGIN = 'LOGIN';
+export const LOAD_MESSAGES = 'LOAD_MESSAGES';
+export const SEND_MESSAGE = 'SEND_MESSAGE';
+
 
 
 export const loadUsers = id => {
@@ -51,10 +54,29 @@ export const destroyUser = id => {
 export const signIn = user => {
   return dispatch => {
     return signinPassport(JSON.stringify(user))
-    .then( () => {
+    .then( (userInfo) => {
+
       localStorage.setItem('loggedIn', true);
       localStorage.setItem('username', user.username);
+      localStorage.setItem('id', userInfo.id);
       dispatch({type: LOGIN });
+    });
+  };
+};
+export const loadMessages = () => {
+  return dispatch => {
+    return getMessages()
+    .then( (messages) => {
+      dispatch({type: LOAD_MESSAGES, messages });
+    });
+  };
+};
+export const sendMessage = (message) => {
+  console.log(message);
+  return dispatch => {
+    return postMessage(JSON.stringify(message))
+    .then( (message) => {
+      dispatch({type: SEND_MESSAGE, message });
     });
   };
 };

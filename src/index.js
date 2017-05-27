@@ -45,7 +45,7 @@ ReactDOM.render(
         <Route path="/plantalytics/location" component={AnalysisPage}/>
         <Route path="/plantalytics/supplier-listing" component={Supplier_List}/>
         <Route path="/plantalytics/supplier-profile" component={Supplier_Profile}/>
-        <Route path="/plantalytics/conversation" component={Conversation}/>
+        <Route path="/plantalytics/conversation/:id" component={Conversation}/>
         <Route path="/plantalytics/inbox" component={Inbox}/>
       </div>
     </Router>

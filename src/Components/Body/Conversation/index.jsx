@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import MessageFeed from './Message-Feed';
 import OtherUser from './Other-Prof';
-import SendMessage from './Send-Message';
+import SendMessageForm from './Send-Message';
 import Header from '../../Header';
 import UserNav from '../User-Profile/User-Nav';
 import './styles.css';
@@ -16,8 +16,8 @@ class Conversation extends Component {
         <UserNav/>
         <div id="conversation">
           <OtherUser/>
-          <MessageFeed/>
-          <SendMessage/>
+          <MessageFeed userConversed={this.props.match.params.id}/>
+          <SendMessageForm userConversed={this.props.match.params.id}/>
         </div>
       </div>
     )
