@@ -6,7 +6,7 @@ class Filter extends Component {
   render(){
     return (
       <div id="inbox-filter">
-        <select name="filterType" id="filterType">
+        <select name="filterType" id="filter-type">
           <option value="Date">When</option>
           <option value="Sender">Who</option>
           <option value="Importance">Why</option>
