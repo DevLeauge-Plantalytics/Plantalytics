@@ -19,7 +19,7 @@ class SignUpForm extends Component {
     };
   }
   addUser(user){
-    let confirmed = document.getElementById('confirmed');
+    //let confirmed = document.getElementById('confirmed');
     console.error(user);
     if (user.password === user.confirmpass) {
       if (user.agreed === true) {

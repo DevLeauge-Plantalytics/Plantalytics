@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import SignUpForm from '../../Containers/Sign-Up-Form';
 import SocialSignUp from '../../Components/SocialSignUp';
 import './styles.css';

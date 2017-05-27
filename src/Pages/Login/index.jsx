@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import LoginForm from '../../Containers/Login-Form';
 import SignUpBtn from '../../Components/SignUpButton';
 import SocialLogin from '../../Components/SocialLogin';

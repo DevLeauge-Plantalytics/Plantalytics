@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 class Newsfeed extends Component {
   constructor(props) {
     super(props);
+    this.title = 'No-Warning'
   }
   render(){
     return (

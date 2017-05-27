@@ -6,6 +6,7 @@ import Message from './Message';
 class Messages extends Component {
   constructor(props) {
     super(props);
+    this.title = 'No-Warning'
   }
 
   componentWillMount(){

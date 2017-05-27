@@ -4,15 +4,16 @@ import Header from '../../Header';
 import AnalysisHeader from './Analysis-Header';
 import AnalysisMap from './Analysis-Map';
 import DataVisuals from './Data-Visuals';
-import SearchBar from './Search-Bar';
+//import SearchBar from './Search-Bar';
 import SuggestedCrops from './Suggested-Crops';
 import SuggestedSuppliers from './Suggested-Sups';
 
-import styles from './styles.css';
+import './styles.css';
 
 class AnalysisPage extends Component {
   constructor(props) {
     super(props);
+    this.title = 'No-Warning'
   }
   render(){
     return (

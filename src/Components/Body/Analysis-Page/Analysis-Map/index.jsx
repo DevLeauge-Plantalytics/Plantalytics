@@ -4,6 +4,7 @@ import SearchBar from '../Search-Bar';
 class AnalysisMap extends Component {
   constructor(props) {
     super(props);
+    this.title = 'No-Warning'
   }
   render(){
     return (
