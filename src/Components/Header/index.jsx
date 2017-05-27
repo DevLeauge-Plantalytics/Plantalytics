@@ -5,6 +5,7 @@ import './styles.css';
 class Header extends Component {
   constructor(props) {
     super(props);
+    this.title = 'No-Warning'
   }
   render(){
     return (

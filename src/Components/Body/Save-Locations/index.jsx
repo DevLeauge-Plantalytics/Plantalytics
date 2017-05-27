@@ -5,6 +5,7 @@ import Header from '../../Header';
 class SaveLocations extends Component {
   constructor(props) {
     super(props);
+    this.title = 'No-Warning'
   }
   render(){
     return (

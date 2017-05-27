@@ -4,6 +4,7 @@ import Message from '../Message';
 class Feed extends Component {
   constructor(props) {
     super(props);
+    this.title = 'No-Warning'
   }
   render(){
     return (
