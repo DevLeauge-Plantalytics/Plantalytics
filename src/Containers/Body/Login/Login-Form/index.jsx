@@ -1,9 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
-// import SocialLogin from './Social-Login'
-// import SignUpBtn from './Sign-Up-Btn'
-
 class LoginForm extends Component {
   constructor(props){
     super(props);
@@ -34,13 +31,11 @@ class LoginForm extends Component {
 
   render(){
     return (
-      <div id="Login">
         <form id="Login" onSubmit={this.handleSubmit}>
-          <input type="text" placeholder="Username" onChange={this.handleUsernameChange} value={this.state.username} />
-          <input type="password" placeholder="Password " onChange={this.handlePasswordChange} value={this.state.password} />
-          <button type="submit">Log In</button>
+          <input className="login-form-info" type="text" placeholder="Username" onChange={this.handleUsernameChange} value={this.state.username} />
+          <input className="login-form-info" type="password" placeholder="Password " onChange={this.handlePasswordChange} value={this.state.password} />
+          <button id="login-form-btn" type="submit">Log In</button>
         </form>
-      </div>
     )
   }
 

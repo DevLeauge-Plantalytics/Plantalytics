@@ -1,12 +1,15 @@
 import React, {Component} from 'react';
+
+import Header from '../../Header';
 import AnalysisHeader from './Analysis-Header';
 import AnalysisMap from './Analysis-Map';
 import DataVisuals from './Data-Visuals';
-import MoreSuppliers from './More-Sups';
 import SearchBar from './Search-Bar';
 import SuggestedCrops from './Suggested-Crops';
 import SuggestedSuppliers from './Suggested-Sups';
-import Header from '../../Header';
+
+import styles from './styles.css';
+
 class AnalysisPage extends Component {
   constructor(props) {
     super(props);
@@ -16,12 +19,18 @@ class AnalysisPage extends Component {
       <div id="analysis-page">
         <Header/>
         <AnalysisHeader/>
-        <AnalysisMap/>
-        <DataVisuals/>
-        <MoreSuppliers/>
-        <SearchBar/>
-        <SuggestedCrops/>
-        <SuggestedSuppliers/>
+        <div id="body-analysis">
+          <div id="right-side-analysis-page">
+            <div id="crops-supplier-column">
+              <SuggestedCrops/>
+              <SuggestedSuppliers/>
+            </div>
+            <DataVisuals/>
+          </div>
+          <div id="left-side-analysis=page">
+            <AnalysisMap/>
+          </div>
+        </div>
       </div>
     )
   }

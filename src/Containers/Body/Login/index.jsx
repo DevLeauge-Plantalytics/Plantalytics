@@ -4,7 +4,7 @@ import LoginForm from './Login-Form';
 import SignUpBtn from './Sign-Up-Btn';
 import SocialLogin from './Social-Login';
 import {signIn} from '../../../Actions';
-
+import './styles.css';
 class Login extends Component {
   constructor(props) {
     super(props);

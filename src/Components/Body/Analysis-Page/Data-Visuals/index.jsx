@@ -5,8 +5,8 @@ class DataVisuals extends Component {
   }
   render(){
     return (
-      <div id="data-visuals">
-        <ul>
+      <div>
+        <ul id="data-visuals-list">
           <li className="data-visual">Data1</li>
           <li className="data-visual">Data2</li>
           <li className="data-visual">Data3</li>
