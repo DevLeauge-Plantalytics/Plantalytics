@@ -1,42 +1,48 @@
 #analysis-header {
-  background-color: limegreen;
-  height: 35px;
-  padding: 8px;
-
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  background-color: #97a91a;
+}
+#analysis-header-items {
+  width: 55%;
+  margin: 0;
+  margin-left: 10%;
+}
+.analysis-header-item {
+  display: inline-block;
+  font-family: 'Futura';
+  margin: 0 25px;
+  color: white;
+  cursor: pointer;
 }
 
 #body-analysis {
   display:flex;
   flex-wrap: wrap;
   align-content: flex-end;
-
 }
 
 #left-side-analysis-page {
   width: 50%;
   display: flex;
   flex-wrap: wrap;
-
 }
 
 #crops-supplier-column {
-
 }
 
 #crop-list-container {
   border: 1px solid black;
   margin: 10px;
   padding: 15px;
-
   width: 250px;
-
 }
 
 #crop-list {
   list-style-type: none;
   margin: 10px;
   padding: 15px;
-
 }
 
 #suggested-supplier {
@@ -48,53 +54,47 @@
   padding: 10px;
   margin-bottom: 10px;
   border: 1px solid black;
-
 }
 
 #get-more-sups {
   border: 1px solid black;
-
 }
 
 #data-visuals-list {
   list-style-type: none;
-
 }
 
 .data-visual {
   margin: 15px;
   padding: 10px;
   border: 1px solid black;
-
   height: 75px;
   width: 200px;
-
 }
 
 #right-side-analysis-page {
   display: flex;
   direction: column;
-
 }
 
 #analysis-map {
   position: relative;
-  height: 700px;
-  width: 700px;
+  left: 25%;
+  height: 550px;
+  width: 450px;
   background-image: url("https://www.hiusa.org/images/uploads/state/Hawaii-state.png");
   align-content: flex-end;
-
 }
 
 #analysis-search {
   position: absolute; bottom: 150px; left: 35%;
-  border: 1px solid black;
-
 }
 
 #analysis-search-bar {
-  border: 1px solid black;
-
+  width: 150px;
+}
+#analysis-search-bar:focus {
+  outline: none;
 }
 
 

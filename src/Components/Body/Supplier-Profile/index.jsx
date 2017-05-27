@@ -4,6 +4,9 @@ import SupplierAvatar from './Sup-Avatar';
 import SupplierHeader from './Sup-Header';
 import UserPosts from './User-Posts';
 import Header from '../../Header';
+import UserNav from '../User-Profile/User-Nav';
+import UserAvatar from '../User-Profile/UserAvatar';
+import './styles.css';
 class SupplierProfile extends Component {
   constructor(props) {
     super(props);
@@ -12,7 +15,8 @@ class SupplierProfile extends Component {
     return (
       <div id="supplier-profile">
         <Header/>
-        <h1>Supplier Name</h1>
+        <UserNav/>
+        <UserAvatar/>
         <SupplierHeader/>
         <SupplierAvatar/>
         <UserPosts/>

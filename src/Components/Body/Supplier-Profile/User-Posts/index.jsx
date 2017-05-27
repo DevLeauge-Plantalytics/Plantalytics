@@ -6,7 +6,7 @@ class UserPosts extends Component {
   render(){
     return (
       <div id="users-posts">
-        <ul>
+        <ul id="users-posts-list">
           <li className="user-post">Post1</li>
           <li className="user-post">Post2</li>
           <li className="user-post">Post3</li>
