@@ -7,11 +7,9 @@ class Filter extends Component {
   render(){
     return (
       <div id="supplier-filter">
-        <select name="filterType" id="filterType">
-          <option value="Date">Joined</option>
-          <option value="Name">Alphabetical</option>
-          <option value="Score">Rating</option>
-        </select>
+       <h3 id="find-a-sup">Find a Supplier Near You</h3>
+       <button className="filter-btn">Filter by Zipcode</button>
+       <button className="filter-btn">Filter by Plants</button>
       </div>
     )
   }

@@ -1,7 +1,10 @@
 #header {
+  position: absolute;
+  top: 0;
   width: 100%;
   height: 75px;
   line-height: 75px;
+  z-index: 99;
 }
 .header-nav-item {
   font-family: 'Futura';
