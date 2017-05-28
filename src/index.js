@@ -12,9 +12,9 @@ import UserLogin from './Pages/Login';
 import UserSignUp from './Pages/Signup';
 
 import AnalysisPage from './Components/Body/Analysis-Page';
-import Dashboard from './Components/Body/Dashboard';
+import Dashboard from './Pages/Dashboard';
 import EditUser from './Containers/Edit-User-Form';
-import UserProfile from './Components/Body/User-Profile';
+import UserProfile from './Pages/User-Profile';
 import SavedLocations from './Components/Body/Save-Locations';
 // import SupplierSignUp from './Components/Body/Suppliers/Supplier_Sign_Up'
 import Supplier_Profile from './Components/Body/Supplier-Profile';

@@ -1,7 +1,8 @@
 /*jshint esversion: 6*/
-import {LOAD_CONVERSATION, SEND_MESSAGE} from '../Actions';
+import {LOAD_CONVERSATION, SEND_MESSAGE, GET_MESSAGES} from '../Actions';
 const initialState = {
   messages: [],
+  inboxMessages: []
 };
 
 const messages = (state = initialState, action) => {
@@ -13,6 +14,10 @@ const messages = (state = initialState, action) => {
     case SEND_MESSAGE:
       return Object.assign({}, state, {
         messages: state.messages.concat(action.message)
+      });
+    case GET_MESSAGES:
+      return Object.assign({}, state, {
+        inboxMessages: action.messages
       });
 
     default:

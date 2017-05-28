@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import Header from '../../Header'
-import UserAvatar from './UserAvatar';
-import UserInfo from './UserInfo';
-import UserNav from './User-Nav';
-import {getUserById} from '../../../API';
-import {getUser} from '../../../Actions';
+import Header from '../../Components/Header'
+import UserAvatar from '../../Components/UserAvatar';
+import UserInfo from '../../Components/UserInfo';
+import UserNav from '../../Components/UserNav';
+import {getUserById} from '../../API';
+import {getUser} from '../../Actions';
 import './styles.css';
 
 class UserProfile extends Component {

@@ -3,7 +3,7 @@ import MessageFeed from './Message-Feed';
 import OtherUser from './Other-Prof';
 import SendMessageForm from './Send-Message';
 import Header from '../../Header';
-import UserNav from '../User-Profile/User-Nav';
+import UserNav from '../../UserNav';
 import './styles.css';
 class Conversation extends Component {
   constructor(props) {
