@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import Filter from '../../Components/InboxFilter';
 import Message from '../../Components/MessageInInbox';
 import Header from '../../Components/Header';
-//import {getMessages} from '../../Actions';
+import {getMessages} from '../../Actions';
 
 class Inbox extends Component {
 
@@ -17,13 +17,14 @@ class Inbox extends Component {
   }
 
   render(){
+    console.log(this.props);
     return (
       <div id="inbox">
         <Header/>
         <h1>Inbox</h1>
-        <Filter id="filter" messages={this.props.messages}/>
+        <Filter id="filter" messages={this.props.inboxMessages}/>
         <div id="inbox-feed">
-          {this.props.message.map(message => (
+          {this.props.inboxMessages.map(message => (
             <a onClick={this.openMessage}>
               <Message message={message}/>
             </a>
@@ -36,16 +37,16 @@ class Inbox extends Component {
 
 const mapStateToProps = state => {
   return {
-    messages: state.messages.messages,
+    inboxMessages: state.messages.inboxMessages,
     user_id: state.users.id
   }
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-   /* getMessages: (user_id) => {
+   getMessages: (user_id) => {
       dispatch(getMessages(user_id))
-    }*/
+    }
   }
 }
 
