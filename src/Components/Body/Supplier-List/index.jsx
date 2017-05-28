@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 import Filter from './Filter';
 import Search from './Search';
-//import SupplierItemList from './Supplier-Item';
+import SupplierList from './Supplier-Item';
 import Header from '../../Header';
 
-class SupplierList extends Component {
+class SupplierListing extends Component {
   constructor(props) {
     super(props);
     this.title = 'No-Warning'
@@ -18,7 +18,7 @@ class SupplierList extends Component {
         <Filter/>
         <SupplierList/>
       </div>
-    )
+    );
   }
 }
-export default SupplierList;
+export default SupplierListing;

@@ -29,13 +29,13 @@ body {
 }
 #user-info {
   position: relative;
-  top: -157.5px;
+  top: 44px;
+  left: 33%;
   border: 1px solid #999;
   width: 33%;
   text-align: center;
   height: 350px;
   display: inline-block;
-  margin-left: 25px;
 }
 #user-profile-pic {
   background-color: coral;
