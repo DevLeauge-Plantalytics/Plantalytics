@@ -115,4 +115,14 @@ export const postMessage = (body) => {
   });
 };
 
-export const getMessages = (id) => fetch(`/api/messages/inbox/${id}`).then(res => res.json()).catch(err => err);
+export const getMessages = (id) => {
+  return new Promise(function (resolve, reject) {
+    makeRequest('GET', `/api/messages/inbox/${id}`)
+    .then (messages => {
+      resolve(JSON.parse(messages));
+    })
+    .catch (err => {
+      reject(err);
+    });
+  });
+};

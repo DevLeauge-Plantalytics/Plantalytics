@@ -8,7 +8,7 @@ import {getMessages} from '../../Actions';
 class Inbox extends Component {
 
   componentWillMount() {
-    this.props.getMessages(this.props.user_id);
+    this.props.getMessages(localStorage.id);
   }
 
   openMessage = (event) => {
@@ -17,18 +17,16 @@ class Inbox extends Component {
   }
 
   render(){
-    console.log(this.props);
+    console.log(this.props.inboxMessages);
     return (
       <div id="messagesFeed">
         <Header/>
         <h1>Inbox</h1>
         <Filter id="filter" messages={this.props.inboxMessages}/>
         <div id="inbox-feed">
-          {this.props.inboxMessages.map(message => (
-            <a onClick={this.openMessage}>
-              <Message message={message}/>
-            </a>
-          ))}
+          { this.props.inboxMessages
+            .map(message => <Message message={message} key={message.id}/> )
+          }
         </div>
       </div>
     )

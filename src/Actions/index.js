@@ -72,7 +72,6 @@ export const loadConversation = (id) => {
   };
 };
 export const sendMessage = (message) => {
-  console.log(message);
   return dispatch => {
     return API.postMessage(JSON.stringify(message))
     .then( (message) => {
@@ -80,9 +79,11 @@ export const sendMessage = (message) => {
     });
   };
 };
-export const getMessages = (id) => dispatch => API.getMessages(id)
-  .then((messages) => {
-    if (messages.error === undefined) {
-      dispatch({type: GET_MESSAGES, messages});
-    }
-  });
+export const getMessages = (id) => {
+  return dispatch => {
+    return API.getMessages(id)
+      .then((messages) => {
+        dispatch({type: GET_MESSAGES, messages});
+      });
+    };
+  };
