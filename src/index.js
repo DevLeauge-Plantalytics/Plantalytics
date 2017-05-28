@@ -20,7 +20,7 @@ import SavedLocations from './Components/Body/Save-Locations';
 import Supplier_Profile from './Components/Body/Supplier-Profile';
 import Supplier_List from './Components/Body/Supplier-List';
 import Conversation from './Components/Body/Conversation';
-import Inbox from './Components/Body/Inbox';
+import Inbox from './Containers/Inbox';
 
 const reactContainer = document.getElementById('root');
 
