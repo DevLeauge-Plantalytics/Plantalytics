@@ -4,8 +4,8 @@ import SupplierAvatar from './Sup-Avatar';
 import SupplierHeader from './Sup-Header';
 import UserPosts from './User-Posts';
 import Header from '../../Header';
-import UserNav from '../User-Profile/User-Nav';
-import UserAvatar from '../User-Profile/UserAvatar';
+import UserNav from '../../UserNav';
+import UserAvatar from '../../UserAvatar';
 import './styles.css';
 class SupplierProfile extends Component {
   constructor(props) {

@@ -2,9 +2,9 @@
 import {LOAD_USERS, GET_USER, ADD_USER, UPDATE_USER, DELETE_USER, LOGIN} from '../Actions';
 const initialState = {
   users: [],
-  username: localStorage.username,
-  loggedIn: localStorage.logged,
-  id: localStorage.id,
+  username: localStorage.username || null,
+  loggedIn: localStorage.logged || false,
+  id: localStorage.id || null,
 };
 
 const users = (state = initialState, action) => {

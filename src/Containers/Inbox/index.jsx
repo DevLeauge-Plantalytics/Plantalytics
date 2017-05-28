@@ -19,7 +19,7 @@ class Inbox extends Component {
   render(){
     console.log(this.props);
     return (
-      <div id="inbox">
+      <div id="messagesFeed">
         <Header/>
         <h1>Inbox</h1>
         <Filter id="filter" messages={this.props.inboxMessages}/>
