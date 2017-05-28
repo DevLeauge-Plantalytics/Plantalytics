@@ -3,6 +3,8 @@ import Filter from './Filter';
 import Search from './Search';
 import SupplierList from './Supplier-Item';
 import Header from '../../Header';
+import UserNav from '../User-Profile/User-Nav';
+import './styles.css';
 
 class SupplierListing extends Component {
   constructor(props) {
@@ -13,7 +15,7 @@ class SupplierListing extends Component {
     return (
       <div id="supplier-list">
         <Header/>
-        <h1>Suppliers</h1>
+        <UserNav/>
         <Search/>
         <Filter/>
         <SupplierList/>
