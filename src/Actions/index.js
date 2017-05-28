@@ -1,12 +1,12 @@
 /*jshint esversion: 6*/
-import {getUsers, getUserById, postUser, putUser, deleteUser, signinPassport, getMessages, postMessage} from '../API';
+import {getUsers, getUserById, postUser, putUser, deleteUser, signinPassport, getConversation, postMessage} from '../API';
 export const LOAD_USERS = 'LOAD_USERS';
 export const GET_USER = 'GET_USER';
 export const ADD_USER = 'ADD_USER';
 export const UPDATE_USER = 'UPDATE_USER';
 export const DELETE_USER = 'DELETE_USER';
 export const LOGIN = 'LOGIN';
-export const LOAD_MESSAGES = 'LOAD_MESSAGES';
+export const LOAD_CONVERSATION = 'LOAD_CONVERSATION';
 export const SEND_MESSAGE = 'SEND_MESSAGE';
 
 
@@ -63,11 +63,11 @@ export const signIn = user => {
     });
   };
 };
-export const loadMessages = () => {
+export const loadConversation = (id) => {
   return dispatch => {
-    return getMessages()
+    return getConversation(id)
     .then( (messages) => {
-      dispatch({type: LOAD_MESSAGES, messages });
+      dispatch({type: LOAD_CONVERSATION, messages });
     });
   };
 };

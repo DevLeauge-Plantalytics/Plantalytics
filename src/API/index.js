@@ -92,9 +92,9 @@ export const signinPassport = user => {
     });
   });
 };
-export const getMessages = () => {
+export const getConversation = (id) => {
   return new Promise(function (resolve, reject) {
-    makeRequest('GET', `/api/messages/`)
+    makeRequest('GET', `/api/messages/conversation?id1=${localStorage.id}&id2=${id}`)
     .then (messages => {
       resolve(JSON.parse(messages));
     })
