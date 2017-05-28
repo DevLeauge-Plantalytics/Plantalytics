@@ -17,7 +17,6 @@ class Inbox extends Component {
   }
 
   render(){
-    console.log(this.props.inboxMessages);
     return (
       <div id="messagesFeed">
         <Header/>
