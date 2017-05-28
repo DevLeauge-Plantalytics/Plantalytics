@@ -1,4 +1,4 @@
-import { loadMessages } from '../../../../Actions';
+import { loadConversation } from '../../../../Actions';
 import { connect } from 'react-redux';
 import React, {Component} from 'react';
 import Message from './Message';
@@ -10,7 +10,7 @@ class Messages extends Component {
   }
 
   componentWillMount(){
-    this.props.loadMessages();
+    this.props.loadConversation(Number(this.props.userConversed));
   }
 
   render(){
@@ -18,10 +18,8 @@ class Messages extends Component {
       <div id="message-feed">
         <h1>List of messages</h1>
         { this.props.messages
-          .filter(message => (message.Sender === Number(localStorage.id) && message.Receiver === Number(this.props.userConversed)) || (message.Sender === Number(this.props.userConversed) && message.Receiver === Number(localStorage.id)))
           .map( message => <Message message={message} key={message.id} ></Message> )
         }
-
       </div>
     )
   }
@@ -35,8 +33,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    loadMessages: () => {
-      dispatch(loadMessages())
+    loadConversation: (id) => {
+      dispatch(loadConversation(id))
     }
   }
 }
