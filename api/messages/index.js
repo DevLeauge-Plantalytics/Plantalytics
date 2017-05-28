@@ -16,13 +16,13 @@ messages.get('/', (req,res) => {
   });
 });
 
-messages.get('/:id', (req,res) => {
-  Message.findall({
+messages.get('/inbox/:id', (req,res) => {
+  Message.findAll({
+    where: {$or : [{Sender: req.params.id}, {Receiver: req.params.id}]},
     include: [
       {
         model:User,
         as:'Author',
-        where: {id: req.params.id},
       },
       {
         model:User,
@@ -34,6 +34,34 @@ messages.get('/:id', (req,res) => {
   .catch((err) => {
     res.status(400).send({error: err.message});
   });
+});
+
+messages.get('/conversation', (req,res) => {
+
+  if(req.query.id1 === undefined || req.query.id2 === undefined ){
+    res.send(400, "must have valid query id1 and id2");
+  } else {
+
+    Message.findAll({
+      include: [
+        {
+          model:User,
+          as:'Author',
+          where: {id: {$in:[Number(req.query.id1), Number(req.query.id2)] }},
+        },
+        {
+          model:User,
+          as:'Listener',
+          where: {id: {$in:[Number(req.query.id1), Number(req.query.id2)] }},
+        }
+      ],
+    })
+    .then(res.json.bind(res))
+    .catch((err) => {
+      res.status(400).send({error: err.message});
+    });
+  }
+
 });
 
 messages.get('/requests/:id', (req,res) => {
