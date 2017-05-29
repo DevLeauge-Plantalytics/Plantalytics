@@ -7,6 +7,7 @@ class LocInput extends Component {
   render(){
     return (
       <div id="loc-input">
+        <h1 id="all-good-things">ALL GOOD THINGS GROWN, START AT HOME.</h1>
       </div>
     )
   }
