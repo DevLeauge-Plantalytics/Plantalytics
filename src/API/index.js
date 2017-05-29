@@ -114,7 +114,6 @@ export const postMessage = (body) => {
     });
   });
 };
-
 export const getMessages = (id) => {
   return new Promise(function (resolve, reject) {
     makeRequest('GET', `/api/messages/inbox/${id}`)
