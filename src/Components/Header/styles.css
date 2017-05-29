@@ -11,6 +11,8 @@
   margin: 0 15px;
   font-weight: 900;
   cursor: pointer;
+  width: 150px;
+  display: inline-block;
 }
 #main-nav-items {
   flex-wrap: nowrap;
