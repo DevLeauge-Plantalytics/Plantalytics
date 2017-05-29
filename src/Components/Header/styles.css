@@ -15,9 +15,9 @@
 }
 #main-nav-items {
   position: relative;
-  left: 42.5%;
+  left: 40%;
   height: 75px;
-  width: 30%;
+  width: 45%;
   margin: 0;
   text-align: center;
   display: inline-block;
@@ -28,7 +28,7 @@
   width: 90px;
   border-radius: 50px;
   position: relative;
-  left: 45%;
+  left: 35%;
   top: 20px;
   display: inline-block;
   background-color: coral;

@@ -33,7 +33,7 @@ body {
 }
 #user-info {
   position: relative;
-  top: 44px;
+  top: 25vh;
   left: 33%;
   border: 1px solid #999;
   width: 33%;

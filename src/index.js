@@ -34,7 +34,8 @@ ReactDOM.render(
   <Provider store={store}>
     <Router>
       <div>
-        <Route path="/" component={App}/>
+        <Route exact path="/" render={()=>(<Redirect to="/home"/>)}/>
+        <Route path="/home" component={App}/>
         <Route path="/sign-up" component={UserSignUp}/>
         <Route path="/login" component={UserLogin}/>
         <Route path="/profile" component={UserProfile}/>
