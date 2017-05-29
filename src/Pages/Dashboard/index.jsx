@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 
-import LocationCrops from './Loc-Crops';
-import Messages from './Messages';
-import Newsfeed from './Newsfeed';
-import Settings from './Settings';
-import UserAvatar from '../User-Profile/UserAvatar';
-import UserNav from '../User-Profile/User-Nav';
-import Header from '../../Header';
-import {getUser} from '../../../Actions';
+import LocationCrops from '../../Components/ViewCropsButton';
+import MessageFeed from '../../Containers/MessageFeed';
+import Newsfeed from '../../Containers/Newsfeed';
+import SettingsButton from '../../Components/SettingsButton';
+import UserAvatar from '../../Components/UserAvatar';
+import UserNav from '../../Components/UserNav';
+import Header from '../../Components/Header';
+import {getUser} from '../../Actions';
 import './styles.css';
 
 class Dashboard extends Component {
@@ -26,10 +26,10 @@ class Dashboard extends Component {
         <Header/>
         <UserNav/>
         <UserAvatar/>
-        <Settings/>
+        <SettingsButton/>
         <LocationCrops/>
         <Newsfeed/>
-        <Messages/>
+        <MessageFeed/>
       </div>
     )
   }

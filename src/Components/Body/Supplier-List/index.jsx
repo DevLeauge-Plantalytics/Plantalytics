@@ -3,7 +3,7 @@ import Filter from './Filter';
 import Search from './Search';
 import SupplierList from './Supplier-Item';
 import Header from '../../Header';
-import UserNav from '../User-Profile/User-Nav';
+import UserNav from '../../UserNav';
 import './styles.css';
 
 class SupplierListing extends Component {

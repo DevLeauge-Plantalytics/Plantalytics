@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import Header from '../../Header'
-import UserAvatar from './UserAvatar';
-import UserInfo from './UserInfo';
-import UserNav from './User-Nav';
-import {getUserById} from '../../../API';
-import {getUser} from '../../../Actions';
+import Header from '../../Components/Header'
+import UserAvatar from '../../Components/UserAvatar';
+import UserInfo from '../../Components/UserInfo';
+import UserNav from '../../Components/UserNav';
+import {getUserById} from '../../API';
+import {getUser} from '../../Actions';
 import './styles.css';
 
 class UserProfile extends Component {
@@ -14,20 +14,16 @@ class UserProfile extends Component {
     this.title = 'No-Warning'
   }
   componentWillMount() {
-    getUserById()
-    .then(user => {
-      getUser(user);
-    });
+    this.props.getUser(localStorage.id);
   }
 
   render(){
-    console.error(this.props);
     return (
       <div id="user-profile">
         <Header/>
         <UserNav/>
-        <UserAvatar/>
-        <UserInfo/>
+        <UserAvatar user={this.props.singleUser} />
+        <UserInfo user={this.props.singleUser} />
       </div>
     )
   }
@@ -35,14 +31,14 @@ class UserProfile extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    users: state.users
+    singleUser: state.users.singleUser
   };
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    getUser: user => {
-      dispatch(getUser(user))
+    getUser: id => {
+      dispatch(getUser(id))
     }
   }
 }

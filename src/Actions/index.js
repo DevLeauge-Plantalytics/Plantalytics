@@ -1,19 +1,20 @@
 /*jshint esversion: 6*/
-import {getUsers, getUserById, postUser, putUser, deleteUser, signinPassport, getMessages, postMessage} from '../API';
+import * as API from '../API';
 export const LOAD_USERS = 'LOAD_USERS';
 export const GET_USER = 'GET_USER';
 export const ADD_USER = 'ADD_USER';
 export const UPDATE_USER = 'UPDATE_USER';
 export const DELETE_USER = 'DELETE_USER';
 export const LOGIN = 'LOGIN';
-export const LOAD_MESSAGES = 'LOAD_MESSAGES';
+export const LOAD_CONVERSATION = 'LOAD_CONVERSATION';
 export const SEND_MESSAGE = 'SEND_MESSAGE';
-
+export const GET_MESSAGES = 'GET_MESSAGES';
+export const FILTER_USERNAME = 'FILTER_USERNAME';
 
 
 export const loadUsers = id => {
   return dispatch => {
-    return getUsers()
+    return API.getUsers()
     .then(users => {
       dispatch({type: LOAD_USERS, users});
     });
@@ -21,7 +22,7 @@ export const loadUsers = id => {
 };
 export const getUser = id => {
   return dispatch => {
-    return getUserById(id)
+    return API.getUserById(id)
     .then(user => {
       dispatch({type: GET_USER, user});
     });
@@ -29,7 +30,7 @@ export const getUser = id => {
 };
 export const addUser = user => {
   return dispatch => {
-    return postUser(JSON.stringify(user))
+    return API.postUser(JSON.stringify(user))
     .then(user => {
       dispatch({type: ADD_USER, user});
     });
@@ -37,7 +38,7 @@ export const addUser = user => {
 };
 export const updateUser = (id, body) => {
   return dispatch => {
-    return putUser(id, body)
+    return API.putUser(id, body)
     .then(users => {
       dispatch({type: ADD_USER, users});
     });
@@ -45,7 +46,7 @@ export const updateUser = (id, body) => {
 };
 export const destroyUser = id => {
   return dispatch => {
-    return deleteUser(id)
+    return API.deleteUser(id)
     .then(users => {
       dispatch({type: DELETE_USER, users});
     });
@@ -53,7 +54,7 @@ export const destroyUser = id => {
 };
 export const signIn = user => {
   return dispatch => {
-    return signinPassport(JSON.stringify(user))
+    return API.signinPassport(JSON.stringify(user))
     .then( (userInfo) => {
 
       localStorage.setItem('loggedIn', true);
@@ -63,20 +64,32 @@ export const signIn = user => {
     });
   };
 };
-export const loadMessages = () => {
+export const loadConversation = (id) => {
   return dispatch => {
-    return getMessages()
+    return API.getConversation(id)
     .then( (messages) => {
-      dispatch({type: LOAD_MESSAGES, messages });
+      dispatch({type: LOAD_CONVERSATION, messages });
     });
   };
 };
 export const sendMessage = (message) => {
-  console.log(message);
   return dispatch => {
-    return postMessage(JSON.stringify(message))
+    return API.postMessage(JSON.stringify(message))
     .then( (message) => {
       dispatch({type: SEND_MESSAGE, message });
     });
+  };
+};
+export const getMessages = (id) => {
+  return dispatch => {
+    return API.getMessages(id)
+      .then((messages) => {
+        dispatch({type: GET_MESSAGES, messages});
+      });
+    };
+  };
+export const filterByUsername = (username) => {
+  return dispatch => {
+    dispatch({type: FILTER_USERNAME, username});
   };
 };
