@@ -34,19 +34,18 @@ ReactDOM.render(
   <Provider store={store}>
     <Router>
       <div>
-        <Route exact path="/" render={()=>(<Redirect to="/plantalytics"/>)}/>
-        <Route path="/plantalytics" component={App}/>
-        <Route path="/plantalytics/sign-up" component={UserSignUp}/>
-        <Route path="/plantalytics/login" component={UserLogin}/>
-        <Route path="/plantalytics/profile" component={UserProfile}/>
-        <Route path="/plantalytics/edit-profile" component={EditUser}/>
-        <Route path="/plantalytics/dashboard" component={Dashboard}/>
-        <Route path="/plantalytics/saved-locations" component={SavedLocations}/>
-        <Route path="/plantalytics/location" component={AnalysisPage}/>
-        <Route path="/plantalytics/supplier-listing" component={Supplier_List}/>
-        <Route path="/plantalytics/supplier-profile" component={Supplier_Profile}/>
-        <Route path="/plantalytics/conversation/:id" component={Conversation}/>
-        <Route path="/plantalytics/inbox" component={Inbox}/>
+        <Route path="/" component={App}/>
+        <Route path="/sign-up" component={UserSignUp}/>
+        <Route path="/login" component={UserLogin}/>
+        <Route path="/profile" component={UserProfile}/>
+        <Route path="/edit-profile" component={EditUser}/>
+        <Route path="/dashboard" component={Dashboard}/>
+        <Route path="/saved-locations" component={SavedLocations}/>
+        <Route path="/location" component={AnalysisPage}/>
+        <Route path="/supplier-listing" component={Supplier_List}/>
+        <Route path="/supplier-profile" component={Supplier_Profile}/>
+        <Route path="/conversation/:id" component={Conversation}/>
+        <Route path="/inbox" component={Inbox}/>
       </div>
     </Router>
   </Provider>,
