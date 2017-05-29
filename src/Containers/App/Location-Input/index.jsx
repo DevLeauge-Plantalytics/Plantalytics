@@ -8,6 +8,8 @@ class LocInput extends Component {
     return (
       <div id="loc-input">
         <h1 id="all-good-things">ALL GOOD THINGS GROWN, START AT HOME.</h1>
+        <input id="location-input" type="text" placeholder="Enter the address where you'll plant change"/>
+        <button id="get-started-btn">Search</button>
       </div>
     )
   }
