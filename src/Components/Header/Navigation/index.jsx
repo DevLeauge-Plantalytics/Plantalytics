@@ -8,10 +8,10 @@ class Navigation extends Component {
 
   render(){
     return (
-        <ul id="main-nav-items">
-          <li className="header-nav-item">Download the App</li>
-          <li className="header-nav-item">Become a Supplier</li>
-        </ul>
+        <div id="main-nav-items">
+          <p className="header-nav-item">Download the App</p>
+          <p className="header-nav-item">Become a Supplier</p>
+        </div>
     )
   }
 }

@@ -2,6 +2,7 @@
 import {LOAD_USERS, GET_USER, ADD_USER, UPDATE_USER, DELETE_USER, LOGIN} from '../Actions';
 const initialState = {
   users: [],
+  singleUser: [],
   username: localStorage.username || null,
   loggedIn: localStorage.logged || false,
   id: localStorage.id || null,
@@ -16,7 +17,7 @@ const users = (state = initialState, action) => {
 
     case GET_USER:
       return Object.assign({}, state, {
-        users: action.user
+        singleUser: action.user
       });
 
     case ADD_USER:

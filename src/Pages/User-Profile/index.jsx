@@ -14,20 +14,16 @@ class UserProfile extends Component {
     this.title = 'No-Warning'
   }
   componentWillMount() {
-    getUserById()
-    .then(user => {
-      getUser(user);
-    });
+    this.props.getUser(localStorage.id);
   }
 
   render(){
-    console.error(this.props);
     return (
       <div id="user-profile">
         <Header/>
         <UserNav/>
-        <UserAvatar/>
-        <UserInfo/>
+        <UserAvatar user={this.props.singleUser} />
+        <UserInfo user={this.props.singleUser} />
       </div>
     )
   }
@@ -35,14 +31,14 @@ class UserProfile extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    users: state.users
+    singleUser: state.users.singleUser
   };
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    getUser: user => {
-      dispatch(getUser(user))
+    getUser: id => {
+      dispatch(getUser(id))
     }
   }
 }
