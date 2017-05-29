@@ -1,13 +1,9 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-// import Header from '../../Components/Header/index.jsx';
-// import ___ from '../../Components/___/index.js';
-// import ___ from '../../Components/___/index.js';
-// import ___ from '../../Containers/___/index.js';
-// import ___ from '../../Containers/___/index.js';
-// import ___ from '../../Containers/___/index.js';
-// import {} from '../../API';
-// import {} from '../../Actions';
+import HomeHeader from './Home-Header';
+import HomeDescrip from './Description';
+import LocInput from './Location-Input';
+import './styles.css';
 
 class App extends Component {
   constructor(props) {
@@ -22,21 +18,25 @@ class App extends Component {
   // }
 render(){
   return (
-    <div id="view"></div>
+    <div id="home-page">
+      <HomeHeader/>
+      <LocInput/>
+      <HomeDescrip/>
+    </div>
     )
   }
 }
 const mapStateToProps = (state) => {
   return {
-    plants: state.plants
+    // plants: state.plants
   };
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    // ___: ___ => {
-    //   dispatch(___(___))
-    // }
+  //   // ___: ___ => {
+  //   //   dispatch(___(___))
+  //   // }
   }
 }
 

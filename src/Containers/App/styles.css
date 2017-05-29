@@ -1,0 +1,24 @@
+ #home-header {
+  position: absolute;
+  top: 0;
+  width: 95%;
+  height: 75px;
+  line-height: 75px;
+  z-index: 99;
+}
+.home-header-item {
+  font-family: 'Futura';
+  display: inline-block;
+  font-weight: 900;
+  cursor: pointer;
+  margin: 0;
+  float: right;
+}
+.home-header-slash {
+  font-family: 'Futura';
+  display: inline-block;
+  font-weight: 900;
+  margin: 0;
+  float: right;
+}
+
