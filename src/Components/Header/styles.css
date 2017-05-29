@@ -8,14 +8,14 @@
 }
 .header-nav-item {
   font-family: 'Futura';
-  display: inline-block;
   margin: 0 15px;
   font-weight: 900;
   cursor: pointer;
 }
 #main-nav-items {
+  flex-wrap: nowrap;
   position: relative;
-  left: 42.5%;
+  left: 25%;
   height: 75px;
   width: 30%;
   margin: 0;
