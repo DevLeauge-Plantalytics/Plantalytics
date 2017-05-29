@@ -1,8 +1,9 @@
 /*jshint esversion: 6*/
-import {LOAD_CONVERSATION, SEND_MESSAGE, GET_MESSAGES} from '../Actions';
+import {LOAD_CONVERSATION, SEND_MESSAGE, GET_MESSAGES, FILTER_USERNAME} from '../Actions';
 const initialState = {
   messages: [],
-  inboxMessages: []
+  inboxMessages: [],
+  displayMessages: []
 };
 
 const messages = (state = initialState, action) => {
@@ -17,7 +18,12 @@ const messages = (state = initialState, action) => {
       });
     case GET_MESSAGES:
       return Object.assign({}, state, {
-        inboxMessages: action.messages
+        inboxMessages: action.messages,
+        displayMessages: action.messages
+      });
+    case FILTER_USERNAME:
+      return Object.assign({}, state, {
+        displayMessages: state.inboxMessages.filter(message => message.Receiver == action.username)
       });
 
     default:

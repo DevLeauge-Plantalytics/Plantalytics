@@ -1,19 +1,44 @@
+import {connect} from 'react-redux';
+import {filterByUsername} from '../Actions';
 import React, {Component} from 'react';
+
 class Filter extends Component {
   constructor(props) {
     super(props);
-    this.title = 'No-Warning'
+    this.state = {
+      username: ""
+    }
   }
+
+  handleChange = (event) => {
+    event.preventDefault();
+    this.setState({[event.target.name]: event.target.value})
+  }
+
   render(){
     return (
       <div id="inbox-filter">
-        <select name="filterType" id="filter-type">
-          <option value="Date">When</option>
-          <option value="Sender">Who</option>
-          <option value="Importance">Why</option>
-        </select>
+        <h3>Username</h3>
+        <input type='text' value={this.state.username} onChange={this.handleChange} name="username"/>
+        <button onClick = {() => this.props.filterByUsername(this.state.username)}/>
       </div>
     )
   }
 }
-export default Filter;
+
+const mapStateToProps = (state) => {
+  return {};
+}
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    filterByUsername: (username) => {
+      dispatch(filterByUsername(username))
+    }
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Filter);

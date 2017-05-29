@@ -9,6 +9,7 @@ export const LOGIN = 'LOGIN';
 export const LOAD_CONVERSATION = 'LOAD_CONVERSATION';
 export const SEND_MESSAGE = 'SEND_MESSAGE';
 export const GET_MESSAGES = 'GET_MESSAGES';
+export const FILTER_USERNAME = 'FILTER_USERNAME';
 
 
 export const loadUsers = id => {
@@ -87,3 +88,8 @@ export const getMessages = (id) => {
       });
     };
   };
+export const filterByUsername = (username) => {
+  return dispatch => {
+    dispatch({type: FILTER_USERNAME, username});
+  };
+};

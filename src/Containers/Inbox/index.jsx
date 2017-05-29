@@ -21,11 +21,11 @@ class Inbox extends Component {
       <div id="messagesFeed">
         <Header/>
         <h1>Inbox</h1>
-        <Filter id="filter" messages={this.props.inboxMessages}/>
+        <Filter id="filter"/>
         <div id="inbox-feed">
-          { this.props.inboxMessages
-            .map(message => <Message message={message} key={message.id}/> )
-          }
+          { this.props.displayMessages.map(message =>
+             <Message message={message} key={message.id} />
+          )}
         </div>
       </div>
     )
@@ -34,7 +34,7 @@ class Inbox extends Component {
 
 const mapStateToProps = state => {
   return {
-    inboxMessages: state.messages.inboxMessages,
+    displayMessages: state.messages.displayMessages,
     user_id: state.users.id
   }
 }
