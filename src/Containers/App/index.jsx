@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import HomeHeader from './Home-Header';
 import HomeDescrip from './Description';
 import LocInput from './Location-Input';
+import HomeFooter from './Home-Footer';
 import './styles.css';
 
 class App extends Component {
@@ -22,6 +23,7 @@ render(){
       <HomeHeader/>
       <LocInput/>
       <HomeDescrip/>
+      <HomeFooter/>
     </div>
     )
   }
