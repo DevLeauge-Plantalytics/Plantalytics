@@ -1,9 +1,10 @@
 #Login {
   width: 45%;
   height: 200px;
-  margin: 0 auto;
+  margin: 100px auto 0 auto;
+  padding: 50px 0;
   border: 1px solid #dfdfdf;
-  border-width: 0px 1px 0px 1px;
+  border-width: 1px 1px 0px 1px;
 }
 .login-form-info {
   font-family: 'Futura';
@@ -23,6 +24,9 @@
 }
 .login-form-info:focus {
   outline: none;
+}
+#login-form-button {
+  text-decoration: none;
 }
 #login-form-btn {
   font-family: 'Futura';
@@ -64,6 +68,7 @@
   color: #fff;
   cursor: pointer;
   font-size: 20px;
+  text-decoration: none;
 }
 #sufl-btn:focus {
   outline: none;

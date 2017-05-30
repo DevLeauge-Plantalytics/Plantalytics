@@ -16,7 +16,6 @@ class Messages extends Component {
   render(){
     return (
       <div id="message-feed">
-        <h1>List of messages</h1>
         { this.props.messages
           .map( message => <Message message={message} key={message.id} ></Message> )
         }

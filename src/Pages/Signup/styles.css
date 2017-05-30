@@ -42,6 +42,7 @@
   text-align: center;
   display: inline-block;
   vertical-align: top;
+  border: 1px solid #dfdfdf;
 }
 #agree-check {
   cursor: pointer;
@@ -56,6 +57,7 @@
   text-align: center;
   display: inline-block;
   vertical-align: top;
+  border: 1px solid #dfdfdf;
 }
 #sign-up-btn {
   font-family: 'Futura';

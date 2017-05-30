@@ -1,7 +1,12 @@
 #conversation {
+  position: absolute;
+  top: 150px;
+  left: 25%;
   border: 1px solid #333;
-  width: 75%;
-  margin: 25px auto;
+  width: 50%;
+  height: 450px;
+  padding: 25px 0 0 25px;
+  overflow: scroll;
 }
 #conversation-feed {
   list-style: none;
@@ -9,10 +14,22 @@
   float: right;
 }
 #other-user-profile-pic {
+  position: fixed;
   height: 150px;
   width: 150px;
   border-radius: 100px;
   background-color: coral;
+}
+#other-user {
+  text-align: center;
+}
+#convo-other {
+  position: fixed;
+  top: 325px;
+}
+#convo-other-location {
+  position: fixed;
+  top: 375px;
 }
 .other-user-message {
   text-decoration: underline;
@@ -33,14 +50,33 @@
   margin: 10px;
 }
 #compose-message {
-  left: 50%;
-  position: relative;
-  width: 60%;
-  clear: both;
+  position: fixed;
+  padding: 15px 0 20px 0;
+  top: 540px;
+  left: 25.25%;
+  width: 51.5%;
+  background-color: white;
 }
 #message-body {
-  width: 50%;
-  margin: 0px 5% 25px 10%;
+  width: 65%;
+  margin: 0 2.5%;
+  height: 40px;
+  padding-left: 10px;
+  font-size: 20px;
 }
-
-
+#message-body:focus {
+  outline: none;
+}
+#send-message {
+  width: 125px;
+  height: 45px;
+  border-radius: 30px;
+  border: none;
+  background-color: #ff9000;
+  color: white;
+  font-family: 'Futura';
+  font-size: 20px;
+}
+#send-message:focus {
+  outline: none;
+}

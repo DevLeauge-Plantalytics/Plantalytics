@@ -2,7 +2,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {getDataByAddress} from '../../../Actions';
-import {withRouter} from 'react-router'
+import {withRouter} from 'react-router';
 
 class LocInput extends Component {
   constructor(props) {

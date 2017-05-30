@@ -56,11 +56,10 @@ export const destroyUser = id => {
     });
   };
 };
-export const signIn = user => {
+export const signIn = (user) => {
   return dispatch => {
     return API.signinPassport(JSON.stringify(user))
     .then( (userInfo) => {
-
       localStorage.setItem('loggedIn', true);
       localStorage.setItem('username', user.username);
       localStorage.setItem('id', userInfo.id);
