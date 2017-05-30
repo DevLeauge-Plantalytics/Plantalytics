@@ -21,10 +21,16 @@ class LoginForm extends Component {
   handlePasswordChange = (event) => {
     this.setState({ password : event.target.value });
   }
-
+  reset() {
+    this.setState({
+      username: "",
+      password: ""
+    });
+  }
   handleSubmit = (event) => {
     event.preventDefault();
     this.props.signIn(this.state);
+    this.reset();
   }
 
 

@@ -1,0 +1,77 @@
+@keyframes shake {
+  0%   {left: 33%;}
+  1%   {left: 32.5%;}
+  2%   {left: 33.5%;}
+  3%   {left: 32.5%;}
+  4%   {left: 33.5%;}
+  5%   {left: 33%;}
+  50%  {left: 33%;}
+  51%  {left: 32.5%;}
+  52%  {left: 33.5%;}
+  53%  {left: 32.5%;}
+  54%  {left: 33.5%;}
+  55%  {left: 32.5%;}
+  56%  {left: 33.5%;}
+  57%  {left: 32.5%;}
+  58%  {left: 33.5%;}
+  59%  {left: 32.5%;}
+  60%  {left: 33%;}
+  100% {left: 33%;}
+}
+#user-avatar {
+  position: absolute;
+  top: 25%;
+  left: 10%;
+  text-align: center;
+  border: 1px solid #999;
+  width: 20%;
+  display: inline-block;
+}
+#users-posts {
+  position: absolute;
+  top: 33%;
+  left: 33%;
+  border: 1px solid #999;
+  width: 33%;
+  text-align: center;
+  height: 750px;
+  display: inline-block;
+}
+#users-posts-list {
+  list-style: none;
+}
+#user-profile-pic {
+  background-color: coral;
+  border-radius: 100px;
+  height: 150px;
+  width: 150px;
+  margin: 25px auto;
+}
+#message-supplier {
+  position: absolute;
+  top: 25%;
+  left: 33%;
+  font-family: 'Futura';
+  width: 33%;
+  height: 50px;
+  display: block;
+  background-color: #8db500;
+  border: none;
+  border-radius: 15px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 20px;
+}
+#message-supplier:hover {
+  animation: shake 7s infinite;
+}
+#message-supplier:focus {
+  outline: none;
+}
+#sup-plant-listing {
+  border: 1px solid #999999;
+  width: 20%;
+  position: absolute;
+  top: 25%;
+  left: 72.5%;
+}
