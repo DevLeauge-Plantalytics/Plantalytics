@@ -1,0 +1,46 @@
+#conversation {
+  border: 1px solid #333;
+  width: 75%;
+  margin: 25px auto;
+}
+#conversation-feed {
+  list-style: none;
+  width: 60%;
+  float: right;
+}
+#other-user-profile-pic {
+  height: 150px;
+  width: 150px;
+  border-radius: 100px;
+  background-color: coral;
+}
+.other-user-message {
+  text-decoration: underline;
+  border: 1px solid #999999;
+  border-radius: 10px;
+  text-decoration-color: #999999;
+  padding: 10px;
+  text-align: left;
+  margin: 10px;
+}
+.your-message {
+  text-decoration: underline;
+  border: 1px solid #97A91A;
+  border-radius: 10px;
+  text-decoration-color: #97A91A;
+  padding: 10px;
+  text-align: right;
+  margin: 10px;
+}
+#compose-message {
+  left: 50%;
+  position: relative;
+  width: 60%;
+  clear: both;
+}
+#message-body {
+  width: 50%;
+  margin: 0px 5% 25px 10%;
+}
+
+
