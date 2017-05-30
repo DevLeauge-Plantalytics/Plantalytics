@@ -96,6 +96,7 @@ export const filterByUsername = (username) => {
   };
 };
 export const getD3Rain = () => {
+  console.log("test");
   return dispatch => {
     return API.loadRain()
       .then((data) => {

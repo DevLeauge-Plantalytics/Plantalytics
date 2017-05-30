@@ -8,6 +8,7 @@ const initialState = {
 const D3 = (state = initialState, action) => {
   switch(action.type){
     case GET_D3_RAIN:
+      console.log(action.data);
       return Object.assign({}, state, {
         rain: action.data
       });
