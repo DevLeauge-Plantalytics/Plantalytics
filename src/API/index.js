@@ -92,6 +92,15 @@ export const signinPassport = user => {
     });
   });
 };
+export const signoutPassport = () => {
+  return new Promise(function (resolve, reject) {
+    makeRequest('GET', `/logout/`)
+    .then(localStorage.clear())
+    .catch (err => {
+      reject(err);
+    });
+  });
+};
 export const getConversation = (id) => {
   return new Promise(function (resolve, reject) {
     makeRequest('GET', `/api/messages/conversation?id1=${localStorage.id}&id2=${id}`)
