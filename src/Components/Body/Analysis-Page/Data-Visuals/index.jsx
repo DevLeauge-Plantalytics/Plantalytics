@@ -1,23 +1,15 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {getD3Temp, getD3Rain} from '../../../../Actions';
 var BarChart = require('react-d3-basic').BarChart;
 
 class DataVisuals extends Component {
 
   constructor(props) {
     super(props);
-    this.renderChartTemp = this.renderChartTemp.bind(this);
-    this.renderChartRain = this.renderChartRain.bind(this);
-  }
-
-  componentWillMount() {
-    this.props.getD3Temp();
-    this.props.getD3Rain();
   }
 
   renderChartTemp(){
-    var generalChartData = this.props.temp
+    var generalChartData = this.props.D3Data.temp
 
     var width = 350,
     height = 200,
@@ -55,7 +47,7 @@ class DataVisuals extends Component {
   }
 
   renderChartRain(){
-    var generalChartData = this.props.rain
+    var generalChartData = this.props.D3Data.rain
 
     var width = 350,
     height = 200,
@@ -106,19 +98,12 @@ class DataVisuals extends Component {
 
 const mapStateToProps = state => {
   return {
-    temp: state.D3.temp,
-    rain: state.D3.rain,
+    D3Data: state.D3.locationData
   }
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    getD3Temp: () => {
-      dispatch(getD3Temp())
-    },
-    getD3Rain: () => {
-      dispatch(getD3Rain())
-    },
   }
 }
 
