@@ -13,16 +13,31 @@ class SignUpForm extends Component {
       password: "",
       confirmpass:"",
       address: "",
+      latitude: "",
+      longitude: "",
       zipcode: "",
       supplier: false,
       agreed: false
     };
   }
+
   addUser(user){
     //let confirmed = document.getElementById('confirmed');
     if (user.password === user.confirmpass) {
       if (user.agreed === true) {
-        this.props.addUser(user);
+        return fetch(`/localisation/${user.address}`, {
+          credentials: 'include',
+        })
+        .then( res => res.json())
+        .catch(err => {
+          console.log(err);
+          throw err;
+        })
+        .then( location => {
+          user.latitude = location[0].latitude,
+          user.longitude = location[0].longitude,
+          this.props.addUser(user);
+        })
       } else {
         alert('Please Accept the Terms of Aggreement');
       }
@@ -173,7 +188,8 @@ class SignUpForm extends Component {
 }
 
 const mapStateToProps = (state) => {
-  return {};
+  return {
+  };
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {

@@ -10,7 +10,7 @@ export const LOAD_CONVERSATION = 'LOAD_CONVERSATION';
 export const SEND_MESSAGE = 'SEND_MESSAGE';
 export const GET_MESSAGES = 'GET_MESSAGES';
 export const FILTER_USERNAME = 'FILTER_USERNAME';
-
+export const GET_LATLONG = 'GET_LATLONG';
 
 export const loadUsers = id => {
   return dispatch => {

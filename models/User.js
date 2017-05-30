@@ -38,6 +38,14 @@ module.exports = function(sequelize, DataTypes) {
         isNumeric: true,
       }
     },
+    latitude: {
+      type: DataTypes.FLOAT,
+      allowNull: false,
+    },
+    longitude: {
+      type: DataTypes.FLOAT,
+      allowNull: false,
+    },
     supplier: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
