@@ -5,6 +5,8 @@
   height: 50px;
   line-height: 50px;
   background-color: #97a91a;
+  z-index: 98;
+  box-shadow: 0px 1px 3px #333;
 }
 #analysis-header-items {
   width: 55%;
@@ -63,10 +65,15 @@
   list-style-type: none;
 }
 
-.data-visual {
-  margin: 15px;
+.data-visual1 {
+  margin-bottom: 170px;
   padding: 10px;
-  border: 1px solid black;
+  height: 75px;
+  width: 200px;
+}
+
+.data-visual2 {
+  padding: 10px;
   height: 75px;
   width: 200px;
 }
@@ -153,7 +160,13 @@
 #crop-list-title {
   font-family: 'Futura';
   margin: 0;
+  text-decoration: underline;
 }
 .crop {
   font-family: 'Futura';
+  font-size: 18px;
+}
+.sugst-crop-type {
+  font-size: 16px;
+  color: #97a91a;
 }

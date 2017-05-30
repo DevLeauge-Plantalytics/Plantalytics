@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default () => (
   <div id="sign-up-from-login">
-    <p id="sufl-Q">Dont have an account?</p>
-    <Link to="/plantalytics/sign-up"> <button id="sufl-btn">Sign Up</button></Link>
+    <p id="sufl-Q">Don't have an account?</p>
+    <Link to="/sign-up"><button id="sufl-btn">Sign Up</button></Link>
   </div>
 )

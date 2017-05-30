@@ -1,5 +1,5 @@
 /*jshint esversion: 6*/
-import {LOAD_USERS, GET_USER, ADD_USER, UPDATE_USER, DELETE_USER, LOGIN} from '../Actions';
+import {LOAD_USERS, GET_USER, ADD_USER, UPDATE_USER, DELETE_USER, LOGIN, LOGOUT} from '../Actions';
 const initialState = {
   users: [],
   singleUser: [],
@@ -40,6 +40,13 @@ const users = (state = initialState, action) => {
         loggedIn: true,
         username: localStorage.username,
         id: localStorage.id,
+      });
+
+    case LOGOUT:
+      return Object.assign({}, state, {
+        loggedIn: false,
+        username: null,
+        id: null,
       });
 
     default:

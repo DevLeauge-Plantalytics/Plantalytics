@@ -92,6 +92,15 @@ export const signinPassport = user => {
     });
   });
 };
+export const signoutPassport = () => {
+  return new Promise(function (resolve, reject) {
+    makeRequest('GET', `/logout/`)
+    .then(localStorage.clear())
+    .catch (err => {
+      reject(err);
+    });
+  });
+};
 export const getConversation = (id) => {
   return new Promise(function (resolve, reject) {
     makeRequest('GET', `/api/messages/conversation?id1=${localStorage.id}&id2=${id}`)
@@ -125,9 +134,9 @@ export const getMessages = (id) => {
     });
   });
 };
-export const loadRain = () => {
+export const getLatLong = address => {
   return new Promise(function (resolve, reject) {
-    makeRequest('GET', `/api/D3/rainfall`)
+    makeRequest('GET', `/localisation/${address}`)
     .then (data => {
       resolve(JSON.parse(data));
     })
@@ -136,9 +145,9 @@ export const loadRain = () => {
     });
   });
 };
-export const loadTemp = () => {
+export const getClosestData = (location) => {
   return new Promise(function (resolve, reject) {
-    makeRequest('GET', `/api/D3/temp`)
+    makeRequest('POST', `/api/D3/closest`, JSON.stringify(location))
     .then (data => {
       resolve(JSON.parse(data));
     })
