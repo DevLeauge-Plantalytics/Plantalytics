@@ -7,6 +7,7 @@ class SuggestedCrops extends Component {
   render(){
     return (
       <div id="crop-list-container">
+        <h2 id="crop-list-title">Suggested Crops</h2>
         <ul id="crop-list">
         <li className="crop">Crop1</li>
         <li className="crop">Crop2</li>
