@@ -11,6 +11,8 @@ module.exports = {
         address: "woodlawn street 45, honolulu, Hawaii, USA",
         zipcode: "78885",
         supplier: true,
+        latitude: 21.318399,
+        longitude: -157.801251,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -22,6 +24,8 @@ module.exports = {
         password: "test",
         address: "aka street 87, honolulu, Hawaii, USA",
         zipcode: "87654",
+        latitude: 21.3090518,
+        longitude: -157.7114537,
         supplier: false,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -34,6 +38,8 @@ module.exports = {
         password: "test",
         address: "delta street 134, honolulu, Hawaii, USA",
         zipcode: "87654",
+        latitude: 21.3090518,
+        longitude: -157.7114537,
         supplier: true,
         createdAt: new Date(),
         updatedAt: new Date()

@@ -3,7 +3,7 @@ module.exports = function(sequelize, DataTypes) {
   var D3soil = sequelize.define("D3soil",
     {
       month: {
-        type: DataTypes.DATE,
+        type: DataTypes.INTEGER,
         allowNull: false,
       },
       ph: {
