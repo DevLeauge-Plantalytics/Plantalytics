@@ -55,7 +55,6 @@ class DataVisuals extends Component {
   }
 
   renderChartRain(){
-    console.log(this.props.rain);
     var generalChartData = this.props.rain
 
     var width = 350,

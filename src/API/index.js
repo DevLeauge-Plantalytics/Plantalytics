@@ -125,28 +125,6 @@ export const getMessages = (id) => {
     });
   });
 };
-export const loadRain = () => {
-  return new Promise(function (resolve, reject) {
-    makeRequest('GET', `/api/D3/rainfall`)
-    .then (data => {
-      resolve(JSON.parse(data));
-    })
-    .catch (err => {
-      reject(err);
-    });
-  });
-};
-export const loadTemp = () => {
-  return new Promise(function (resolve, reject) {
-    makeRequest('GET', `/api/D3/temp`)
-    .then (data => {
-      resolve(JSON.parse(data));
-    })
-    .catch (err => {
-      reject(err);
-    });
-  });
-};
 export const getLatLong = address => {
   return new Promise(function (resolve, reject) {
     makeRequest('GET', `/localisation/${address}`)

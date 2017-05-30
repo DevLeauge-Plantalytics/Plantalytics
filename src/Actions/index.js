@@ -10,9 +10,6 @@ export const LOAD_CONVERSATION = 'LOAD_CONVERSATION';
 export const SEND_MESSAGE = 'SEND_MESSAGE';
 export const GET_MESSAGES = 'GET_MESSAGES';
 export const FILTER_USERNAME = 'FILTER_USERNAME';
-export const GET_LATLONG = 'GET_LATLONG';
-export const GET_D3_RAIN = 'GET_D3_RAIN';
-export const GET_D3_TEMP = 'GET_D3_TEMP';
 export const DISPLAY_DATA = 'DISPLAY_DATA';
 
 export const loadUsers = id => {
@@ -100,21 +97,9 @@ export const filterByUsername = (username) => {
     return dispatch({type: FILTER_USERNAME, username});
   };
 };
-export const getD3Rain = () => {
-  console.log("test");
-  return dispatch => {
-    return API.loadRain()
-      .then((data) => {
-        return dispatch({type: GET_D3_RAIN, data});
-      });
-    };
-  };
-export const getD3Temp = () => {
-  return dispatch => {
-    return API.loadTemp()
-      .then((data) => {
-        return dispatch({type: GET_D3_TEMP, data});
-      });
-    };
-  };
-export const getDataByAddress = address => dispatch => API.getLatLong(address).then(API.getClosestData).then(info => dispatch({type: DISPLAY_DATA, info}));
+export const getDataByAddress = (address) =>
+  dispatch => API.getLatLong(address)
+  .then(API.getClosestData)
+  .then(info =>
+    dispatch({type: DISPLAY_DATA, info})
+  );
