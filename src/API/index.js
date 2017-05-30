@@ -147,3 +147,25 @@ export const loadTemp = () => {
     });
   });
 };
+export const getLatLong = address => {
+  return new Promise(function (resolve, reject) {
+    makeRequest('GET', `/localisation/${address}`)
+    .then (data => {
+      resolve(JSON.parse(data));
+    })
+    .catch (err => {
+      reject(err);
+    });
+  });
+};
+export const getClosestData = (location) => {
+  return new Promise(function (resolve, reject) {
+    makeRequest('POST', `/api/D3/closest`, JSON.stringify(location))
+    .then (data => {
+      resolve(JSON.parse(data));
+    })
+    .catch (err => {
+      reject(err);
+    });
+  });
+};
