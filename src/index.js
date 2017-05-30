@@ -21,7 +21,6 @@ import Supplier_Profile from './Components/Body/Supplier-Profile';
 import Supplier_List from './Components/Body/Supplier-List';
 import Conversation from './Components/Body/Conversation';
 import Inbox from './Containers/Inbox';
-import D3 from './Containers/D3';
 
 const reactContainer = document.getElementById('root');
 
@@ -48,7 +47,6 @@ ReactDOM.render(
         <Route path="/supplier-profile" component={Supplier_Profile}/>
         <Route path="/conversation/:id" component={Conversation}/>
         <Route path="/inbox" component={Inbox}/>
-        <Route path="/D3" component={D3}/>
       </div>
     </Router>
   </Provider>,
