@@ -1,0 +1,793 @@
+month,town-district,zipcode,temperature,rainfall (inches)
+jan,Aiea,96701,73,2.7
+feb,Aiea,96701,73,2.4
+mar,Aiea,96701,74.3,1.9
+apr,Aiea,96701,75.6,1.1
+may,Aiea,96701,77.2,0.8
+jun,Aiea,96701,79.5,0.4
+jul,Aiea,96701,80.8,0.5
+aug,Aiea,96701,81.8,0.5
+sep,Aiea,96701,81.5,0.7
+oct,Aiea,96701,80.2,2.2
+nov,Aiea,96701,77.7,2.3
+dec,Aiea,96701,74.8,2.9
+jan,Ewa Beach,96706,71.6,2.8
+feb,Ewa Beach,96706,71.5,2.6
+mar,Ewa Beach,96706,73,1.6
+apr,Ewa Beach,96706,74.7,1.1
+may,Ewa Beach,96706,76.1,0.8
+jun,Ewa Beach,96706,78.4,0.4
+jul,Ewa Beach,96706,79.5,0.5
+aug,Ewa Beach,96706,79.9,0.4
+sep,Ewa Beach,96706,79.3,0.7
+oct,Ewa Beach,96706,78.1,2.1
+nov,Ewa Beach,96706,76,2.3
+dec,Ewa Beach,96706,73.3,2.7
+jan,Kapolei,96707,73,2.5
+feb,Kapolei,96707,73.1,2.4
+mar,Kapolei,96707,74.2,1.3
+apr,Kapolei,96707,75.6,1.1
+may,Kapolei,96707,76.9,0.9
+jun,Kapolei,96707,79.1,0.4
+jul,Kapolei,96707,80.3,0.4
+aug,Kapolei,96707,80.6,0.4
+sep,Kapolei,96707,80.6,0.6
+oct,Kapolei,96707,79.3,2
+nov,Kapolei,96707,77.1,2.3
+dec,Kapolei,96707,74.7,2.5
+jan,Kapolei,96709,65.9,5.1
+feb,Kapolei,96709,66,4.1
+mar,Kapolei,96709,66.6,2.9
+apr,Kapolei,96709,67.5,2.6
+may,Kapolei,96709,68.4,2.2
+jun,Kapolei,96709,70.2,1.6
+jul,Kapolei,96709,71.1,1.7
+aug,Kapolei,96709,72.1,1.4
+sep,Kapolei,96709,72.2,2.1
+oct,Kapolei,96709,71.2,2.5
+nov,Kapolei,96709,69.7,3.1
+dec,Kapolei,96709,67.5,4.4
+jan,Haleiwa,96712,70.3,5.8
+feb,Haleiwa,96712,70.4,4.1
+mar,Haleiwa,96712,71.9,5.7
+apr,Haleiwa,96712,72.9,5
+may,Haleiwa,96712,74.2,3.9
+jun,Haleiwa,96712,76.1,3.6
+jul,Haleiwa,96712,76.9,4.3
+aug,Haleiwa,96712,77.8,3
+sep,Haleiwa,96712,77.6,2.7
+oct,Haleiwa,96712,76.6,4.2
+nov,Haleiwa,96712,74,6.2
+dec,Haleiwa,96712,71.4,6.3
+jan,Hauula,96717,71.8,4
+feb,Hauula,96717,71.6,3.5
+mar,Hauula,96717,72.6,4.5
+apr,Hauula,96717,73.7,2.2
+may,Hauula,96717,74.6,2.1
+jun,Hauula,96717,76.6,2
+jul,Hauula,96717,77.4,2.6
+aug,Hauula,96717,78.5,1.5
+sep,Hauula,96717,78.6,2.5
+oct,Hauula,96717,78.1,3.5
+nov,Hauula,96717,75.6,5.2
+dec,Hauula,96717,73.3,4.5
+jan,Kaaawa,96730,73.8,4.4
+feb,Kaaawa,96730,73.8,5.8
+mar,Kaaawa,96730,74.4,2.9
+apr,Kaaawa,96730,75.1,3.1
+may,Kaaawa,96730,76.4,2.1
+jun,Kaaawa,96730,78,2.2
+jul,Kaaawa,96730,78.9,1.7
+aug,Kaaawa,96730,79.8,1.7
+sep,Kaaawa,96730,80.3,2
+oct,Kaaawa,96730,79.3,3
+nov,Kaaawa,96730,77.1,4.4
+dec,Kaaawa,96730,75,4
+jan,Kahuku,96731,71.8,4
+feb,Kahuku,96731,71.6,3.5
+mar,Kahuku,96731,72.6,4.5
+apr,Kahuku,96731,73.7,2.2
+may,Kahuku,96731,74.6,2.1
+jun,Kahuku,96731,76.6,2
+jul,Kahuku,96731,77.4,2.6
+aug,Kahuku,96731,78.5,1.5
+sep,Kahuku,96731,78.6,2.5
+oct,Kahuku,96731,78.1,3.5
+nov,Kahuku,96731,75.6,5.2
+dec,Kahuku,96731,73.3,4.5
+jan,Kailua,96734,73.8,4.4
+feb,Kailua,96734,73.8,5.8
+mar,Kailua,96734,74.4,2.9
+apr,Kailua,96734,75.1,3.1
+may,Kailua,96734,76.4,2.1
+jun,Kailua,96734,78,2.2
+jul,Kailua,96734,78.9,1.7
+aug,Kailua,96734,79.8,1.7
+sep,Kailua,96734,80.3,2
+oct,Kailua,96734,79.3,3
+nov,Kailua,96734,77.1,4.4
+dec,Kailua,96734,75,4
+jan,Kaneohe,96744,71.5,8.5
+feb,Kaneohe,96744,71.8,6
+mar,Kaneohe,96744,72.3,6.5
+apr,Kaneohe,96744,73.2,6.6
+may,Kaneohe,96744,74.6,5
+jun,Kaneohe,96744,76.3,4.6
+jul,Kaneohe,96744,77,5.1
+aug,Kaneohe,96744,77.9,4.5
+sep,Kaneohe,96744,77.9,4.9
+oct,Kaneohe,96744,77,6.4
+nov,Kaneohe,96744,74.8,9.5
+dec,Kaneohe,96744,73.1,7.3
+jan,Kunia,96759,69.5,5.2
+feb,Kunia,96759,69.2,3.9
+mar,Kunia,96759,70.2,3.4
+apr,Kunia,96759,71.4,2.2
+may,Kunia,96759,73,1.5
+jun,Kunia,96759,75,1.1
+jul,Kunia,96759,76.1,1.2
+aug,Kunia,96759,77,0.7
+sep,Kunia,96759,76.7,1.3
+oct,Kunia,96759,75.7,2.5
+nov,Kunia,96759,74.1,3.5
+dec,Kunia,96759,71.3,3.4
+jan,Laie,96762,71.8,4
+feb,Laie,96762,71.6,3.5
+mar,Laie,96762,72.6,4.5
+apr,Laie,96762,73.7,2.2
+may,Laie,96762,74.6,2.1
+jun,Laie,96762,76.6,2
+jul,Laie,96762,77.4,2.6
+aug,Laie,96762,78.5,1.5
+sep,Laie,96762,78.6,2.5
+oct,Laie,96762,78.1,3.5
+nov,Laie,96762,75.6,5.2
+dec,Laie,96762,73.3,4.5
+jan,Pearl City,96782,73,2.7
+feb,Pearl City,96782,73,2.4
+mar,Pearl City,96782,74.3,1.9
+apr,Pearl City,96782,75.6,1.1
+may,Pearl City,96782,77.2,0.8
+jun,Pearl City,96782,79.5,0.4
+jul,Pearl City,96782,80.8,0.5
+aug,Pearl City,96782,81.8,0.5
+sep,Pearl City,96782,81.5,0.7
+oct,Pearl City,96782,80.2,2.2
+nov,Pearl City,96782,77.7,2.3
+dec,Pearl City,96782,74.8,2.9
+jan,Wahiawa,96786,7,7
+feb,Wahiawa,96786,5,5
+mar,Wahiawa,96786,5.4,5.4
+apr,Wahiawa,96786,5.7,5.7
+may,Wahiawa,96786,3.4,3.4
+jun,Wahiawa,96786,2.7,2.7
+jul,Wahiawa,96786,3.3,3.3
+aug,Wahiawa,96786,2.1,2.1
+sep,Wahiawa,96786,2.2,2.2
+oct,Wahiawa,96786,3.5,3.5
+nov,Wahiawa,96786,5,5
+dec,Wahiawa,96786,4.7,4.7
+jan,Mililani,96789,69,7
+feb,Mililani,96789,68.7,5
+mar,Mililani,96789,69.2,5.4
+apr,Mililani,96789,69,5.7
+may,Mililani,96789,70.7,3.4
+jun,Mililani,96789,72.4,2.7
+jul,Mililani,96789,73.2,3.3
+aug,Mililani,96789,73.9,2.1
+sep,Mililani,96789,74.4,2.2
+oct,Mililani,96789,73.7,3.5
+nov,Mililani,96789,72.2,5
+dec,Mililani,96789,70.3,4.7
+jan,Waialua,96791,69.5,5.2
+feb,Waialua,96791,69.2,3.9
+mar,Waialua,96791,70.2,3.4
+apr,Waialua,96791,71.4,2.2
+may,Waialua,96791,73,1.5
+jun,Waialua,96791,75,1.1
+jul,Waialua,96791,76.1,1.2
+aug,Waialua,96791,77,0.7
+sep,Waialua,96791,76.7,1.3
+oct,Waialua,96791,75.7,2.5
+nov,Waialua,96791,74.1,3.5
+dec,Waialua,96791,71.3,3.4
+jan,Waianae,96792,66.1,4.1
+feb,Waianae,96792,66,2.9
+mar,Waianae,96792,66.5,2.4
+apr,Waianae,96792,67.7,2.2
+may,Waianae,96792,69,1.7
+jun,Waianae,96792,71,1.3
+jul,Waianae,96792,72.5,1.3
+aug,Waianae,96792,73.5,1.1
+sep,Waianae,96792,73.6,1.3
+oct,Waianae,96792,72.2,3.4
+nov,Waianae,96792,69.9,3.4
+dec,Waianae,96792,67.3,4.3
+jan,Waimanalo,96795,71.6,6.8
+feb,Waimanalo,96795,71.5,4.6
+mar,Waimanalo,96795,72.5,3.6
+apr,Waimanalo,96795,73.9,3.2
+may,Waimanalo,96795,75.3,3.2
+jun,Waimanalo,96795,77.1,1.5
+jul,Waimanalo,96795,78.2,1.6
+aug,Waimanalo,96795,79,1.5
+sep,Waimanalo,96795,78.9,2
+oct,Waimanalo,96795,77.9,3.7
+nov,Waimanalo,96795,75.6,5.6
+dec,Waimanalo,96795,73.1,5.5
+jan,Waipahu,96797,71.6,2.8
+feb,Waipahu,96797,71.5,2.6
+mar,Waipahu,96797,73,1.6
+apr,Waipahu,96797,74.7,1.1
+may,Waipahu,96797,76.1,0.8
+jun,Waipahu,96797,78.4,0.4
+jul,Waipahu,96797,79.5,0.5
+aug,Waipahu,96797,79.9,0.4
+sep,Waipahu,96797,79.3,0.7
+oct,Waipahu,96797,78.1,2.1
+nov,Waipahu,96797,76,2.3
+dec,Waipahu,96797,73.3,2.7
+jan,Honolulu,96801,69.7,11.7
+feb,Honolulu,96801,69.8,9.6
+mar,Honolulu,96801,70.3,14
+apr,Honolulu,96801,70.7,16.3
+may,Honolulu,96801,72.1,12.1
+jun,Honolulu,96801,73.2,12.5
+jul,Honolulu,96801,74.2,15.2
+aug,Honolulu,96801,75.4,12
+sep,Honolulu,96801,75.8,10.6
+oct,Honolulu,96801,74.9,11.6
+nov,Honolulu,96801,72.9,14.3
+dec,Honolulu,96801,71,12.3
+jan,Honolulu,96802,69.7,11.7
+feb,Honolulu,96802,69.8,9.6
+mar,Honolulu,96802,70.3,14
+apr,Honolulu,96802,70.7,16.3
+may,Honolulu,96802,72.1,12.1
+jun,Honolulu,96802,73.2,12.5
+jul,Honolulu,96802,74.2,15.2
+aug,Honolulu,96802,75.4,12
+sep,Honolulu,96802,75.8,10.6
+oct,Honolulu,96802,74.9,11.6
+nov,Honolulu,96802,72.9,14.3
+dec,Honolulu,96802,71,12.3
+jan,Honolulu,96803,69.7,11.7
+feb,Honolulu,96803,69.8,9.6
+mar,Honolulu,96803,70.3,14
+apr,Honolulu,96803,70.7,16.3
+may,Honolulu,96803,72.1,12.1
+jun,Honolulu,96803,73.2,12.5
+jul,Honolulu,96803,74.2,15.2
+aug,Honolulu,96803,75.4,12
+sep,Honolulu,96803,75.8,10.6
+oct,Honolulu,96803,74.9,11.6
+nov,Honolulu,96803,72.9,14.3
+dec,Honolulu,96803,71,12.3
+jan,Honolulu,96804,69.7,11.7
+feb,Honolulu,96804,69.8,9.6
+mar,Honolulu,96804,70.3,14
+apr,Honolulu,96804,70.7,16.3
+may,Honolulu,96804,72.1,12.1
+jun,Honolulu,96804,73.2,12.5
+jul,Honolulu,96804,74.2,15.2
+aug,Honolulu,96804,75.4,12
+sep,Honolulu,96804,75.8,10.6
+oct,Honolulu,96804,74.9,11.6
+nov,Honolulu,96804,72.9,14.3
+dec,Honolulu,96804,71,12.3
+jan,Honolulu,96805,69.7,11.7
+feb,Honolulu,96805,69.8,9.6
+mar,Honolulu,96805,70.3,14
+apr,Honolulu,96805,70.7,16.3
+may,Honolulu,96805,72.1,12.1
+jun,Honolulu,96805,73.2,12.5
+jul,Honolulu,96805,74.2,15.2
+aug,Honolulu,96805,75.4,12
+sep,Honolulu,96805,75.8,10.6
+oct,Honolulu,96805,74.9,11.6
+nov,Honolulu,96805,72.9,14.3
+dec,Honolulu,96805,71,12.3
+jan,Honolulu,96806,69.7,11.7
+feb,Honolulu,96806,69.8,9.6
+mar,Honolulu,96806,70.3,14
+apr,Honolulu,96806,70.7,16.3
+may,Honolulu,96806,72.1,12.1
+jun,Honolulu,96806,73.2,12.5
+jul,Honolulu,96806,74.2,15.2
+aug,Honolulu,96806,75.4,12
+sep,Honolulu,96806,75.8,10.6
+oct,Honolulu,96806,74.9,11.6
+nov,Honolulu,96806,72.9,14.3
+dec,Honolulu,96806,71,12.3
+jan,Honolulu,96807,69.7,11.7
+feb,Honolulu,96807,69.8,9.6
+mar,Honolulu,96807,70.3,14
+apr,Honolulu,96807,70.7,16.3
+may,Honolulu,96807,72.1,12.1
+jun,Honolulu,96807,73.2,12.5
+jul,Honolulu,96807,74.2,15.2
+aug,Honolulu,96807,75.4,12
+sep,Honolulu,96807,75.8,10.6
+oct,Honolulu,96807,74.9,11.6
+nov,Honolulu,96807,72.9,14.3
+dec,Honolulu,96807,71,12.3
+jan,Honolulu,96808,69.7,11.7
+feb,Honolulu,96808,69.8,9.6
+mar,Honolulu,96808,70.3,14
+apr,Honolulu,96808,70.7,16.3
+may,Honolulu,96808,72.1,12.1
+jun,Honolulu,96808,73.2,12.5
+jul,Honolulu,96808,74.2,15.2
+aug,Honolulu,96808,75.4,12
+sep,Honolulu,96808,75.8,10.6
+oct,Honolulu,96808,74.9,11.6
+nov,Honolulu,96808,72.9,14.3
+dec,Honolulu,96808,71,12.3
+jan,Honolulu,96809,69.7,11.7
+feb,Honolulu,96809,69.8,9.6
+mar,Honolulu,96809,70.3,14
+apr,Honolulu,96809,70.7,16.3
+may,Honolulu,96809,72.1,12.1
+jun,Honolulu,96809,73.2,12.5
+jul,Honolulu,96809,74.2,15.2
+aug,Honolulu,96809,75.4,12
+sep,Honolulu,96809,75.8,10.6
+oct,Honolulu,96809,74.9,11.6
+nov,Honolulu,96809,72.9,14.3
+dec,Honolulu,96809,71,12.3
+jan,Honolulu,96810,69.7,11.7
+feb,Honolulu,96810,69.8,9.6
+mar,Honolulu,96810,70.3,14
+apr,Honolulu,96810,70.7,16.3
+may,Honolulu,96810,72.1,12.1
+jun,Honolulu,96810,73.2,12.5
+jul,Honolulu,96810,74.2,15.2
+aug,Honolulu,96810,75.4,12
+sep,Honolulu,96810,75.8,10.6
+oct,Honolulu,96810,74.9,11.6
+nov,Honolulu,96810,72.9,14.3
+dec,Honolulu,96810,71,12.3
+jan,Honolulu,96811,69.7,11.7
+feb,Honolulu,96811,69.8,9.6
+mar,Honolulu,96811,70.3,14
+apr,Honolulu,96811,70.7,16.3
+may,Honolulu,96811,72.1,12.1
+jun,Honolulu,96811,73.2,12.5
+jul,Honolulu,96811,74.2,15.2
+aug,Honolulu,96811,75.4,12
+sep,Honolulu,96811,75.8,10.6
+oct,Honolulu,96811,74.9,11.6
+nov,Honolulu,96811,72.9,14.3
+dec,Honolulu,96811,71,12.3
+jan,Honolulu,96812,69.7,11.7
+feb,Honolulu,96812,69.8,9.6
+mar,Honolulu,96812,70.3,14
+apr,Honolulu,96812,70.7,16.3
+may,Honolulu,96812,72.1,12.1
+jun,Honolulu,96812,73.2,12.5
+jul,Honolulu,96812,74.2,15.2
+aug,Honolulu,96812,75.4,12
+sep,Honolulu,96812,75.8,10.6
+oct,Honolulu,96812,74.9,11.6
+nov,Honolulu,96812,72.9,14.3
+dec,Honolulu,96812,71,12.3
+jan,Honolulu,96813,69.7,11.7
+feb,Honolulu,96813,69.8,9.6
+mar,Honolulu,96813,70.3,14
+apr,Honolulu,96813,70.7,16.3
+may,Honolulu,96813,72.1,12.1
+jun,Honolulu,96813,73.2,12.5
+jul,Honolulu,96813,74.2,15.2
+aug,Honolulu,96813,75.4,12
+sep,Honolulu,96813,75.8,10.6
+oct,Honolulu,96813,74.9,11.6
+nov,Honolulu,96813,72.9,14.3
+dec,Honolulu,96813,71,12.3
+jan,Honolulu,96814,69.7,11.7
+feb,Honolulu,96814,69.8,9.6
+mar,Honolulu,96814,70.3,14
+apr,Honolulu,96814,70.7,16.3
+may,Honolulu,96814,72.1,12.1
+jun,Honolulu,96814,73.2,12.5
+jul,Honolulu,96814,74.2,15.2
+aug,Honolulu,96814,75.4,12
+sep,Honolulu,96814,75.8,10.6
+oct,Honolulu,96814,74.9,11.6
+nov,Honolulu,96814,72.9,14.3
+dec,Honolulu,96814,71,12.3
+jan,Waikiki,96815,72.7,3.4
+feb,Waikiki,96815,72.9,2.4
+mar,Waikiki,96815,74.2,2.3
+apr,Waikiki,96815,75.4,1.4
+may,Waikiki,96815,76.7,1.2
+jun,Waikiki,96815,78.7,0.7
+jul,Waikiki,96815,79.7,0.9
+aug,Waikiki,96815,80.5,0.6
+sep,Waikiki,96815,80.2,1
+oct,Waikiki,96815,79.1,2.1
+nov,Waikiki,96815,76.9,2.9
+dec,Waikiki,96815,74.2,3.5
+jan,Waialae / Kahala,96816,72.7,3.4
+feb,Waialae / Kahala,96816,72.9,2.4
+mar,Waialae / Kahala,96816,74.2,2.3
+apr,Waialae / Kahala,96816,75.4,1.4
+may,Waialae / Kahala,96816,76.7,1.2
+jun,Waialae / Kahala,96816,78.7,0.7
+jul,Waialae / Kahala,96816,79.7,0.9
+aug,Waialae / Kahala,96816,80.5,0.6
+sep,Waialae / Kahala,96816,80.2,1
+oct,Waialae / Kahala,96816,79.1,2.1
+nov,Waialae / Kahala,96816,76.9,2.9
+dec,Waialae / Kahala,96816,74.2,3.5
+jan,Kapalama,96817,69.7,11.7
+feb,Kapalama,96817,69.8,9.6
+mar,Kapalama,96817,70.3,14
+apr,Kapalama,96817,70.7,16.3
+may,Kapalama,96817,72.1,12.1
+jun,Kapalama,96817,73.2,12.5
+jul,Kapalama,96817,74.2,15.2
+aug,Kapalama,96817,75.4,12
+sep,Kapalama,96817,75.8,10.6
+oct,Kapalama,96817,74.9,11.6
+nov,Kapalama,96817,72.9,14.3
+dec,Kapalama,96817,71,12.3
+jan,Kapalama,96819,73,2.7
+feb,Kapalama,96819,73,2.4
+mar,Kapalama,96819,74.3,1.9
+apr,Kapalama,96819,75.6,1.1
+may,Kapalama,96819,77.2,0.8
+jun,Kapalama,96819,79.5,0.4
+jul,Kapalama,96819,80.8,0.5
+aug,Kapalama,96819,81.8,0.5
+sep,Kapalama,96819,81.5,0.7
+oct,Kapalama,96819,80.2,2.2
+nov,Kapalama,96819,77.7,2.3
+dec,Kapalama,96819,74.8,2.9
+jan,Honolulu,96820,73,2.7
+feb,Honolulu,96820,73,2.4
+mar,Honolulu,96820,74.3,1.9
+apr,Honolulu,96820,75.6,1.1
+may,Honolulu,96820,77.2,0.8
+jun,Honolulu,96820,79.5,0.4
+jul,Honolulu,96820,80.8,0.5
+aug,Honolulu,96820,81.8,0.5
+sep,Honolulu,96820,81.5,0.7
+oct,Honolulu,96820,80.2,2.2
+nov,Honolulu,96820,77.7,2.3
+dec,Honolulu,96820,74.8,2.9
+jan,Waialae / Kahala,96821,71.6,6.8
+feb,Waialae / Kahala,96821,71.5,4.6
+mar,Waialae / Kahala,96821,72.5,3.6
+apr,Waialae / Kahala,96821,73.9,3.2
+may,Waialae / Kahala,96821,75.3,3.2
+jun,Waialae / Kahala,96821,77.1,1.5
+jul,Waialae / Kahala,96821,78.2,1.6
+aug,Waialae / Kahala,96821,79,1.5
+sep,Waialae / Kahala,96821,78.9,2
+oct,Waialae / Kahala,96821,77.9,3.7
+nov,Waialae / Kahala,96821,75.6,5.6
+dec,Waialae / Kahala,96821,73.1,5.5
+jan,Makiki,96822,69.7,11.7
+feb,Makiki,96822,69.8,9.6
+mar,Makiki,96822,70.3,14
+apr,Makiki,96822,70.7,16.3
+may,Makiki,96822,72.1,12.1
+jun,Makiki,96822,73.2,12.5
+jul,Makiki,96822,74.2,15.2
+aug,Makiki,96822,75.4,12
+sep,Makiki,96822,75.8,10.6
+oct,Makiki,96822,74.9,11.6
+nov,Makiki,96822,72.9,14.3
+dec,Makiki,96822,71,12.3
+jan,Honolulu,96823,73,2.7
+feb,Honolulu,96823,73,2.4
+mar,Honolulu,96823,74.3,1.9
+apr,Honolulu,96823,75.6,1.1
+may,Honolulu,96823,77.2,0.8
+jun,Honolulu,96823,79.5,0.4
+jul,Honolulu,96823,80.8,0.5
+aug,Honolulu,96823,81.8,0.5
+sep,Honolulu,96823,81.5,0.7
+oct,Honolulu,96823,80.2,2.2
+nov,Honolulu,96823,77.7,2.3
+dec,Honolulu,96823,74.8,2.9
+jan,Honolulu,96824,69.7,11.7
+feb,Honolulu,96824,69.8,9.6
+mar,Honolulu,96824,70.3,14
+apr,Honolulu,96824,70.7,16.3
+may,Honolulu,96824,72.1,12.1
+jun,Honolulu,96824,73.2,12.5
+jul,Honolulu,96824,74.2,15.2
+aug,Honolulu,96824,75.4,12
+sep,Honolulu,96824,75.8,10.6
+oct,Honolulu,96824,74.9,11.6
+nov,Honolulu,96824,72.9,14.3
+dec,Honolulu,96824,71,12.3
+jan,Honolulu,96825,71.6,6.8
+feb,Honolulu,96825,71.5,4.6
+mar,Honolulu,96825,72.5,3.6
+apr,Honolulu,96825,73.9,3.2
+may,Honolulu,96825,75.3,3.2
+jun,Honolulu,96825,77.1,1.5
+jul,Honolulu,96825,78.2,1.6
+aug,Honolulu,96825,79,1.5
+sep,Honolulu,96825,78.9,2
+oct,Honolulu,96825,77.9,3.7
+nov,Honolulu,96825,75.6,5.6
+dec,Honolulu,96825,73.1,5.5
+jan,Makiki,96826,72.7,3.4
+feb,Makiki,96826,72.9,2.4
+mar,Makiki,96826,74.2,2.3
+apr,Makiki,96826,75.4,1.4
+may,Makiki,96826,76.7,1.2
+jun,Makiki,96826,78.7,0.7
+jul,Makiki,96826,79.7,0.9
+aug,Makiki,96826,80.5,0.6
+sep,Makiki,96826,80.2,1
+oct,Makiki,96826,79.1,2.1
+nov,Makiki,96826,76.9,2.9
+dec,Makiki,96826,74.2,3.5
+jan,Honolulu,96836,72.7,3.4
+feb,Honolulu,96836,72.9,2.4
+mar,Honolulu,96836,74.2,2.3
+apr,Honolulu,96836,75.4,1.4
+may,Honolulu,96836,76.7,1.2
+jun,Honolulu,96836,78.7,0.7
+jul,Honolulu,96836,79.7,0.9
+aug,Honolulu,96836,80.5,0.6
+sep,Honolulu,96836,80.2,1
+oct,Honolulu,96836,79.1,2.1
+nov,Honolulu,96836,76.9,2.9
+dec,Honolulu,96836,74.2,3.5
+jan,Honolulu,96837,69.7,11.7
+feb,Honolulu,96837,69.8,9.6
+mar,Honolulu,96837,70.3,14
+apr,Honolulu,96837,70.7,16.3
+may,Honolulu,96837,72.1,12.1
+jun,Honolulu,96837,73.2,12.5
+jul,Honolulu,96837,74.2,15.2
+aug,Honolulu,96837,75.4,12
+sep,Honolulu,96837,75.8,10.6
+oct,Honolulu,96837,74.9,11.6
+nov,Honolulu,96837,72.9,14.3
+dec,Honolulu,96837,71,12.3
+jan,Honolulu,96838,73,2.7
+feb,Honolulu,96838,73,2.4
+mar,Honolulu,96838,74.3,1.9
+apr,Honolulu,96838,75.6,1.1
+may,Honolulu,96838,77.2,0.8
+jun,Honolulu,96838,79.5,0.4
+jul,Honolulu,96838,80.8,0.5
+aug,Honolulu,96838,81.8,0.5
+sep,Honolulu,96838,81.5,0.7
+oct,Honolulu,96838,80.2,2.2
+nov,Honolulu,96838,77.7,2.3
+dec,Honolulu,96838,74.8,2.9
+jan,Honolulu,96839,69.7,11.7
+feb,Honolulu,96839,69.8,9.6
+mar,Honolulu,96839,70.3,14
+apr,Honolulu,96839,70.7,16.3
+may,Honolulu,96839,72.1,12.1
+jun,Honolulu,96839,73.2,12.5
+jul,Honolulu,96839,74.2,15.2
+aug,Honolulu,96839,75.4,12
+sep,Honolulu,96839,75.8,10.6
+oct,Honolulu,96839,74.9,11.6
+nov,Honolulu,96839,72.9,14.3
+dec,Honolulu,96839,71,12.3
+jan,Honolulu,96840,69.7,11.7
+feb,Honolulu,96840,69.8,9.6
+mar,Honolulu,96840,70.3,14
+apr,Honolulu,96840,70.7,16.3
+may,Honolulu,96840,72.1,12.1
+jun,Honolulu,96840,73.2,12.5
+jul,Honolulu,96840,74.2,15.2
+aug,Honolulu,96840,75.4,12
+sep,Honolulu,96840,75.8,10.6
+oct,Honolulu,96840,74.9,11.6
+nov,Honolulu,96840,72.9,14.3
+dec,Honolulu,96840,71,12.3
+jan,Honolulu,96841,69.7,11.7
+feb,Honolulu,96841,69.8,9.6
+mar,Honolulu,96841,70.3,14
+apr,Honolulu,96841,70.7,16.3
+may,Honolulu,96841,72.1,12.1
+jun,Honolulu,96841,73.2,12.5
+jul,Honolulu,96841,74.2,15.2
+aug,Honolulu,96841,75.4,12
+sep,Honolulu,96841,75.8,10.6
+oct,Honolulu,96841,74.9,11.6
+nov,Honolulu,96841,72.9,14.3
+dec,Honolulu,96841,71,12.3
+jan,Honolulu,96843,69.7,11.7
+feb,Honolulu,96843,69.8,9.6
+mar,Honolulu,96843,70.3,14
+apr,Honolulu,96843,70.7,16.3
+may,Honolulu,96843,72.1,12.1
+jun,Honolulu,96843,73.2,12.5
+jul,Honolulu,96843,74.2,15.2
+aug,Honolulu,96843,75.4,12
+sep,Honolulu,96843,75.8,10.6
+oct,Honolulu,96843,74.9,11.6
+nov,Honolulu,96843,72.9,14.3
+dec,Honolulu,96843,71,12.3
+jan,Honolulu,96844,69.7,11.7
+feb,Honolulu,96844,69.8,9.6
+mar,Honolulu,96844,70.3,14
+apr,Honolulu,96844,70.7,16.3
+may,Honolulu,96844,72.1,12.1
+jun,Honolulu,96844,73.2,12.5
+jul,Honolulu,96844,74.2,15.2
+aug,Honolulu,96844,75.4,12
+sep,Honolulu,96844,75.8,10.6
+oct,Honolulu,96844,74.9,11.6
+nov,Honolulu,96844,72.9,14.3
+dec,Honolulu,96844,71,12.3
+jan,Honolulu,96846,69.7,11.7
+feb,Honolulu,96846,69.8,9.6
+mar,Honolulu,96846,70.3,14
+apr,Honolulu,96846,70.7,16.3
+may,Honolulu,96846,72.1,12.1
+jun,Honolulu,96846,73.2,12.5
+jul,Honolulu,96846,74.2,15.2
+aug,Honolulu,96846,75.4,12
+sep,Honolulu,96846,75.8,10.6
+oct,Honolulu,96846,74.9,11.6
+nov,Honolulu,96846,72.9,14.3
+dec,Honolulu,96846,71,12.3
+jan,Honolulu,96847,69.7,11.7
+feb,Honolulu,96847,69.8,9.6
+mar,Honolulu,96847,70.3,14
+apr,Honolulu,96847,70.7,16.3
+may,Honolulu,96847,72.1,12.1
+jun,Honolulu,96847,73.2,12.5
+jul,Honolulu,96847,74.2,15.2
+aug,Honolulu,96847,75.4,12
+sep,Honolulu,96847,75.8,10.6
+oct,Honolulu,96847,74.9,11.6
+nov,Honolulu,96847,72.9,14.3
+dec,Honolulu,96847,71,12.3
+jan,Honolulu,96848,69.7,11.7
+feb,Honolulu,96848,69.8,9.6
+mar,Honolulu,96848,70.3,14
+apr,Honolulu,96848,70.7,16.3
+may,Honolulu,96848,72.1,12.1
+jun,Honolulu,96848,73.2,12.5
+jul,Honolulu,96848,74.2,15.2
+aug,Honolulu,96848,75.4,12
+sep,Honolulu,96848,75.8,10.6
+oct,Honolulu,96848,74.9,11.6
+nov,Honolulu,96848,72.9,14.3
+dec,Honolulu,96848,71,12.3
+jan,Honolulu,96849,69.7,11.7
+feb,Honolulu,96849,69.8,9.6
+mar,Honolulu,96849,70.3,14
+apr,Honolulu,96849,70.7,16.3
+may,Honolulu,96849,72.1,12.1
+jun,Honolulu,96849,73.2,12.5
+jul,Honolulu,96849,74.2,15.2
+aug,Honolulu,96849,75.4,12
+sep,Honolulu,96849,75.8,10.6
+oct,Honolulu,96849,74.9,11.6
+nov,Honolulu,96849,72.9,14.3
+dec,Honolulu,96849,71,12.3
+jan,Honolulu,96850,69.7,11.7
+feb,Honolulu,96850,69.8,9.6
+mar,Honolulu,96850,70.3,14
+apr,Honolulu,96850,70.7,16.3
+may,Honolulu,96850,72.1,12.1
+jun,Honolulu,96850,73.2,12.5
+jul,Honolulu,96850,74.2,15.2
+aug,Honolulu,96850,75.4,12
+sep,Honolulu,96850,75.8,10.6
+oct,Honolulu,96850,74.9,11.6
+nov,Honolulu,96850,72.9,14.3
+dec,Honolulu,96850,71,12.3
+jan,Hickam AFB,96853,73,2.7
+feb,Hickam AFB,96853,73,2.4
+mar,Hickam AFB,96853,74.3,1.9
+apr,Hickam AFB,96853,75.6,1.1
+may,Hickam AFB,96853,77.2,0.8
+jun,Hickam AFB,96853,79.5,0.4
+jul,Hickam AFB,96853,80.8,0.5
+aug,Hickam AFB,96853,81.8,0.5
+sep,Hickam AFB,96853,81.5,0.7
+oct,Hickam AFB,96853,80.2,2.2
+nov,Hickam AFB,96853,77.7,2.3
+dec,Hickam AFB,96853,74.8,2.9
+jan,Wheeler Army Airfield        96854,96854,69,7
+feb,Wheeler Army Airfield	96854,96854,68.7,5
+mar,Wheeler Army Airfield	96854,96854,69.2,5.4
+apr,Wheeler Army Airfield	96854,96854,69,5.7
+may,Wheeler Army Airfield	96854,96854,70.7,3.4
+jun,Wheeler Army Airfield	96854,96854,72.4,2.7
+jul,Wheeler Army Airfield	96854,96854,73.2,3.3
+aug,Wheeler Army Airfield	96854,96854,73.9,2.1
+sep,Wheeler Army Airfield	96854,96854,74.4,2.2
+oct,Wheeler Army Airfield	96854,96854,73.7,3.5
+nov,Wheeler Army Airfield	96854,96854,72.2,5
+dec,Wheeler Army Airfield	96854,96854,70.3,4.7
+jan,Schofield Barracks	96857,96857,69,7
+feb,Schofield Barracks	96857,96857,68.7,5
+mar,Schofield Barracks	96857,96857,69.2,5.4
+apr,Schofield Barracks	96857,96857,69,5.7
+may,Schofield Barracks	96857,96857,70.7,3.4
+jun,Schofield Barracks	96857,96857,72.4,2.7
+jul,Schofield Barracks	96857,96857,73.2,3.3
+aug,Schofield Barracks	96857,96857,73.9,2.1
+sep,Schofield Barracks	96857,96857,74.4,2.2
+oct,Schofield Barracks	96857,96857,73.7,3.5
+nov,Schofield Barracks	96857,96857,72.2,5
+dec,Schofield Barracks	96857,96857,70.3,4.7
+jan,Fort Shafter,96858,73,2.7
+feb,Fort Shafter,96858,73,2.4
+mar,Fort Shafter,96858,74.3,1.9
+apr,Fort Shafter,96858,75.6,1.1
+may,Fort Shafter,96858,77.2,0.8
+jun,Fort Shafter,96858,79.5,0.4
+jul,Fort Shafter,96858,80.8,0.5
+aug,Fort Shafter,96858,81.8,0.5
+sep,Fort Shafter,96858,81.5,0.7
+oct,Fort Shafter,96858,80.2,2.2
+nov,Fort Shafter,96858,77.7,2.3
+dec,Fort Shafter,96858,74.8,2.9
+jan,Tripler Army Medical Center,96859,73,2.7
+feb,Tripler Army Medical Center,96859,73,2.4
+mar,Tripler Army Medical Center,96859,74.3,1.9
+apr,Tripler Army Medical Center,96859,75.6,1.1
+may,Tripler Army Medical Center,96859,77.2,0.8
+jun,Tripler Army Medical Center,96859,79.5,0.4
+jul,Tripler Army Medical Center,96859,80.8,0.5
+aug,Tripler Army Medical Center,96859,81.8,0.5
+sep,Tripler Army Medical Center,96859,81.5,0.7
+oct,Tripler Army Medical Center,96859,80.2,2.2
+nov,Tripler Army Medical Center,96859,77.7,2.3
+dec,Tripler Army Medical Center,96859,74.8,2.9
+jan,Pearl Harbor,96860,73,2.7
+feb,Pearl Harbor,96860,73,2.4
+mar,Pearl Harbor,96860,74.3,1.9
+apr,Pearl Harbor,96860,75.6,1.1
+may,Pearl Harbor,96860,77.2,0.8
+jun,Pearl Harbor,96860,79.5,0.4
+jul,Pearl Harbor,96860,80.8,0.5
+aug,Pearl Harbor,96860,81.8,0.5
+sep,Pearl Harbor,96860,81.5,0.7
+oct,Pearl Harbor,96860,80.2,2.2
+nov,Pearl Harbor,96860,77.7,2.3
+dec,Pearl Harbor,96860,74.8,2.9
+jan,Camp H M Smith,96861,71.5,8.5
+feb,Camp H M Smith,96861,71.8,6
+mar,Camp H M Smith,96861,72.3,6.5
+apr,Camp H M Smith,96861,73.2,6.6
+may,Camp H M Smith,96861,74.6,5
+jun,Camp H M Smith,96861,76.3,4.6
+jul,Camp H M Smith,96861,77,5.1
+aug,Camp H M Smith,96861,77.9,4.5
+sep,Camp H M Smith,96861,77.9,4.9
+oct,Camp H M Smith,96861,77,6.4
+nov,Camp H M Smith,96861,74.8,9.5
+dec,Camp H M Smith,96861,73.1,7.3
+jan,M C B H Kaneohe Bay,96863,73.8,4.4
+feb,M C B H Kaneohe Bay,96863,73.8,5.8
+mar,M C B H Kaneohe Bay,96863,74.4,2.9
+apr,M C B H Kaneohe Bay,96863,75.1,3.1
+may,M C B H Kaneohe Bay,96863,76.4,2.1
+jun,M C B H Kaneohe Bay,96863,78,2.2
+jul,M C B H Kaneohe Bay,96863,78.9,1.7
+aug,M C B H Kaneohe Bay,96863,79.8,1.7
+sep,M C B H Kaneohe Bay,96863,80.3,2
+oct,M C B H Kaneohe Bay,96863,79.3,3
+nov,M C B H Kaneohe Bay,96863,77.1,4.4
+dec,M C B H Kaneohe Bay,96863,75,4
+jan,Wake Island,96898,73,2.7
+feb,Wake Island,96898,73,2.4
+mar,Wake Island,96898,74.3,1.9
+apr,Wake Island,96898,75.6,1.1
+may,Wake Island,96898,77.2,0.8
+jun,Wake Island,96898,79.5,0.4
+jul,Wake Island,96898,80.8,0.5
+aug,Wake Island,96898,81.8,0.5
+sep,Wake Island,96898,81.5,0.7
+oct,Wake Island,96898,80.2,2.2
+nov,Wake Island,96898,77.7,2.3
+dec,Wake Island,96898,74.8,2.9

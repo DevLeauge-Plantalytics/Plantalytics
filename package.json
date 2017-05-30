@@ -25,6 +25,7 @@
     "body-parser": "^1.17.2",
     "bootstrap": "^3.3.7",
     "connect-redis": "^3.3.0",
+    "csv": "^1.1.1",
     "express": "^4.15.3",
     "express-session": "^1.15.3",
     "method-override": "^2.3.8",
