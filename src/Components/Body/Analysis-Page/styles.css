@@ -138,6 +138,7 @@
   top: 25%;
   left: 5%;
   width: 20%;
+  text-align: center;
 }
 
 #data-visuals-list {
@@ -148,4 +149,11 @@
 }
 #data-visual {
   margin-top: 0;
+}
+#crop-list-title {
+  font-family: 'Futura';
+  margin: 0;
+}
+.crop {
+  font-family: 'Futura';
 }
