@@ -5,6 +5,7 @@ const PORT = process.env.PORT || 5000;
 const bodyParser = require('body-parser');
 const db = require('./models');
 const fs = require('fs');
+const NodeGeocoder = require('node-geocoder');
 
 const methodOverride = require('method-override');
 
@@ -102,6 +103,28 @@ app.use(express.static('./public') );
 app.use('/api', require('./api'));
 
 // db.sequelize.sync({force:true});
+
+var options = {
+   provider: 'google',
+   httpAdapter: 'https',
+   apiKey: 'AIzaSyBq9bEx9M3S3uXzii-sbvtpE0t-TQxjzy4',
+   formatter: null
+};
+
+var geocoder = NodeGeocoder(options);
+
+app.get(`/localisation/:address`, function (req, res){
+
+  geocoder.geocode(req.params.address)
+  .then((location) => {
+    res.json(location);
+  })
+  .catch(err => {
+    res.status(400).send({error: err.message});
+  });
+
+});
+
 
 app.listen(PORT, () =>{
   console.log(`Listening on ${PORT}`);

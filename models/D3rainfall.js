@@ -3,7 +3,7 @@ module.exports = function(sequelize, DataTypes) {
   var D3rainfall = sequelize.define("D3rainfall",
     {
       month: {
-        type: DataTypes.DATE,
+        type: DataTypes.INTEGER,
         allowNull: false,
       },
       rainfall: {

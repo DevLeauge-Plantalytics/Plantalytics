@@ -3,7 +3,7 @@ module.exports = function(sequelize, DataTypes) {
   var D3temp = sequelize.define("D3temp",
     {
       month: {
-        type: DataTypes.DATE,
+        type: DataTypes.INTEGER,
         allowNull: false,
       },
       temperature: {
