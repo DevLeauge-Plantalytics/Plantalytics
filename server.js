@@ -87,7 +87,7 @@ passport.deserializeUser(function(user, done) {
   });
 });
 
-app.get('/api/logout', function (req, res){
+app.get('/logout', function (req, res){
   console.log(req.isAuthenticated());
   req.logout();
   console.log(req.isAuthenticated());
