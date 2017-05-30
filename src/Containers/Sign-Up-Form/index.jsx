@@ -21,22 +21,10 @@ class SignUpForm extends Component {
     };
   }
 
-  addUser(user){
+  addUser = (user) => {
     if (user.password === user.confirmpass) {
       if (user.agreed === true) {
-        return fetch(`/localisation/${user.address}`, {
-          credentials: 'include',
-        })
-        .then( res => res.json())
-        .catch(err => {
-          console.log(err);
-          throw err;
-        })
-        .then( location => {
-          user.latitude = location[0].latitude,
-          user.longitude = location[0].longitude,
-          this.props.addUser(user);
-        })
+        this.props.addUser(this.state)
       } else {
         alert('Please Accept the Terms of Aggreement');
       }

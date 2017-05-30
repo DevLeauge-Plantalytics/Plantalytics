@@ -2,6 +2,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {getDataByAddress} from '../../../Actions';
+import {withRouter} from 'react-router'
 
 class LocInput extends Component {
   constructor(props) {
@@ -13,7 +14,12 @@ class LocInput extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    this.props.getDataByAddress(this.state.address);
+    this.props.getDataByAddress(this.state.address)
+      .then(data => {
+        if(data.info !== undefined) {
+          this.props.history.push('/location')
+        }
+      })
   }
 
   handleChange = (event) => {
@@ -50,4 +56,4 @@ const mapDispatchToProps = dispatch => {
     getDataByAddress: address => dispatch(getDataByAddress(address))
   }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(LocInput)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(LocInput))
