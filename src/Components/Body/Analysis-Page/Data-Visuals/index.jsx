@@ -88,8 +88,8 @@ class DataVisuals extends Component {
     return (
       <div>
         <ul id="data-visuals-list">
-          <li className="data-visual">{this.renderChartTemp()}</li>
-          <li className="data-visual">{this.renderChartRain()}</li>
+          <li className="data-visual1">{this.renderChartTemp()}</li>
+          <li className="data-visual2">{this.renderChartRain()}</li>
         </ul>
       </div>
     )
