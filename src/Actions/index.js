@@ -6,6 +6,7 @@ export const ADD_USER = 'ADD_USER';
 export const UPDATE_USER = 'UPDATE_USER';
 export const DELETE_USER = 'DELETE_USER';
 export const LOGIN = 'LOGIN';
+export const LOGOUT = 'LOGOUT';
 export const LOAD_CONVERSATION = 'LOAD_CONVERSATION';
 export const SEND_MESSAGE = 'SEND_MESSAGE';
 export const GET_MESSAGES = 'GET_MESSAGES';
@@ -64,6 +65,14 @@ export const signIn = (user) => {
       localStorage.setItem('username', user.username);
       localStorage.setItem('id', userInfo.id);
       return dispatch({type: LOGIN });
+    });
+  };
+};
+export const signOut = () => {
+  return dispatch => {
+    return API.signoutPassport()
+    .then( () => {
+      return dispatch({type: LOGOUT });
     });
   };
 };

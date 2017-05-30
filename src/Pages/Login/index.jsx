@@ -3,9 +3,14 @@ import LoginForm from '../../Containers/Login-Form';
 import SignUpBtn from '../../Components/SignUpButton';
 import './styles.css';
 
-export default () => (
-  <div id="login-page">
+const loggedInCheck = () => {
+  console.log(localStorage);
+  return
+  (<div id="login-page">
     <LoginForm/>
     <SignUpBtn/>
-  </div>
+  </div>;
+};
+export default () => (
+  loggedInCheck()
 )
