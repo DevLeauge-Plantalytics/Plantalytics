@@ -14,8 +14,10 @@ class LocInput extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
+    console.log(this.state.address);
     this.props.getDataByAddress(this.state.address)
       .then(data => {
+        console.log(data);
         if(data.info !== undefined) {
           this.props.history.push('/location')
         }
@@ -41,7 +43,7 @@ class LocInput extends Component {
           name="address"
         required/>
 
-        <button type="submit">Search</button>
+        <button id="get-started-btn" type="submit">Search</button>
       </form>
     )
   }
