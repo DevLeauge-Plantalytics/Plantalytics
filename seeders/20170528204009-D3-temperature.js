@@ -2,7 +2,7 @@
 
 module.exports = {
   up: function (queryInterface, Sequelize) {
-      return queryInterface.bulkInsert('D3temperature', [{
+      return queryInterface.bulkInsert('D3temps', [{
         month: 1,
         temperature: 71.6 ,
         latitude: 21.309052,
@@ -293,6 +293,6 @@ module.exports = {
   },
 
   down: function (queryInterface, Sequelize) {
-    return queryInterface.bulkDelete('Messages', null, {});
+    return queryInterface.bulkDelete('D3temps', null, {});
   }
 };

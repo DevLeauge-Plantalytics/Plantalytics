@@ -11,6 +11,8 @@ export const SEND_MESSAGE = 'SEND_MESSAGE';
 export const GET_MESSAGES = 'GET_MESSAGES';
 export const FILTER_USERNAME = 'FILTER_USERNAME';
 export const GET_LATLONG = 'GET_LATLONG';
+export const GET_D3_RAIN = 'GET_D3_RAIN';
+export const GET_D3_TEMP = 'GET_D3_TEMP';
 
 export const loadUsers = id => {
   return dispatch => {
@@ -93,3 +95,19 @@ export const filterByUsername = (username) => {
     dispatch({type: FILTER_USERNAME, username});
   };
 };
+export const getD3Rain = () => {
+  return dispatch => {
+    return API.loadRain()
+      .then((data) => {
+        dispatch({type: GET_D3_RAIN, data});
+      });
+    };
+  };
+export const getD3Temp = () => {
+  return dispatch => {
+    return API.loadTemp()
+      .then((data) => {
+        dispatch({type: GET_D3_TEMP, data});
+      });
+    };
+  };
