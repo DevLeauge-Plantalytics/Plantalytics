@@ -22,7 +22,6 @@ class SignUpForm extends Component {
   }
 
   addUser(user){
-    //let confirmed = document.getElementById('confirmed');
     if (user.password === user.confirmpass) {
       if (user.agreed === true) {
         return fetch(`/localisation/${user.address}`, {

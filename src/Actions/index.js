@@ -13,6 +13,7 @@ export const FILTER_USERNAME = 'FILTER_USERNAME';
 export const GET_LATLONG = 'GET_LATLONG';
 export const GET_D3_RAIN = 'GET_D3_RAIN';
 export const GET_D3_TEMP = 'GET_D3_TEMP';
+export const DISPLAY_DATA = 'DISPLAY_DATA';
 
 export const loadUsers = id => {
   return dispatch => {
@@ -112,3 +113,4 @@ export const getD3Temp = () => {
       });
     };
   };
+export const getDataByAddress = address => dispatch => API.getLatLong(address).then(API.getClosestData).then(info => dispatch({type: DISPLAY_DATA, info}));

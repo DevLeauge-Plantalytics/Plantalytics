@@ -1,4 +1,7 @@
+/*jshint esversion: 6*/
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {getDataByAddress} from '../../../Actions';
 
 class LocInput extends Component {
   constructor(props) {
@@ -8,29 +11,14 @@ class LocInput extends Component {
     };
   }
 
-  latlong(address){
-    return fetch(`/localisation/${address}`, {
-        credentials: 'include',
-      })
-      .then( res => res.json())
-      .catch(err => {
-        console.log(err);
-        throw err;
-      })
-      .then( location => {
-        let latitude = location[0].latitude;
-        let longitude = location[0].longitude;
-      })
-  }
-
   handleSubmit = (event) => {
     event.preventDefault();
-    this.latlong(this.state.address);
+    this.props.getDataByAddress(this.state.address);
   }
 
   handleChange = (event) => {
     event.preventDefault();
-    this.setState({[event.target.name]: event.target.value})
+    this.setState({[event.target.name]: event.target.value});
   }
 
   render(){
@@ -52,4 +40,14 @@ class LocInput extends Component {
     )
   }
 }
-export default LocInput;
+
+const mapStateToProps = state => {
+  return {}
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    getDataByAddress: address => dispatch(getDataByAddress(address))
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(LocInput)
