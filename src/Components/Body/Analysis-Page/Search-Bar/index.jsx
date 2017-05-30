@@ -8,7 +8,9 @@ class SearchBar extends Component {
   render(){
     return (
       <div id="analysis-search">
+      <h1 id="look-up-locat">LOOK UP ANOTHER LOCATION</h1>
         <input id="analysis-search-bar" type="text" placeholder="Search Plantalytics"/>
+        <button id="analysis-search-btn">Search</button>
       </div>
     )
   }

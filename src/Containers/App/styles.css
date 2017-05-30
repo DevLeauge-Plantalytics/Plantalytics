@@ -79,6 +79,10 @@
   font-size: 18px;
   border-radius: 25px;
   color: #fff;
+  cursor: pointer;
+}
+#get-started-btn:focus {
+  outline: none;
 }
 
 #home-descrip {
