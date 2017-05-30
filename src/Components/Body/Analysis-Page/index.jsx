@@ -6,7 +6,7 @@ import AnalysisMap from './Analysis-Map';
 import DataVisuals from './Data-Visuals';
 //import SearchBar from './Search-Bar';
 import SuggestedCrops from './Suggested-Crops';
-import SuggestedSuppliers from './Suggested-Sups';
+// import SuggestedSuppliers from './Suggested-Sups';
 
 import './styles.css';
 
@@ -24,7 +24,6 @@ class AnalysisPage extends Component {
           <div id="right-side-analysis-page">
             <div id="crops-supplier-column">
               <SuggestedCrops/>
-              <SuggestedSuppliers/>
             </div>
             <DataVisuals/>
           </div>
