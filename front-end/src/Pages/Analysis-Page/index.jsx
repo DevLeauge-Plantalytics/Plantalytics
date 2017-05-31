@@ -5,6 +5,7 @@ import Header from '../../Components/Header';
 import AnalysisHeader from '../../Components/AnalysisHeader';
 import AnalysisMap from '../../Containers/Analysis-Map';
 import DataVisuals from '../../Containers/Data-Visuals';
+import LocSearch from '../../Containers/LocSearch';
 //import SearchBar from '../../Containers/Search-Bar';
 import SuggestedCrops from '../../Containers/Suggested-Crops';
 // import SuggestedSuppliers from '../../Containers/Suggested-Sups';
@@ -29,6 +30,7 @@ class AnalysisPage extends Component {
           </div>
           <div id="analysis-map">
             <AnalysisMap/>
+            <LocSearch/>
           </div>
         </div>
       </div>
