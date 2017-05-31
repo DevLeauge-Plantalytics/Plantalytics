@@ -11,7 +11,7 @@ import App from './Containers/App';
 import UserLogin from './Pages/Login';
 import UserSignUp from './Pages/Signup';
 
-import AnalysisPage from './Components/Body/Analysis-Page';
+import AnalysisPage from './Pages/Analysis-Page';
 import Dashboard from './Pages/Dashboard';
 import EditUser from './Containers/Edit-User-Form';
 import UserProfile from './Pages/User-Profile';

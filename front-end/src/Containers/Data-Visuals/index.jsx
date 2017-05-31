@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {getDataByAddress} from '../../../../Actions';
+import {getDataByAddress} from '../../Actions';
 var BarChart = require('react-d3-basic').BarChart;
 var LineChart = require('react-d3-basic').LineChart;
 
@@ -35,7 +35,6 @@ class DataVisuals extends Component {
     yScale = "linear";
 
     return (
-      <div>
         <BarChart
           title= {title}
           data= {generalChartData}
@@ -48,7 +47,6 @@ class DataVisuals extends Component {
           yScale= {yScale}
           yLabel = {yLabel}
        />
-      </div>
     );
   }
 
@@ -74,7 +72,6 @@ class DataVisuals extends Component {
     yScale = "linear";
 
     return (
-      <div>
         <LineChart
           title= {title}
           data= {generalChartData}
@@ -87,18 +84,15 @@ class DataVisuals extends Component {
           yScale= {yScale}
           yLabel = {yLabel}
        />
-      </div>
     );
   }
 
   render(){
     return (
-      <div>
-        <ul id="data-visuals-list">
-          <li className="data-visual1">{this.renderChartTemp()}</li>
-          <li className="data-visual2">{this.renderChartRain()}</li>
-        </ul>
-      </div>
+        <div id="data-visuals-list">
+          <div className="tempDiv">{this.renderChartTemp()}</div>
+          <div className="raindDiv">{this.renderChartRain()}</div>
+        </div>
     )
   }
 }
