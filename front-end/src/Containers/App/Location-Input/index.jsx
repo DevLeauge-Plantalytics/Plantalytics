@@ -14,6 +14,7 @@ class LocInput extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
+    localStorage.setItem('addressSearched', this.state.address);
     this.props.getDataByAddress(this.state.address)
       .then(data => {
         if(data.info !== undefined) {

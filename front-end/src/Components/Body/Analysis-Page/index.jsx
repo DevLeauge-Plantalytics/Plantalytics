@@ -19,10 +19,10 @@ class AnalysisPage extends Component {
     return (
       <div id="analysis-page">
         {this.props.loggedIn &&
-          <p> You are logged in as {localStorage.username}</p>
+          <p id="loggedInfo"> You are logged in as {localStorage.username}</p>
         }
         {!this.props.loggedIn &&
-          <p> You are currently not logged in</p>
+          <p id="loggedInfo"> You are currently not logged in</p>
         }
         <Header/>
         <AnalysisHeader/>

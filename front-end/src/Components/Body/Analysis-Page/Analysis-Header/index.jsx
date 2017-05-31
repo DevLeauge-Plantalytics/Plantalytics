@@ -6,14 +6,23 @@ class AnalysisHeader extends Component {
     this.title = 'No-Warning'
   }
   render(){
+
     return (
       <div id="analysis-header">
+      {localStorage.loggedIn === undefined &&
         <ul id="analysis-header-items">
-          <li className="analysis-header-item">Find A Supplier</li>
-          <li className="analysis-header-item">Share/Save</li>
+          <li className="analysis-header-item">You are looking information for <span>{localStorage.addressSearched}</span></li>
         </ul>
+      }
+      {localStorage.loggedIn &&
+        <ul id="analysis-header-items">
+          <li className="analysis-header-item">You are looking information for <span>{localStorage.address}</span></li>
+        </ul>
+      }
       </div>
     )
   }
 }
+
 export default AnalysisHeader;
+
