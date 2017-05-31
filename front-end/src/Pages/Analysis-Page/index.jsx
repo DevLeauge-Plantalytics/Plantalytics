@@ -18,15 +18,18 @@ class AnalysisPage extends Component {
   render(){
     return (
       <div id="analysis-page">
-        <Header/>
-        <AnalysisHeader/>
-
+        <div className="headers">
+          <Header/>
+          <AnalysisHeader/>
+        </div>
         <div id="body-analysis">
-          <div id="right-side-analysis-page">
+          <div id="analysis-data">
             <SuggestedCrops/>
             <DataVisuals/>
           </div>
-          <AnalysisMap/>
+          <div id="analysis-map">
+            <AnalysisMap/>
+          </div>
         </div>
       </div>
     )

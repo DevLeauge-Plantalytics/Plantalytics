@@ -11,15 +11,12 @@ class Map extends Component {
 
   render() {
     return (
-      <div id="mapDiv" style={{height: '200px', width: '200px'}}>
         <GoogleMapReact
           bootstrapURLKeys={{key: GOOGLE_MAP_KEY}}
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
         >
         </GoogleMapReact>
-      </div>
-
     );
   }
 }
