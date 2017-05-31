@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
 import {signIn} from '../../Actions';
+import {withRouter} from 'react-router';
 
 class LoginForm extends Component {
   constructor(props){
@@ -19,14 +21,22 @@ class LoginForm extends Component {
   handlePasswordChange = (event) => {
     this.setState({ password : event.target.value });
   }
-
+  reset() {
+    this.setState({
+      username: "",
+      password: ""
+    });
+  }
   handleSubmit = (event) => {
-    event.preventDefault();
-    this.props.signIn(this.state)
+    this.props.signIn(this.state);
+    this.reset();
   }
 
 
   render(){
+    if (localStorage.loggedIn) {
+      this.props.history.push('/location');
+    }
     return (
         <form id="Login" onSubmit={this.handleSubmit}>
           <input className="login-form-info" type="text" placeholder="Username" onChange={this.handleUsernameChange} value={this.state.username} />
@@ -39,7 +49,9 @@ class LoginForm extends Component {
 }
 
 const mapStateToProps = (state) => {
-  return {};
+  return {
+    loggedIn: state.users.loggedIn
+  };
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
@@ -50,7 +62,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   }
 }
 
-export default  connect(
+export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(LoginForm);
+)(LoginForm));

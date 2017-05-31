@@ -67,8 +67,8 @@ users.post('/', (req,res) =>{
         "password": hash,
         "address": req.body.address,
         "zipcode": req.body.zipcode,
-        "latitude": req.body.latitude,
-        "longitude": req.body.longitude,
+        "latitude": req.body.location[0].latitude,
+        "longitude": req.body.location[0].longitude,
         "supplier": req.body.supplier
       })
       .then(res.json.bind(res))
