@@ -6,6 +6,7 @@ const initialState = {
   username: localStorage.username || null,
   loggedIn: localStorage.loggedIn || false,
   id: localStorage.id || null,
+  address: localStorage.address || null,
 };
 
 const users = (state = initialState, action) => {
@@ -40,6 +41,7 @@ const users = (state = initialState, action) => {
         loggedIn: true,
         username: localStorage.username,
         id: localStorage.id,
+        address: localStorage.address
       });
 
     case LOGOUT:

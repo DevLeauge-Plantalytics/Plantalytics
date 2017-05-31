@@ -64,6 +64,7 @@ export const signIn = user => {
       localStorage.setItem('loggedIn', true);
       localStorage.setItem('username', user.username);
       localStorage.setItem('id', userInfo.id);
+      localStorage.setItem('address', userInfo.address);
       return dispatch({type: LOGIN });
     });
   };
