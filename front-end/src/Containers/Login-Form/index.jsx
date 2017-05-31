@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {Link} from 'react-router-dom';
-import {signIn} from '../../Actions';
 import {withRouter} from 'react-router';
+import {signIn} from '../../Actions';
 
 class LoginForm extends Component {
   constructor(props){
@@ -12,6 +11,8 @@ class LoginForm extends Component {
       username: "",
       password: "",
     };
+
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleUsernameChange = (event) => {
@@ -28,14 +29,15 @@ class LoginForm extends Component {
     });
   }
   handleSubmit = (event) => {
+    event.preventDefault();
     this.props.signIn(this.state);
-    this.reset();
+    console.log(localStorage.loggedIn);
   }
 
 
   render(){
-    if (localStorage.loggedIn) {
-      this.props.history.push('/location');
+    if (this.props.loggedIn) {
+      this.props.history.push('/home');
     }
     return (
         <form id="Login" onSubmit={this.handleSubmit}>

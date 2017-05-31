@@ -95,7 +95,9 @@ export const signinPassport = user => {
 export const signoutPassport = () => {
   return new Promise(function (resolve, reject) {
     makeRequest('GET', `/logout/`)
-    .then(localStorage.clear())
+    .then(res => {
+      resolve(JSON.parse(res));
+    })
     .catch (err => {
       reject(err);
     });

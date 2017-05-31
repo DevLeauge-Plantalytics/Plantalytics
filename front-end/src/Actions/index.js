@@ -72,8 +72,11 @@ export const signIn = user => {
 export const signOut = () => {
   return dispatch => {
     return API.signoutPassport()
-    .then( () => {
-      return dispatch({type: LOGOUT });
+    .then( res => {
+      if (res.success) {
+        localStorage.clear();
+        return dispatch({type: LOGOUT });
+      }
     });
   };
 };
