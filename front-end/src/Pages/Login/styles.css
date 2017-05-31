@@ -1,9 +1,12 @@
 #Login {
-  width: 45%;
-  height: 200px;
-  margin: 0 auto;
+  position: absolute;
+  top: 125px;
+  left: 25%;
+  width: 50%;
+  height: 175px;
   border: 1px solid #dfdfdf;
-  border-width: 0px 1px 0px 1px;
+  border-width: 1px 1px 0px 1px;
+  padding-top: 25px;
 }
 .login-form-info {
   font-family: 'Futura';
@@ -41,8 +44,10 @@
   outline: none;
 }
 #sign-up-from-login {
-  width: 45%;
-  margin: 0 auto;
+  position: absolute;
+  top: 325px;
+  left: 25%;
+  width: 50%;
   border: 1px solid #dfdfdf;
   border-width: 0px 1px 1px 1px;
 }
@@ -67,25 +72,4 @@
 }
 #sufl-btn:focus {
   outline: none;
-}
-#social-login {
-  width: 45%;
-  height: 150px;
-  border: 1px solid #dfdfdf;
-  border-width: 1px 1px 0 1px;
-  margin: 50px auto 0 auto;
-}
-#facebook-login {
-  font-family: 'Futura';
-  margin: 15px auto;
-  width: 50%;
-  height: 50px;
-  display: block;
-}
-#google-login {
-  font-family: 'Futura';
-  margin: 15px auto;
-  width: 50%;
-  height: 50px;
-  display: block;
 }
