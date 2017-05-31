@@ -7,6 +7,10 @@ import {getMessages} from '../../Actions';
 
 class Inbox extends Component {
 
+  constructor(props) {
+    super(props);
+  }
+
   componentWillMount() {
     this.props.getMessages(localStorage.id);
   }

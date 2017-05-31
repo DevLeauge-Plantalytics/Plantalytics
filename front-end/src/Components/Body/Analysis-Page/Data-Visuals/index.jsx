@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import {getDataByAddress} from '../../../../Actions';
 var BarChart = require('react-d3-basic').BarChart;
+var LineChart = require('react-d3-basic').LineChart;
 
 class DataVisuals extends Component {
 
@@ -8,8 +10,12 @@ class DataVisuals extends Component {
     super(props);
   }
 
+  componentDidMount() {
+    this.props.getDataByAddress(localStorage.address);
+  }
+
   renderChartTemp(){
-    var generalChartData = this.props.D3Data.temp
+    var generalChartData = this.props.temp
 
     var width = 350,
     height = 200,
@@ -47,7 +53,7 @@ class DataVisuals extends Component {
   }
 
   renderChartRain(){
-    var generalChartData = this.props.D3Data.rain
+    var generalChartData = this.props.rain
 
     var width = 350,
     height = 200,
@@ -55,7 +61,8 @@ class DataVisuals extends Component {
     chartSeries = [
       {
         field: 'rainfall',
-        name: 'Rain data'
+        name: 'Rain data',
+        color: '#ff7f0e'
       }
     ],
     x = function(d) {
@@ -68,7 +75,7 @@ class DataVisuals extends Component {
 
     return (
       <div>
-        <BarChart
+        <LineChart
           title= {title}
           data= {generalChartData}
           width= {width}
@@ -98,12 +105,19 @@ class DataVisuals extends Component {
 
 const mapStateToProps = state => {
   return {
-    D3Data: state.D3.locationData
+    rain: state.D3.rain,
+    temp: state.D3.temp,
+    soil: state.D3.soil,
+    latitude: state.users.latitude,
+    longitude: state.users.longitude
   }
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
+   getDataByAddress: (address) => {
+      dispatch(getDataByAddress(address))
+    }
   }
 }
 

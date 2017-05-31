@@ -71,7 +71,8 @@ passport.serializeUser(function(user, done) {
 // ^ ---------- given from authentication strategy
   // building the object to serialize to save
   return done(null, {
-    username: user.username
+    username: user.username,
+    address: user.address
   });
 });
 
@@ -95,7 +96,8 @@ app.get('/logout', function (req, res){
 });
 
 app.post('/login', passport.authenticate('local'), (req, res) => {
-  res.json({id: req.user.id, username: req.user.username});
+
+  res.json({id: req.user.id, username: req.user.username, address: req.user.address});
 });
 
 app.use(express.static('./public') );

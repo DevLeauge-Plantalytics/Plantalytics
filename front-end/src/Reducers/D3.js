@@ -1,14 +1,18 @@
 /*jshint esversion: 6*/
 import {DISPLAY_DATA} from '../Actions';
 const initialState = {
-  locationData: []
+  rain: [],
+  temp: [],
+  soil: [],
 };
 
 const D3 = (state = initialState, action) => {
   switch(action.type){
     case DISPLAY_DATA:
       return Object.assign({}, state, {
-        locationData: action.info
+        rain: action.info.rain,
+        temp: action.info.temp,
+        soil: action.info.soil,
       });
 
     default:
