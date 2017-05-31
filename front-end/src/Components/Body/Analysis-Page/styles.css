@@ -142,7 +142,7 @@
 
 #crop-list-container {
   position: absolute;
-  top: 25%;
+  top: 18%;
   left: 5%;
   width: 20%;
   text-align: center;
@@ -150,7 +150,7 @@
 
 #data-visuals-list {
   position: absolute;
-  top: 25%;
+  top: 18%;
   left: 30%;
   margin: 0;
 }

@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 
 import Header from '../../Header';
 import AnalysisHeader from './Analysis-Header';
@@ -13,11 +14,16 @@ import './styles.css';
 class AnalysisPage extends Component {
   constructor(props) {
     super(props);
-    this.title = 'No-Warning'
   }
   render(){
     return (
       <div id="analysis-page">
+        {this.props.loggedIn &&
+          <p> You are logged in as {localStorage.username}</p>
+        }
+        {!this.props.loggedIn &&
+          <p> You are currently not logged in</p>
+        }
         <Header/>
         <AnalysisHeader/>
         <div id="body-analysis">
@@ -35,4 +41,19 @@ class AnalysisPage extends Component {
     )
   }
 }
-export default AnalysisPage;
+
+const mapStateToProps = state => {
+  return {
+    loggedIn: state.users.loggedIn
+  }
+}
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    }
+}
+
+export default  connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(AnalysisPage);
