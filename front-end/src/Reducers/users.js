@@ -4,7 +4,7 @@ const initialState = {
   users: [],
   singleUser: [],
   username: localStorage.username || null,
-  loggedIn: localStorage.logged || false,
+  loggedIn: localStorage.loggedIn || false,
   id: localStorage.id || null,
 };
 

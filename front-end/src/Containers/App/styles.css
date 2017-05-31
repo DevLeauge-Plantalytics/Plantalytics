@@ -25,6 +25,9 @@
   margin: 0;
   float: right;
 }
+.home-header-link{
+  color: black;
+}
 .home-header-slash {
   font-family: 'Futura';
   display: inline-block;

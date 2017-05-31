@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {addUser} from '../../Actions';
+import {withRouter} from 'react-router';
+import {addUser, signIn} from '../../Actions';
 
 class SignUpForm extends Component {
   constructor(props) {
@@ -24,26 +25,21 @@ class SignUpForm extends Component {
   addUser = (user) => {
     if (user.password === user.confirmpass) {
       if (user.agreed === true) {
-        this.props.addUser(this.state)
+        this.props.addUser(this.state);
+        console.log(this.props.loggedIn);
       } else {
         alert('Please Accept the Terms of Aggreement');
       }
     } else {
       alert("PASSWORDS DON'T MATCH");
-      this.reset('password');
+      this.reset();
     }
   }
-  reset(a){
-    if (a === 'password') {
-      this.setState({
-        password: "",
-        confirmpass: ""
-      });
-    } else if (a === 'email') {
-      this.setState({
-        email: ""
-      });
-    }
+  reset(){
+    this.setState({
+      password: "",
+      confirmpass: ""
+    });
   }
   handleSubmit = (event) => {
     event.preventDefault();
@@ -176,6 +172,7 @@ class SignUpForm extends Component {
 
 const mapStateToProps = (state) => {
   return {
+    loggedIn: state.users.loggedIn
   };
 }
 
@@ -183,11 +180,14 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     addUser: user => {
       dispatch(addUser(user))
+    },
+    signIn: (user) => {
+      dispatch(signIn(user))
     }
   }
 }
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(SignUpForm);
+)(SignUpForm));
