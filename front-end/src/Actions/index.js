@@ -141,7 +141,15 @@ export const makeRequest = (body) => {
   return dispatch => {
     return API.postRequest(JSON.stringify(body))
     .then( (request) => {
-      return dispatch({type: MAKE_REQ, request });
+      return API.postMessage(JSON.stringify({
+                                subject: `New request from ${localStorage.username}`,
+                                body:`Hi Buddy, ${localStorage.username} needs the following products from you and will offer you the following products in exchange` ,
+                                Sender:Number(localStorage.id),
+                                Receiver:2,
+                              }))
+      .then( () => {
+        return dispatch({type: MAKE_REQ, request });
+      });
     });
   };
 };
