@@ -4,7 +4,7 @@ import Header from '../../Components/Header'
 import UserAvatar from '../../Components/UserAvatar';
 import UserInfo from '../../Components/UserInfo';
 import UserNav from '../../Components/UserNav';
-import UserMap from '../../Components/UserMap';
+import UserMap from '../../Containers/Analysis-Map';
 import {getUserById} from '../../API';
 import {getUser} from '../../Actions';
 import './styles.css';
@@ -15,7 +15,8 @@ class UserProfile extends Component {
     this.title = 'No-Warning'
   }
   componentWillMount() {
-    this.props.getUser(localStorage.id);
+    localStorage.reqId = window.location.pathname.slice(9);
+    this.props.getUser(localStorage.reqId);
   }
 
   render(){
