@@ -1,10 +1,10 @@
 /*jshint esversion: 6*/
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {getDataByAddress} from '../../../Actions';
+import {getDataByAddress} from '../../Actions';
 import {withRouter} from 'react-router'
 
-class LocInput extends Component {
+class LocSearch extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -30,19 +30,16 @@ class LocInput extends Component {
 
   render(){
     return (
-      <form id="loc-input" onSubmit={this.handleSubmit}>
-        <h1 id="all-good-things">ALL GOOD THINGS GROWN, START AT HOME.</h1>
-
+      <form id="loc-search" onSubmit={this.handleSubmit}>
         <input
           id="location-input"
           type="text"
-          placeholder="Enter the address where you'll plant change"
+          placeholder="Enter a new address"
           value={this.state.address}
           onChange={this.handleChange}
           name="address"
         required/>
-
-        <button id="get-started-btn" type="submit">Search</button>
+        <button id="Search-Button" type="submit">Search</button>
       </form>
     )
   }
@@ -57,4 +54,4 @@ const mapDispatchToProps = dispatch => {
     getDataByAddress: address => dispatch(getDataByAddress(address))
   }
 }
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(LocInput))
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(LocSearch))

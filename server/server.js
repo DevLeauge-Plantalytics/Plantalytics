@@ -52,7 +52,6 @@ passport.use(new LocalStrategy (
       else {
         bcrypt.compare(password, user.password)
         .then(res => {
-          console.log(res);
           if (res) { return done(null, user); }
           else {
             return done(null, false, {message: 'bad password'});
@@ -104,7 +103,7 @@ app.use(express.static('./public') );
 
 app.use('/api', require('./api'));
 
-// db.sequelize.sync({force:true});
+//db.sequelize.sync({force:true});
 
 var options = {
    provider: 'google',
