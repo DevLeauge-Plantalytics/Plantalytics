@@ -38,7 +38,8 @@
   left: 35%;
   top: 20px;
   display: inline-block;
-  background-color: coral;
+  background-image: url(http://www.pof.fr/images/responsive/profileImages/profileImage_nonGender-220.png);
+  background-size: cover;
 }
 
 #loggedInfo {

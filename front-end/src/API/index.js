@@ -26,6 +26,7 @@ const makeRequest = (method, url, body) => {
     (body) ? xhr.send(body) : xhr.send();
   });
 };
+
 export const getUsers = () => {
   return new Promise(function (resolve, reject) {
     makeRequest('GET', `/api/users/`)

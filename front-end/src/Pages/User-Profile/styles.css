@@ -33,6 +33,7 @@ body {
   display: inline-block;
 }
 #user-info {
+  font-family: 'Futura';
   position: absolute;
   top: 25%;
   left: 33%;
@@ -43,10 +44,20 @@ body {
   display: inline-block;
 }
 #user-profile-pic {
-  background-color: coral;
+  background-image: url(http://www.pof.fr/images/responsive/profileImages/profileImage_nonGender-220.png);
+  background-size: cover;
   border-radius: 100px;
   height: 150px;
   width: 150px;
   margin: 25px auto;
 }
 
+#user-profile-map {
+  border: 1px solid #999;
+  height: 450px;
+  width: 300px;
+  position: absolute;
+  top: 25%;
+  left: 69%;
+  text-align: center;
+}

@@ -4,6 +4,7 @@ import Header from '../../Components/Header'
 import UserAvatar from '../../Components/UserAvatar';
 import UserInfo from '../../Components/UserInfo';
 import UserNav from '../../Components/UserNav';
+import UserMap from '../../Components/UserMap';
 import {getUserById} from '../../API';
 import {getUser} from '../../Actions';
 import './styles.css';
@@ -22,6 +23,7 @@ class UserProfile extends Component {
       <div id="user-profile">
         <Header/>
         <UserNav/>
+        <UserMap/>
         <UserAvatar user={this.props.singleUser} />
         <UserInfo user={this.props.singleUser} />
       </div>
