@@ -61,10 +61,10 @@ export const signIn = user => {
   return dispatch => {
     return API.signinPassport(JSON.stringify(user))
     .then( (userInfo) => {
-
       localStorage.setItem('loggedIn', true);
       localStorage.setItem('username', user.username);
       localStorage.setItem('id', userInfo.id);
+      localStorage.setItem('address', userInfo.address);
       return dispatch({type: LOGIN });
     });
   };
@@ -72,8 +72,11 @@ export const signIn = user => {
 export const signOut = () => {
   return dispatch => {
     return API.signoutPassport()
-    .then( () => {
-      return dispatch({type: LOGOUT });
+    .then( res => {
+      if (res.success) {
+        localStorage.clear();
+        return dispatch({type: LOGOUT });
+      }
     });
   };
 };

@@ -9,8 +9,12 @@ class Navigation extends Component {
   render(){
     return (
         <div id="main-nav-items">
-          <p className="header-nav-item">Download the App</p>
-          <p className="header-nav-item">Become a Supplier</p>
+        {localStorage.loggedIn &&
+          <div>
+            <p className="header-nav-item">Download the App</p>
+            <p className="header-nav-item">Become a Supplier</p>
+          </div>
+        }
         </div>
     )
   }

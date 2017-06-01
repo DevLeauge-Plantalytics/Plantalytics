@@ -4,8 +4,9 @@ const initialState = {
   users: [],
   singleUser: [],
   username: localStorage.username || null,
-  loggedIn: localStorage.logged || false,
+  loggedIn: localStorage.loggedIn || false,
   id: localStorage.id || null,
+  address: localStorage.address || null,
 };
 
 const users = (state = initialState, action) => {
@@ -22,7 +23,8 @@ const users = (state = initialState, action) => {
 
     case ADD_USER:
       return Object.assign({}, state, {
-        users: [action.user].concat(state.users)
+        users: [action.user].concat(state.users),
+        loggedIn: true
       });
 
     case UPDATE_USER:
@@ -40,6 +42,7 @@ const users = (state = initialState, action) => {
         loggedIn: true,
         username: localStorage.username,
         id: localStorage.id,
+        address: localStorage.address
       });
 
     case LOGOUT:

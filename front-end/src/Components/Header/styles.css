@@ -1,7 +1,12 @@
 #header {
+  display: flex;
+  flex-direction: row;
+
   position: absolute;
   top: 0;
-  width: 100%;
+  width: 90%;
+  margin-right: 5%;
+  margin-left: 5%;
   height: 75px;
   line-height: 75px;
   z-index: 99;
@@ -34,4 +39,10 @@
   top: 20px;
   display: inline-block;
   background-color: coral;
+}
+
+#loggedInfo {
+  margin-top: 0px;
+  font-family: 'Futura';
+  color: #686965;
 }
