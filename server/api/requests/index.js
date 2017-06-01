@@ -158,14 +158,6 @@ requests.post('/', (req,res) =>{
   });
 });
 
-requests.delete('/:id', (req,res) =>{
-  Request.destroy({where: {"id": req.params.id}})
-  .then(res.json.bind(res))
-  .catch((err) => {
-    res.status(400).send({error: err.message});
-  });
-});
-
 requests.put('/', (req,res) =>{
   // requested products must belong to the supplier
   Product.findAll({where: {id: {$in: req.body.request_products.map(p => p.id)}}})
