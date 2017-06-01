@@ -103,7 +103,7 @@ app.use(express.static('./public') );
 
 app.use('/api', require('./api'));
 
-//db.sequelize.sync({force:true});
+// db.sequelize.sync({force:true});
 
 var options = {
    provider: 'google',

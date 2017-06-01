@@ -159,3 +159,25 @@ export const getClosestData = (location) => {
     });
   });
 };
+export const getProducts= (id) => {
+  return new Promise(function (resolve, reject) {
+    makeRequest('GET', `/api/products/requests?id1=${localStorage.id}&id2=${id}`)
+    .then (products => {
+      resolve(JSON.parse(products));
+    })
+    .catch (err => {
+      reject(err);
+    });
+  });
+};
+export const postRequest= (body) => {
+  return new Promise(function (resolve, reject) {
+    makeRequest('POST', `/api/requests/`, body)
+    .then (request => {
+      resolve(JSON.parse(request));
+    })
+    .catch (err => {
+      reject(err);
+    });
+  });
+};
