@@ -1,5 +1,5 @@
 /*jshint esversion: 6*/
-import {LOAD_USERS, GET_USER, ADD_USER, UPDATE_USER, DELETE_USER, LOGIN, LOGOUT} from '../Actions';
+import {LOAD_USERS, GET_USER, ADD_USER, UPDATE_USER, DELETE_USER, LOGIN, LOGOUT, SET_USER_LATLONG} from '../Actions';
 const initialState = {
   users: [],
   singleUser: [],
@@ -7,6 +7,8 @@ const initialState = {
   loggedIn: localStorage.loggedIn || false,
   id: localStorage.id || null,
   address: localStorage.address || null,
+  latitude: 0,
+  longitude: 0
 };
 
 const users = (state = initialState, action) => {
@@ -40,9 +42,9 @@ const users = (state = initialState, action) => {
     case LOGIN:
       return Object.assign({}, state, {
         loggedIn: true,
-        username: localStorage.username,
-        id: localStorage.id,
-        address: localStorage.address
+        username: action.userInfo.username,
+        id: action.userInfo.id,
+        address: action.userInfo.address
       });
 
     case LOGOUT:
@@ -50,6 +52,12 @@ const users = (state = initialState, action) => {
         loggedIn: false,
         username: null,
         id: null,
+      });
+
+    case SET_USER_LATLONG:
+      return Object.assign({}, state, {
+        latitude: action.location[0].latitude,
+        longitude: action.location[0].longitude
       });
 
     default:
