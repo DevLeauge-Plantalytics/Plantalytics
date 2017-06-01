@@ -31,7 +31,6 @@ class LoginForm extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     this.props.signIn(this.state);
-    console.log(localStorage.loggedIn);
   }
 
 
