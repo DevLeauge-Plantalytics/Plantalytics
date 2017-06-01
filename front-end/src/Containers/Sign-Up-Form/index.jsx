@@ -22,9 +22,9 @@ class SignUpForm extends Component {
     };
   }
 
-  componentWillMount() {
+  componentDidMount() {
     if (localStorage.autoSup === "true") {
-      console.log(this.render().props.children[9].props.children[0]);
+      this.handleSupplierChange();
     }
   }
   addUser = (user) => {
@@ -56,8 +56,8 @@ class SignUpForm extends Component {
     this.setState({[event.target.name]: event.target.value})
   }
 
-  handleSupplierChange = (event) => {
-    let checkBox = event.target;
+  handleSupplierChange = () => {
+    let checkBox = document.getElementById('sup-check');
     if (this.state.supplier === false) {
       checkBox.style.backgroundColor = '#8db500';
       this.setState({supplier: true});
@@ -66,8 +66,8 @@ class SignUpForm extends Component {
       this.setState({supplier: false});
     }
   }
-  handleAgreedChange = (event) => {
-    let checkBox = event.target;
+  handleAgreedChange = () => {
+    let checkBox = document.getElementById('agree-check');
     if (this.state.agreed === false) {
       checkBox.style.backgroundColor = '#8db500';
       this.setState({agreed: true});
