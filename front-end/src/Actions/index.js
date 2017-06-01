@@ -12,6 +12,10 @@ export const SEND_MESSAGE = 'SEND_MESSAGE';
 export const GET_MESSAGES = 'GET_MESSAGES';
 export const FILTER_USERNAME = 'FILTER_USERNAME';
 export const DISPLAY_DATA = 'DISPLAY_DATA';
+export const LOAD_PRODUCTS_R = 'LOAD_PRODUCTS_R';
+export const MAKE_REQ = 'MAKE_REQ';
+export const UPDATE_ARR_REQ = 'UPDATE_ARR_REQ';
+export const UPDATE_ARR_QUANT = 'UPDATE_ARR_QUANT';
 
 export const loadUsers = id => {
   return dispatch => {
@@ -115,3 +119,31 @@ export const getDataByAddress = (address) =>
   .then(info =>
     dispatch({type: DISPLAY_DATA, info})
   );
+
+export const loadProducts = (id) => {
+  return dispatch => {
+    return API.getProducts(id)
+      .then( (products) => {
+        return dispatch({type: LOAD_PRODUCTS_R, products});
+      });
+    };
+  };
+export const makeRequest = (body) => {
+  return dispatch => {
+    return API.postRequest(JSON.stringify(body))
+    .then( (request) => {
+      return dispatch({type: MAKE_REQ, request });
+    });
+  };
+};
+export const updateArrayRequest = (id, bool) => {
+  return dispatch => {
+    return dispatch({type: UPDATE_ARR_REQ, id, bool });
+  };
+};
+export const updateQuantRequest = (id, quantity) => {
+  return dispatch => {
+    return dispatch({type: UPDATE_ARR_QUANT, id, quantity });
+  };
+};
+
