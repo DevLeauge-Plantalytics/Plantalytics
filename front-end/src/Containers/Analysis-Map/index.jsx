@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
-import {GOOGLE_MAP_KEY} from '../../keys'
+import {GOOGLE_MAP_KEY} from '../../keys';
 
 class Map extends Component {
   static defaultProps = {
