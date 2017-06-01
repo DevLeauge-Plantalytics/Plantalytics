@@ -16,6 +16,7 @@ export const LOAD_PRODUCTS_R = 'LOAD_PRODUCTS_R';
 export const MAKE_REQ = 'MAKE_REQ';
 export const UPDATE_ARR_REQ = 'UPDATE_ARR_REQ';
 export const UPDATE_ARR_QUANT = 'UPDATE_ARR_QUANT';
+export const SET_USER_LATLONG = 'SET_USER_LATLONG';
 
 export const loadUsers = () => {
   return dispatch => {
@@ -69,7 +70,7 @@ export const signIn = user => {
       localStorage.setItem('username', user.username);
       localStorage.setItem('id', userInfo.id);
       localStorage.setItem('address', userInfo.address);
-      return dispatch({type: LOGIN });
+      return dispatch({type: LOGIN, userInfo });
     });
   };
 };
@@ -81,6 +82,14 @@ export const signOut = () => {
         localStorage.clear();
         return dispatch({type: LOGOUT });
       }
+    });
+  };
+};
+export const getUserInfo = address => {
+  return dispatch => {
+    return API.getLatLong(address)
+    .then(location => {
+      dispatch({type: SET_USER_LATLONG, location});
     });
   };
 };
