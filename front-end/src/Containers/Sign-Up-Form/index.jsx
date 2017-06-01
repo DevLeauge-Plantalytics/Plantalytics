@@ -24,7 +24,7 @@ class SignUpForm extends Component {
 
   componentWillMount() {
     if (localStorage.autoSup === "true") {
-      console.log(document.getElementById('root'));
+      console.log(this.render().props.children[9].props.children[0]);
     }
   }
   addUser = (user) => {
@@ -57,7 +57,7 @@ class SignUpForm extends Component {
   }
 
   handleSupplierChange = (event) => {
-    let checkBox = document.getElementById('sup-check');
+    let checkBox = event.target;
     if (this.state.supplier === false) {
       checkBox.style.backgroundColor = '#8db500';
       this.setState({supplier: true});
@@ -66,8 +66,8 @@ class SignUpForm extends Component {
       this.setState({supplier: false});
     }
   }
-  handleAgreedChange = () => {
-    let checkBox = document.getElementById('agree-check');
+  handleAgreedChange = (event) => {
+    let checkBox = event.target;
     if (this.state.agreed === false) {
       checkBox.style.backgroundColor = '#8db500';
       this.setState({agreed: true});
