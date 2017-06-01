@@ -33,7 +33,7 @@ const store = createStore(
 ReactDOM.render(
   <Provider store={store}>
     <Router>
-      <div>
+      <div id="react-application">
         <Route exact path="/" render={()=>(<Redirect to="/home"/>)}/>
         <Route path="/home" component={App}/>
         <Route path="/sign-up" component={UserSignUp}/>
