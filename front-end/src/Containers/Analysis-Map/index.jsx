@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
-import {GOOGLE_MAP_KEY} from '../../keys'
+import {GOOGLE_MAP_KEY} from '../../keys';
 import {connect} from 'react-redux';
-import {loadUsers, getUserInfo} from '../../Actions'
+import {loadUsers, getUserInfo} from '../../Actions';
 
 class Map extends Component {
 

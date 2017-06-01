@@ -39,7 +39,7 @@ ReactDOM.render(
         <Route path="/home" component={App}/>
         <Route path="/sign-up" component={UserSignUp}/>
         <Route path="/login" component={UserLogin}/>
-        <Route path="/profile" component={UserProfile}/>
+        <Route path="/profile/:id" component={UserProfile}/>
         <Route path="/edit-profile" component={EditUser}/>
         <Route path="/dashboard" component={Dashboard}/>
         <Route path="/saved-locations" component={SavedLocations}/>
