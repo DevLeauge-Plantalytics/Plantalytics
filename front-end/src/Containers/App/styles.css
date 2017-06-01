@@ -42,7 +42,7 @@
   background: url(http://manoa.hawaii.edu/hshk/wp-content/uploads/2013/03/IMG_9539.jpg);
   background-size: 100%;
   background-position: 0% 45%;
-  border: 3px solid black;
+/*  border: 1px solid black;*/
   border-width: 3px 0 3px 0;
 }
 #all-good-things {
