@@ -13,6 +13,12 @@ class HomeHeader extends Component {
   logout(event) {
     this.props.signOut();
   }
+  autoSupp() {
+    localStorage.autoSup = true;
+  }
+  signIn() {
+    localStorage.autoSup = false;
+  }
   render(){
     if (this.props.loggedIn) {
       console.log(this.props.loggedIn);
@@ -31,7 +37,8 @@ class HomeHeader extends Component {
           <h1 id="logo-text">PLANTALYTICS</h1>
           <Link className="home-header-link" to="/login"><p className="home-header-item">Login</p></Link>
           <p className="home-header-slash">&nbsp;/&nbsp;</p>
-          <Link className="home-header-link" to="/sign-up"><p className="home-header-item">Sign-Up</p></Link>
+          <Link className="home-header-link" to="/sign-up"><p className="home-header-item" onClick={this.signIn}>&nbsp;&nbsp;&nbsp;Sign-Up</p></Link>
+          <Link className="home-header-link" to="/sign-up"><p className="home-header-item" onClick={this.autoSupp}>Become a Supplier&nbsp;&nbsp;&nbsp;</p></Link>
         </div>
       )
     }

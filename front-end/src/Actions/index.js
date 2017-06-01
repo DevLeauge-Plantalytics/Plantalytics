@@ -13,7 +13,7 @@ export const GET_MESSAGES = 'GET_MESSAGES';
 export const FILTER_USERNAME = 'FILTER_USERNAME';
 export const DISPLAY_DATA = 'DISPLAY_DATA';
 
-export const loadUsers = id => {
+export const loadUsers = () => {
   return dispatch => {
     return API.getUsers()
     .then(users => {
