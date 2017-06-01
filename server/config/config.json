@@ -1,7 +1,7 @@
 {
   "development": {
-    "username": "planta",
-    "password": "planta",
+    "username": "gtut",
+    "password": null,
     "database": "planta_data",
     "host": "127.0.0.1",
     "dialect": "postgres"

@@ -12,6 +12,11 @@ export const SEND_MESSAGE = 'SEND_MESSAGE';
 export const GET_MESSAGES = 'GET_MESSAGES';
 export const FILTER_USERNAME = 'FILTER_USERNAME';
 export const DISPLAY_DATA = 'DISPLAY_DATA';
+export const LOAD_PRODUCTS_R = 'LOAD_PRODUCTS_R';
+export const MAKE_REQ = 'MAKE_REQ';
+export const UPDATE_ARR_REQ = 'UPDATE_ARR_REQ';
+export const UPDATE_ARR_QUANT = 'UPDATE_ARR_QUANT';
+export const SET_USER_LATLONG = 'SET_USER_LATLONG';
 
 export const loadUsers = () => {
   return dispatch => {
@@ -65,7 +70,7 @@ export const signIn = user => {
       localStorage.setItem('username', user.username);
       localStorage.setItem('id', userInfo.id);
       localStorage.setItem('address', userInfo.address);
-      return dispatch({type: LOGIN });
+      return dispatch({type: LOGIN, userInfo });
     });
   };
 };
@@ -77,6 +82,14 @@ export const signOut = () => {
         localStorage.clear();
         return dispatch({type: LOGOUT });
       }
+    });
+  };
+};
+export const getUserInfo = address => {
+  return dispatch => {
+    return API.getLatLong(address)
+    .then(location => {
+      dispatch({type: SET_USER_LATLONG, location});
     });
   };
 };
@@ -115,3 +128,39 @@ export const getDataByAddress = (address) =>
   .then(info =>
     dispatch({type: DISPLAY_DATA, info})
   );
+
+export const loadProducts = (id) => {
+  return dispatch => {
+    return API.getProducts(id)
+      .then( (products) => {
+        return dispatch({type: LOAD_PRODUCTS_R, products});
+      });
+    };
+  };
+export const makeRequest = (body) => {
+  return dispatch => {
+    return API.postRequest(JSON.stringify(body))
+    .then( (request) => {
+      return API.postMessage(JSON.stringify({
+                                subject: `New request from ${localStorage.username}`,
+                                body:`Hi Buddy, ${localStorage.username} needs the following products from you and will offer you the following products in exchange` ,
+                                Sender:Number(localStorage.id),
+                                Receiver:2,
+                              }))
+      .then( () => {
+        return dispatch({type: MAKE_REQ, request });
+      });
+    });
+  };
+};
+export const updateArrayRequest = (id, bool) => {
+  return dispatch => {
+    return dispatch({type: UPDATE_ARR_REQ, id, bool });
+  };
+};
+export const updateQuantRequest = (id, quantity) => {
+  return dispatch => {
+    return dispatch({type: UPDATE_ARR_QUANT, id, quantity });
+  };
+};
+
