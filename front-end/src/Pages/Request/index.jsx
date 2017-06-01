@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import React, {Component} from 'react';
-import {loadProducts, makeRequest, updateArrayRequest, updateQuantRequest} from '../../Actions';
+import {loadProducts, makeRequest, updateArrayRequest, updateQuantRequest, sendMessage} from '../../Actions';
 import {withRouter} from 'react-router';
 import './styles.css';
 
@@ -21,6 +21,7 @@ class Requests extends Component {
 
   addRequest = (body) => {
     this.props.makeRequest(body);
+    this.props.sendMessage
     this.props.history.push('/profile');
   }
 
@@ -130,6 +131,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     updateQuantRequest: (id, quantity) => {
       dispatch(updateQuantRequest(id, quantity))
     },
+    sendMessage: (message) => {
+      dispatch(sendMessage(message))
+    }
   }
 }
 
