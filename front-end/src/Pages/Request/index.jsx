@@ -10,13 +10,13 @@ class Requests extends Component {
     super(props);
     this.state = {
       buyer: Number(localStorage.id),
-      supplier: 2,
+      supplier: Number(this.props.match.params.id),
       delivery: "",
     };
   }
 
   componentWillMount(){
-    this.props.loadProducts(2);
+    this.props.loadProducts(this.props.match.params.id);
   }
 
   addRequest = (body) => {
@@ -26,7 +26,6 @@ class Requests extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-
     this.addRequest({
       "buyer": this.state.buyer,
       "supplier": this.state.supplier,

@@ -16,6 +16,11 @@ import Dashboard from './Pages/Dashboard';
 import EditUser from './Containers/Edit-User-Form';
 import UserProfile from './Pages/User-Profile';
 import RequestPage from './Pages/Request';
+
+import listOfRequests from './Pages/ListRequests';
+import listOfQuotations from './Pages/ListQuotations';
+import listOfTrades from './Pages/Trades';
+
 import SavedLocations from './Components/Body/Save-Locations';
 // import SupplierSignUp from './Components/Body/Suppliers/Supplier_Sign_Up'
 import Supplier_Profile from './Components/Body/Supplier-Profile';
@@ -48,7 +53,10 @@ ReactDOM.render(
         <Route path="/supplier-profile" component={Supplier_Profile}/>
         <Route path="/conversation/:id" component={Conversation}/>
         <Route path="/inbox" component={Inbox}/>
-        <Route path="/request" component={RequestPage}/>
+        <Route path="/request/:id" component={RequestPage}/>
+        <Route path="/requests" component={listOfRequests}/>
+        <Route path="/quotations" component={listOfQuotations}/>
+        <Route path="/tradesdone" component={listOfTrades}/>
       </div>
     </Router>
   </Provider>,

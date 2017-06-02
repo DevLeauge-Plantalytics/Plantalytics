@@ -181,3 +181,26 @@ export const postRequest= (body) => {
     });
   });
 };
+export const getRequests= (id) => {
+  return new Promise(function (resolve, reject) {
+    makeRequest('GET', `/api/requests/buyer/${id}`)
+    .then (requests => {
+      resolve(JSON.parse(requests));
+    })
+    .catch (err => {
+      reject(err);
+    });
+  });
+};
+
+export const getRequestsForQuotations= (id) => {
+  return new Promise(function (resolve, reject) {
+    makeRequest('GET', `/api/requests/supplier/${id}`)
+    .then (requests => {
+      resolve(JSON.parse(requests));
+    })
+    .catch (err => {
+      reject(err);
+    });
+  });
+};

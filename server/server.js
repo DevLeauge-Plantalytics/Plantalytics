@@ -103,7 +103,7 @@ app.use(express.static('./public') );
 
 app.use('/api', require('./api'));
 
-//db.sequelize.sync({force:true});
+// db.sequelize.sync({force:true});
 
 var options = {
    provider: 'google',
@@ -125,7 +125,6 @@ app.get(`/localisation/:address`, function (req, res){
   });
 
 });
-
 
 app.listen(PORT, () =>{
   console.log(`Listening on ${PORT}`);
