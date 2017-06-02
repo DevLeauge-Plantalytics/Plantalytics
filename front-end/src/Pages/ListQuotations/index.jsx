@@ -2,16 +2,36 @@ import { connect } from 'react-redux';
 import React, {Component} from 'react';
 import {loadRequestsForQuotations} from '../../Actions';
 import {withRouter} from 'react-router';
+import Updatechanges from '../../Containers/Updatechanges';
 import './styles.css';
 
 class ListQuotations extends Component {
 
   constructor(props) {
     super(props);
+    this.state = {
+      "updateRequest" : false
+    }
   }
 
   componentWillMount(){
     this.props.loadRequestsForQuotations(localStorage.id);
+  }
+
+  makeChanges = () => {
+    this.setState({"updateRequest" : true})
+  }
+
+  checkDisplay = () => {
+
+  }
+
+  renderUpdateForm = (requests) => {
+    if(this.state.updateRequest){
+      return (<Updatechanges request={requests} />)
+    } else {
+      return;
+    }
   }
 
   render(){
@@ -53,8 +73,10 @@ class ListQuotations extends Component {
                   <div className="buttonsQuotations">
                     <button type="button" onClick={this.acceptRequest} >Accept the request</button>
                     <button type="button" onClick={this.makeChanges} >Make changes</button>
+
                   </div>
                 </div>
+                {this.renderUpdateForm(requests)}
             </div> )
           }
       </div>
