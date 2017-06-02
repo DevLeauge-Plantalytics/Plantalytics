@@ -20,17 +20,30 @@ class UserProfile extends Component {
   }
 
   render(){
-    return (
-      <div id="user-profile">
-        <Header/>
-        <UserNav/>
-        <div id="analysis-map">
-          <UserMap/>
+    if (this.props.singleUser.id == localStorage.id) {
+      return (
+        <div id="user-profile">
+          <Header/>
+          <UserNav/>
+          <div id="analysis-map">
+            <UserMap/>
+          </div>
+          <UserAvatar user={this.props.singleUser}/>
+          <UserInfo user={this.props.singleUser}/>
         </div>
-        <UserAvatar user={this.props.singleUser}/>
-        <UserInfo user={this.props.singleUser}/>
-      </div>
-    )
+      )
+    } else {
+      return (
+        <div id="user-profile">
+          <Header/>
+          <UserNav/>
+          <div id="analysis-map">
+          </div>
+          <UserAvatar user={this.props.singleUser}/>
+          <UserInfo user={this.props.singleUser}/>
+        </div>
+      )
+    }
   }
 }
 
