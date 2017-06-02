@@ -57,11 +57,19 @@
   height: 15px;
   width: 15px;
 }
+#mapUser:hover {
+  transform: scale(1.5);
+  background-color: blue;
+}
 
-#mapUserMarkers {
+.mapUserMarkers {
   background-color: magenta;
   height: 10px;
   width: 10px;
+}
+.mapUserMarkers:hover {
+  transform: scale(1.5);
+  background-color: blue;
 }
 #loggedInfo {
   display: inline-block;
