@@ -7,6 +7,7 @@ import UserNav from '../../Components/UserNav';
 import UserMap from '../../Containers/Analysis-Map';
 import {getUserById} from '../../API';
 import {getUser} from '../../Actions';
+import ReqButton from '../../Components/ReqButton';
 import './styles.css';
 
 class UserProfile extends Component {
@@ -38,6 +39,7 @@ class UserProfile extends Component {
           <Header/>
           <UserNav/>
           <div id="analysis-map">
+            <ReqButton/>
           </div>
           <UserAvatar user={this.props.singleUser}/>
           <UserInfo user={this.props.singleUser}/>
