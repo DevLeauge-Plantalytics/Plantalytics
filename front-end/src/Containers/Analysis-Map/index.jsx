@@ -17,11 +17,8 @@ class Map extends Component {
     this.props.getUserInfo(this.props.address)
   }
 
-  yourProfile() {
-    return `/profile/${localStorage.id}`;
-  }
-  theyProfile(event) {
-    console.log(event.target);
+  theyProfile(id) {
+    return `/profile/${id}`;
   }
   render() {
     const {users} = this.props;
@@ -32,25 +29,19 @@ class Map extends Component {
         defaultCenter={this.props.center}
         defaultZoom={this.props.zoom}
       >
-      <Link
-        to={this.yourProfile()}
-        lat={this.props.latitude}
-        lng={this.props.longitude}>
-        <div
-        id="mapUser"
-        >
-
-        </div></Link>
       {users.map(user=> (
+        <Link
+        to={this.theyProfile(user.id)}
+        lat={user.latitude}
+        lng={user.longitude}
+        id={user.id}
+        >
         <div
-          id="mapUserMarkers"
-          lat={user.latitude}
-          lng={user.longitude}
+          className="mapUserMarkers"
           text={user.username}
-          key={user.id}
           onClick={this.theyProfile}
           >
-        </div>
+        </div></Link>
       ))}
 
       </GoogleMapReact>
