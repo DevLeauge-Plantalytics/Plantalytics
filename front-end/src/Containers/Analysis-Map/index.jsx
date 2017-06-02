@@ -3,12 +3,13 @@ import GoogleMapReact from 'google-map-react';
 import {GOOGLE_MAP_KEY} from '../../keys';
 import {connect} from 'react-redux';
 import {loadUsers, getUserInfo} from '../../Actions';
+import {Link} from 'react-router-dom';
 
 class Map extends Component {
 
   static defaultProps = {
-    center: {lat: 21.4389, lng: -158.0001},
-    zoom: 15
+    center: {lat: 21.4389, lng: -157.95},
+    zoom: 10
   };
 
   componentWillMount() {
@@ -16,6 +17,12 @@ class Map extends Component {
     this.props.getUserInfo(this.props.address)
   }
 
+  yourProfile() {
+    return `/profile/${localStorage.id}`;
+  }
+  theyProfile(event) {
+    console.log(event.target);
+  }
   render() {
     const {users} = this.props;
     console.log(this.props.latitude)
@@ -25,13 +32,15 @@ class Map extends Component {
         defaultCenter={this.props.center}
         defaultZoom={this.props.zoom}
       >
-      <div
-        id="mapUser"
+      <Link
+        to={this.yourProfile()}
         lat={this.props.latitude}
-        lng={this.props.longitude}
+        lng={this.props.longitude}>
+        <div
+        id="mapUser"
         >
 
-      </div>
+        </div></Link>
       {users.map(user=> (
         <div
           id="mapUserMarkers"
@@ -39,6 +48,7 @@ class Map extends Component {
           lng={user.longitude}
           text={user.username}
           key={user.id}
+          onClick={this.theyProfile}
           >
         </div>
       ))}
