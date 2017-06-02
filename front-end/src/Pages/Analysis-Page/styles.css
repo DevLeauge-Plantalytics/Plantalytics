@@ -52,15 +52,14 @@
   flex: 2;
 }
 #mapUser {
-  border: 1px solid blue;
+  background-color: coral;
   background-image: url(https://lh4.ggpht.com/Tr5sntMif9qOPrKV_UVl7K8A_V3xQDgA7Sw_qweLUFlg76d_vGFA7q1xIKZ6IcmeGqg=w300);
-  height: 25px;
-  width: 25px;
-  z-index: 99%;
+  height: 15px;
+  width: 15px;
 }
 
 #mapUserMarkers {
-  background-color: lime;
+  background-color: magenta;
   height: 10px;
   width: 10px;
 }
