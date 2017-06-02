@@ -2,7 +2,7 @@
 
 const express = require('express');
 const requests = express.Router();
-const {Request, Product, Req_Prod_Requested, Req_Prod_Offered} = require('../../models');
+const {Request, Product, Req_Prod_Requested, Req_Prod_Offered, User} = require('../../models');
 
 requests.get('/buyer/:id', (req,res) => {
   Request.all({
@@ -14,6 +14,14 @@ requests.get('/buyer/:id', (req,res) => {
       {
         model:User,
         as:"Vendor"
+      },
+      {
+        model:Product,
+        as: "interTableOff"
+      },
+      {
+        model:Product,
+        as: "interTableReq"
       }
     ],
     where: {Buyer: req.params.id},
@@ -37,6 +45,14 @@ requests.get('/supplier/:id', (req,res) => {
       {
         model:User,
         as:"Vendor"
+      },
+      {
+        model:Product,
+        as: "interTableOff"
+      },
+      {
+        model:Product,
+        as: "interTableReq"
       }
     ],
     where: {Supplier: req.params.id},

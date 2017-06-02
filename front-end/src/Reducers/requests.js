@@ -1,14 +1,19 @@
 /*jshint esversion: 6*/
-import {LOAD_PRODUCTS_R} from '../Actions';
+import {LOAD_REQUESTS, LOAD_REQUESTS_FOR_QUOTATIONS} from '../Actions';
 const initialState = {
-  request: []
+  requests: [],
+  requests_for_quotations : []
 };
 
-const products = (state = initialState, action) => {
+const requests = (state = initialState, action) => {
   switch(action.type){
-    case LOAD_PRODUCTS_R:
+    case LOAD_REQUESTS:
       return Object.assign({}, state, {
-        request: action.request
+        requests: action.requests
+      });
+    case LOAD_REQUESTS_FOR_QUOTATIONS:
+      return Object.assign({}, state, {
+        requests_for_quotations: action.requests
       });
 
     default:
@@ -16,4 +21,4 @@ const products = (state = initialState, action) => {
   }
 };
 
-export default products;
+export default requests;

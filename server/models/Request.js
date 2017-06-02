@@ -33,9 +33,11 @@ module.exports = function(sequelize, DataTypes) {
           },
         });
         Request.belongsToMany(models.Product, {
+            as: 'interTableOff',
             through:{ model: 'Req_Prod_Offered', unique: false}
         });
         Request.belongsToMany(models.Product, {
+            as: 'interTableReq',
             through:{ model: 'Req_Prod_Requested', unique: false}
         });
         Request.hasMany(models.Message, {

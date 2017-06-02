@@ -1,0 +1,40 @@
+#requests-feed-title {
+  text-align: center;
+}
+.displayRequests {
+  width: 85%;
+  margin-left: 7.5%;
+  border: solid black 2px;
+}
+.displayRequests span {
+  font-weight: bold;
+}
+.RequestsHeader {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  border-bottom: dotted black 2px;
+  background-color: #CDEB72;
+}
+.RequestsContent {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+}
+.listProdReq {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  border-right: solid black 2px;
+}
+.listProdOff {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
