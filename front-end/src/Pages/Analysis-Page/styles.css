@@ -34,6 +34,9 @@
 }
 
 #analysis-data {
+  position: absolute;
+  left: 10%;
+  width: 50%;
   display: flex;
   flex: 3;
   flex-flow: row nowrap;
@@ -41,21 +44,47 @@
 }
 
 #analysis-map {
-  height: 600px;
+  position: absolute;
+  top: 125px;
+  right: 0;
+  height: 550px;
+  width: 400px;
   flex: 2;
 }
 #mapUser {
-  background-color: red;
-  height: 15px;
-  width: 15px;
-  border-radius: 30%
+  border: 1px solid blue;
+  background-image: url(https://lh4.ggpht.com/Tr5sntMif9qOPrKV_UVl7K8A_V3xQDgA7Sw_qweLUFlg76d_vGFA7q1xIKZ6IcmeGqg=w300);
+  height: 25px;
+  width: 25px;
+  z-index: 99%;
 }
 
 #mapUserMarkers {
   background-color: lime;
   height: 10px;
   width: 10px;
-  border-radius: 30%
+}
+#loggedInfo {
+  display: inline-block;
+}
+.analysis-nav-item {
+  font-family: 'Futura';
+  display: inline-block;
+  font-weight: 900;
+  cursor: pointer;
+  margin: 0;
+}
+.analysis-nav-link{
+  color: black;
+}
+.analysis-nav-slash {
+  font-family: 'Futura';
+  display: inline-block;
+  font-weight: 900;
+  margin: 0;
+}
+.analysis-nav {
+  width: 100%;
 }
 
 /*#body-analysis {

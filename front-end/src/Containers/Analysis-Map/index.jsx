@@ -8,7 +8,7 @@ class Map extends Component {
 
   static defaultProps = {
     center: {lat: 21.4389, lng: -158.0001},
-    zoom: 10
+    zoom: 15
   };
 
   componentWillMount() {
@@ -38,6 +38,7 @@ class Map extends Component {
           lat={user.latitude}
           lng={user.longitude}
           text={user.username}
+          key={user.id}
           >
         </div>
       ))}
