@@ -33,6 +33,7 @@ class UpdateChanges extends Component {
   }
 
   render(){
+    console.log(this.props);
     return (
       <form id="update_quotation_form" onSubmit={this.handleSubmit}>
 
@@ -56,8 +57,8 @@ class UpdateChanges extends Component {
 
         <div className="productsQuotations">
           <div className="productsQuotationsRequested">
-            <p> Your products </p>
-            { this.props.requests.interTableReq
+            <p>Products requested</p>
+            { this.props.request.interTableReq
               .map( products => <div className="displayProductsQuotations" key={products.id} >
                   <p>{products.name}</p>
                   <p> Quantity: </p>
@@ -67,8 +68,8 @@ class UpdateChanges extends Component {
           </div>
 
           <div className="productsQuotationsOffered">
-            <p> Your products </p>
-            { this.props.requests.interTableOff
+            <p>Products offered in exchange</p>
+            { this.props.request.interTableOff
               .map( products => <div className="displayProductsQuotations" key={products.id} >
                   <p>{products.name}</p>
                   <p> Quantity: </p>

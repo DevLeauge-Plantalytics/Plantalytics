@@ -35,6 +35,7 @@ class ListQuotations extends Component {
   }
 
   render(){
+    console.log(this.props.quotations);
     return (
       <div id="quotations-feed">
         <h1 id="quotations-feed-title">List of quotations</h1>
@@ -49,7 +50,7 @@ class ListQuotations extends Component {
                   <div className="listProdReq">
                     <p> <span>Products Requested by {requests.Purchaser.username}:</span></p>
                     <ul> {requests.interTableReq.map( products =>
-                            <li>{products.quantity} - {products.name}</li>
+                            <li>{products.Req_Prod_Requested.quantity} - {products.name}</li>
                             )
                           }
                     </ul>
@@ -57,7 +58,7 @@ class ListQuotations extends Component {
                   <div className="listProdOff">
                     <p> <span>Products Offered in exchange:</span></p>
                     <ul> {requests.interTableOff.map( products =>
-                            <li>{products.quantity} - {products.name}</li>
+                            <li>{products.Req_Prod_Offered.quantity} - {products.name}</li>
                             )
                           }
                     </ul>

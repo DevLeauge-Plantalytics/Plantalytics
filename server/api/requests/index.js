@@ -181,6 +181,7 @@ requests.post('/', (req,res) =>{
       {
         "Buyer": req.body.buyer,
         "Supplier": req.body.supplier,
+        "delivery": req.body.delivery
       }
     );
   })

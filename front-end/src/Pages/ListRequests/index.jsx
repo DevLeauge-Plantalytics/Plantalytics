@@ -29,7 +29,7 @@ class ListRequests extends Component {
                   <div className="listProdReq">
                     <p> <span>Products Requested:</span> </p>
                     <ul> {requests.interTableReq.map( products =>
-                            <li>{products.quantity} - {products.name}</li>
+                            <li>{products.Req_Prod_Requested.quantity} - {products.name}</li>
                             )
                           }
                     </ul>
@@ -37,7 +37,7 @@ class ListRequests extends Component {
                   <div className="listProdOff">
                     <p> <span>Products Offered: </span></p>
                     <ul> {requests.interTableOff.map( products =>
-                            <li>{products.quantity} - {products.name}</li>
+                            <li>{products.Req_Prod_Offered.quantity} - {products.name}</li>
                             )
                           }
                     </ul>
