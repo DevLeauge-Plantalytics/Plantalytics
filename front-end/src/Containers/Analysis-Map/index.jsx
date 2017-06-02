@@ -20,6 +20,9 @@ class Map extends Component {
   yourProfile() {
     return `/profile/${localStorage.id}`;
   }
+  theyProfile(event) {
+    console.log(event.target);
+  }
   render() {
     const {users} = this.props;
     console.log(this.props.latitude)
