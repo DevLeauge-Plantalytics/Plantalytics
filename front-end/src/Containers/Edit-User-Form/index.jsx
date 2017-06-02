@@ -14,17 +14,6 @@ class UserEditForm extends Component {
       supplier: false,
       agreed: false
     };
-
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleUsernameChange = this.handleUsernameChange.bind(this);
-    this.handleFirstNameChange = this.handleFirstNameChange.bind(this);
-    this.handleLastNameChange = this.handleLastNameChange.bind(this);
-    this.handleEmailChange = this.handleEmailChange.bind(this);
-    this.handlePasswordChange = this.handlePasswordChange.bind(this);
-    this.handleAddressChange = this.handleAddressChange.bind(this);
-    this.handleZipcodeChange = this.handleZipcodeChange.bind(this);
-    this.handleSupplierChange = this.handleSupplierChange.bind(this);
-    this.handleAgreedChange = this.handleAgreedChange.bind(this);
   }
 
   editUser(user){
@@ -49,26 +38,8 @@ class UserEditForm extends Component {
     event.preventDefault();
     // this.editUser(this.state); <-- CHECK ACTION NAME HERE
   }
-  handleUsernameChange(event) {
-    this.setState({username: event.target.value});
-  }
-  handleFirstNameChange(event) {
-    this.setState({firstName: event.target.value});
-  }
-  handleLastNameChange(event) {
-    this.setState({lastName: event.target.value});
-  }
-  handleEmailChange(event) {
-    this.setState({email: event.target.value});
-  }
-  handlePasswordChange(event) {
-    this.setState({password: event.target.value});
-  }
-  handleAddressChange(event) {
-    this.setState({address: event.target.value});
-  }
-  handleZipcodeChange(event) {
-    this.setState({zipcode: event.target.value});
+  handleChange(event) {
+    this.setState({[event.target.name]: event.target.value});
   }
   handleSupplierChange(event) {
     if (this.state.supplier === false) {
@@ -87,19 +58,19 @@ class UserEditForm extends Component {
   render(){
     return (
       <form id="sign-up-form" onSubmit={this.handleSubmit}>
-        <input type="text" placeholder="Username" onChange={this.handleUsernameChange}/>
+        <input type="text" name="username" placeholder="Username" onChange={this.handleChange}/>
         <br/>
-        <input type="text" placeholder="First Name" onChange={this.handleFirstNameChange}/>
+        <input type="text" name="firstName" placeholder="First Name" onChange={this.handleChange}/>
         <br/>
-        <input type="text" placeholder="Last Name" onChange={this.handleLastNameChange}/>
+        <input type="text" name="lastName" placeholder="Last Name" onChange={this.handleChange}/>
         <br/>
-        <input type="text" placeholder="Email" onChange={this.handleEmailChange}/>
+        <input type="text" name="email" placeholder="Email" onChange={this.handleChange}/>
         <br/>
-        <input type="password" placeholder="Password" onChange={this.handlePasswordChange}/>
+        <input type="password" name="password" placeholder="Password" onChange={this.handleChange}/>
         <br/>
-        <input type="text" placeholder="Home Address" onChange={this.handleAddressChange}/>
+        <input type="text" name="address" placeholder="Home Address" onChange={this.handleChange}/>
         <br/>
-        <input type="text" placeholder="Zipcode" onChange={this.handleZipcodeChange}/>
+        <input type="text" name="zipcode" placeholder="Zipcode" onChange={this.handleChange}/>
         <br/>
         <input type="checkbox" onClick={this.handleSupplierChange}/>I want to be a supplier!
         <br/>
