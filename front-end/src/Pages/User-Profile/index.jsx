@@ -24,9 +24,11 @@ class UserProfile extends Component {
       <div id="user-profile">
         <Header/>
         <UserNav/>
-        <UserMap/>
-        <UserAvatar user={this.props.singleUser} />
-        <UserInfo user={this.props.singleUser} />
+        <div id="analysis-map">
+          <UserMap/>
+        </div>
+        <UserAvatar user={this.props.singleUser}/>
+        <UserInfo user={this.props.singleUser}/>
       </div>
     )
   }

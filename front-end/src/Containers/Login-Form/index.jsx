@@ -36,7 +36,7 @@ class LoginForm extends Component {
 
   render(){
     if (this.props.loggedIn) {
-      this.props.history.push('/home');
+      this.props.history.push('/location');
     }
     return (
         <form id="Login" onSubmit={this.handleSubmit}>
