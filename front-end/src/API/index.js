@@ -204,3 +204,14 @@ export const getRequestsForQuotations= (id) => {
     });
   });
 };
+export const postQuotation = body => {
+  return new Promise(function (resolve, reject) {
+    makeRequest('POST', `/api/quotations/`, body)
+    .then (quotation => {
+      resolve(JSON.parse(quotation));
+    })
+    .catch (err => {
+      reject(err);
+    });
+  });
+};

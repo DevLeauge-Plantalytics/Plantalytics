@@ -19,6 +19,8 @@ export const UPDATE_ARR_QUANT = 'UPDATE_ARR_QUANT';
 export const SET_USER_LATLONG = 'SET_USER_LATLONG';
 export const LOAD_REQUESTS = 'LOAD_REQUESTS';
 export const LOAD_REQUESTS_FOR_QUOTATIONS = 'LOAD_REQUESTS_FOR_QUOTATIONS';
+export const ADD_QUOTATION = 'ADD_QUOTATION';
+export const UPDATE_QUANT_QUOTATIONS = 'UPDATE_QUANT_QUOTATIONS';
 
 export const loadUsers = () => {
   return dispatch => {
@@ -182,3 +184,16 @@ export const loadRequestsForQuotations = (id) => {
       });
     };
   };
+export const addQuotation = body => {
+  return dispatch => {
+    return API.postQuotation(body)
+    .then(quotation => {
+      return dispatch({type: ADD_QUOTATION, quotation});
+    });
+  };
+};
+export const updateQuantQuotation = (requestid, productid, quantity) => {
+  return dispatch => {
+    return dispatch({type: UPDATE_QUANT_QUOTATIONS, requestid, productid, quantity});
+  };
+};
