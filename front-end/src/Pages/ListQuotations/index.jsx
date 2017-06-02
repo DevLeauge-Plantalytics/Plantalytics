@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import React, {Component} from 'react';
 import {loadRequestsForQuotations} from '../../Actions';
 import {withRouter} from 'react-router';
+import {Link} from 'react-router-dom';
 import Updatechanges from '../../Containers/Updatechanges';
 import './styles.css';
 
@@ -22,8 +23,8 @@ class ListQuotations extends Component {
     this.setState({"updateRequest" : true})
   }
 
-  checkDisplay = () => {
-
+  yourProfile() {
+    return `/profile/${localStorage.id}`;
   }
 
   renderUpdateForm = (requests) => {
@@ -38,6 +39,7 @@ class ListQuotations extends Component {
     console.log(this.props.quotations);
     return (
       <div id="quotations-feed">
+        <Link to={this.yourProfile()}><p className="profileLink">Profile</p></Link>
         <h1 id="quotations-feed-title">List of quotations</h1>
           { this.props.quotations
             .map( requests => <div className="displayQuotations" key={requests.id} >

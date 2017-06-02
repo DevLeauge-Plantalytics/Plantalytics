@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import React, {Component} from 'react';
 import {loadProducts, makeRequest, updateArrayRequest, updateQuantRequest} from '../../Actions';
+import {Link} from 'react-router-dom';
 import {withRouter} from 'react-router';
 import './styles.css';
 
@@ -22,6 +23,10 @@ class Requests extends Component {
   addRequest = (body) => {
     this.props.makeRequest(body);
     this.props.history.push('/profile');
+  }
+
+  yourProfile() {
+    return `/profile/${localStorage.id}`;
   }
 
   handleSubmit = (event) => {
@@ -62,6 +67,7 @@ class Requests extends Component {
   render(){
     return (
       <form id="request_board" onSubmit={this.handleSubmit}>
+        <Link to={this.yourProfile()}><p className="profileLink">Profile</p></Link>
         <h1>Welcome to the trading page</h1>
         <div id="products_display">
           <div className="productsR">
