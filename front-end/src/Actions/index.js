@@ -23,6 +23,7 @@ export const ADD_QUOTATION = 'ADD_QUOTATION';
 export const UPDATE_QUANT_QUOTATIONS = 'UPDATE_QUANT_QUOTATIONS';
 export const ADD_PRODUCT = 'ADD_PRODUCT';
 export const GET_PRODUCTS = 'GET_PRODUCTS';
+export const LOAD_TRADES_DONE = 'LOAD_TRADES_DONE';
 
 export const loadUsers = () => {
   return dispatch => {
@@ -215,3 +216,11 @@ export const getProducts = id => {
     });
   };
 };
+export const loadTradesDone = (id) => {
+  return dispatch => {
+    return API.getTradesDone(id)
+      .then( (trades) => {
+        return dispatch({type: LOAD_TRADES_DONE, trades});
+      });
+    };
+  };

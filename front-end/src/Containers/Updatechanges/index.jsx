@@ -35,11 +35,11 @@ class UpdateChanges extends Component {
     event.preventDefault();
     this.updateRequest({
       "type": "trade",
-      "products_price": this.state.products_price,
+      "products_price": Number(this.state.products_price),
       "delivery": this.state.delivery,
-      "delivery_price": this.state.delivery_price,
+      "delivery_price": Number(this.state.delivery_price),
       "accepted": true,
-      "Request_Id": this.props.request.id,
+      "Request_Id": Number(this.props.request.id),
       "request_products": this.props.RFQ_O,
       "offered_products": this.props.RFQ_Q,
     })

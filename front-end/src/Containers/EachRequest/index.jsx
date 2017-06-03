@@ -23,9 +23,7 @@ class EachRequest extends Component {
     this.setState({"updateRequest" : true})
   }
 
-  acceptRequest = () => {
-    console.log("hi");
-    console.log(this.props.request.id);
+  acceptR = () => {
     this.props.addQuotation({
       "type": "trade",
       "products_price": 0,

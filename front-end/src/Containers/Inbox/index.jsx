@@ -18,10 +18,6 @@ class Inbox extends Component {
     this.props.getMessages(localStorage.id);
   }
 
-  yourProfile() {
-    return `/profile/${localStorage.id}`;
-  }
-
   openConversation = (event) => {
     event.preventDefault();
     this.props.openMessage()
@@ -40,7 +36,7 @@ class Inbox extends Component {
   render(){
     return (
       <div id="messagesFeed">
-        <Link to={this.yourProfile()}><p className="profileLink">Profile</p></Link>
+        <Link to='/myprofile'><p className="profileLink">Profile</p></Link>
         <h1 id="inboxMessage">Inbox</h1>
         <Filter />
         <div id="inbox-feed">

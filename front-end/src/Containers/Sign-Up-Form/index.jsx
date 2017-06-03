@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router';
-import {addUser, signIn} from '../../Actions';
+import {addUser} from '../../Actions';
 
 class SignUpForm extends Component {
   constructor(props) {
@@ -47,8 +47,6 @@ class SignUpForm extends Component {
     });
   }
   handleSubmit = (event) => {
-    localStorage.newUserName = this.state.username;
-    localStorage.newUserPass = this.state.password;
     event.preventDefault();
     this.addUser(this.state);
   }
@@ -122,9 +120,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     addUser: user => {
       dispatch(addUser(user))
     },
-    signIn: (user) => {
-      dispatch(signIn(user))
-    }
   }
 }
 

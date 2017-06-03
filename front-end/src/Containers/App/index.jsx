@@ -12,13 +12,6 @@ class App extends Component {
     super(props);
     this.title = 'No-Warning';
   }
-  componentDidMount() {
-    let state = {
-      username: localStorage.newUserName,
-      password: localStorage.newUserPass
-    };
-    this.props.signIn(state);
-  }
 
 render(){
   return (

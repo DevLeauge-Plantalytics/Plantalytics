@@ -15,14 +15,10 @@ class ListRequests extends Component {
     this.props.loadRequests(localStorage.id);
   }
 
-  yourProfile() {
-    return `/profile/${localStorage.id}`;
-  }
-
   render(){
     return (
       <div id="requests-feed">
-        <Link to={this.yourProfile()}><p className="profileLink">Profile</p></Link>
+        <Link to='/myprofile'><p className="profileLink">Profile</p></Link>
         <h1 id="requests-feed-title">List of requests</h1>
           { this.props.requests
             .map( requests => <div className="displayRequests" key={requests.id} >

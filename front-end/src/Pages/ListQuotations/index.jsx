@@ -17,14 +17,10 @@ class ListQuotations extends Component {
     this.props.loadRequestsForQuotations(localStorage.id);
   }
 
-  yourProfile() {
-    return `/profile/${localStorage.id}`;
-  }
-
   render(){
     return (
       <div id="quotations-feed">
-        <Link to={this.yourProfile()}><p className="profileLink">Profile</p></Link>
+        <Link to='/myprofile'><p className="profileLink">Profile</p></Link>
         <h1 id="quotations-feed-title">List of quotations</h1>
           { this.props.quotations
             .map( request =>  <EachRequest request={request} />)
