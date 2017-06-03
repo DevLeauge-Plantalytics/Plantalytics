@@ -4,22 +4,26 @@ import HomeHeader from './Home-Header';
 import HomeDescrip from './Description';
 import LocInput from './Location-Input';
 import HomeFooter from './Home-Footer';
+import {signIn} from '../../Actions';
 import './styles.css';
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.title = 'No-Warning'
+    this.title = 'No-Warning';
   }
-  // componentWillMount() {
-  //   ___()
-  //   .then(___ => {
-  //     this.props.___(___);
-  //   });
-  // }
+  componentDidMount() {
+    console.log('hi');
+    let state = {
+      username: localStorage.newUserName,
+      password: localStorage.newUserPass
+    };
+    this.props.signIn(state);
+  }
+
 render(){
   return (
-    <div id="home-page">
+    <div id="home-page" onClick={this.autoLogin}>
       <HomeHeader/>
       <LocInput/>
       <HomeDescrip/>
@@ -29,16 +33,14 @@ render(){
   }
 }
 const mapStateToProps = (state) => {
-  return {
-    // plants: state.plants
-  };
+  return {};
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-  //   // ___: ___ => {
-  //   //   dispatch(___(___))
-  //   // }
+    signIn: (user) => {
+      dispatch(signIn(user))
+    }
   }
 }
 

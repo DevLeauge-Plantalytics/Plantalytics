@@ -17,8 +17,13 @@ class Map extends Component {
     this.props.loadUsers();
     this.props.getUserInfo(this.props.address)
   }
-  theyProfile(id) {
-    return `/profile/${id}`;
+  getProfile(id) {
+    if (id == localStorage.id) {
+      console.log('hey');
+      return `/myprofile`;
+    } else {
+      return `/profile/${id}`;
+    }
   }
   render() {
     const {users} = this.props;
@@ -31,15 +36,14 @@ class Map extends Component {
       >
       {users.map(user=> (
         <Link
-        to={this.theyProfile(user.id)}
+        to={this.getProfile(user.id)}
         lat={user.latitude}
         lng={user.longitude}
-        id={user.id}
         >
         <div
           className="mapUserMarkers"
           text={user.username}
-          onClick={this.theyProfile}
+          onClick={this.getProfile}
           >
         </div></Link>
       ))}

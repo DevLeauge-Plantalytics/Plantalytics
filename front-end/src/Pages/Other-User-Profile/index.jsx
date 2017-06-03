@@ -2,34 +2,39 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import Header from '../../Components/Header'
 import UserAvatar from '../../Components/UserAvatar';
-import YourUserInfo from '../../Components/YourUserInfo';
+import TheirUserInfo from '../../Components/TheirUserInfo';
 import UserNav from '../../Components/UserNav';
-import UserMap from '../../Containers/Analysis-Map';
 import {getUserById} from '../../API';
 import {getUser} from '../../Actions';
+import ReqButton from '../../Components/ReqButton';
 import './styles.css';
 
-class UserProfile extends Component {
+class OtherUserProfile extends Component {
   constructor(props) {
     super(props);
     this.title = 'No-Warning'
   }
   componentWillMount() {
-      this.props.getUser(localStorage.id);
+    localStorage.reqId = window.location.pathname.slice(9);
+    if (localStorage.reqId != localStorage.id){
+      this.props.getUser(localStorage.reqId);
+    }
   }
 
   render(){
-    return (
-     <div id="your-user-profile">
-        <Header/>
-       <UserNav/>
-       <div id="analysis-map">
-         <UserMap/>
-       </div>
-       <UserAvatar user={this.props.singleUser}/>
-       <YourUserInfo user={this.props.singleUser}/>
-      </div>
-    )
+    if (localStorage.reqId != localStorage.id){
+      return (
+        <div id="other-user-profile">
+          <Header/>
+          <UserNav/>
+          <div id="analysis-map">
+            <ReqButton user={this.props.singleUser}/>
+          </div>
+          <UserAvatar user={this.props.singleUser}/>
+          <TheirUserInfo user={this.props.singleUser}/>
+        </div>
+      )
+    }
   }
 }
 
@@ -50,6 +55,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 const ConnectedProfile = connect(
   mapStateToProps,
   mapDispatchToProps
-)(UserProfile);
+)(OtherUserProfile);
 
 export default ConnectedProfile;

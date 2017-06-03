@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 class ProfilePic extends Component {
   constructor(props) {
     super(props);
@@ -6,7 +7,7 @@ class ProfilePic extends Component {
   }
   render(){
     return (
-      <div id="your-prof-pic"></div>
+      <Link to="/myprofile"><div id="your-prof-pic"></div></Link>
     )
   }
 }
