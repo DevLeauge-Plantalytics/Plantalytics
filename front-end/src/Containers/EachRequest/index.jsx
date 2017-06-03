@@ -11,7 +11,7 @@ class EachRequest extends Component {
 
   renderUpdateForm = (request) => {
     if(this.state.updateRequest){
-      return (<Updatechanges request={request} />)
+      return (<Updatechanges request={request} hideChanges={this.hideChanges} />)
     } else {
       return;
     }
@@ -19,6 +19,10 @@ class EachRequest extends Component {
 
   makeChanges = () => {
     this.setState({"updateRequest" : true})
+  }
+
+  hideChanges = () => {
+    this.setState({"updateRequest" : false})
   }
 
   render(){
@@ -58,10 +62,10 @@ class EachRequest extends Component {
           <div className="buttonsQuotations">
             <button type="button" onClick={this.acceptRequest} >Accept the request</button>
             <button type="button" onClick={this.makeChanges} >Make changes</button>
-
           </div>
         </div>
         {this.renderUpdateForm(request)}
+
     </div>
     )
   }

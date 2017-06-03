@@ -1,0 +1,39 @@
+#update_quotation_form {
+  position: relative;
+  width: 60%;
+  margin-left: 20%;
+  background-color: white;
+  border: solid black 2px;
+}
+#update_quotation_form span {
+  font-weight: bold;
+}
+.update_quotation_form_price {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border-bottom: dotted black 2px;
+}
+#update_quotation_form_delivery {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  border-bottom: dotted black 2px;
+}
+.displayProductsQuotations{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.productsQuotationsRequested{
+  border-bottom: dotted black 2px;
+}
+.productsQuotationsOffered{
+  border-bottom: dotted black 2px;
+}
+#send_update{
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 42%;
+}
