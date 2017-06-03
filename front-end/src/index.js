@@ -37,6 +37,8 @@ const store = createStore(
   applyMiddleware(ReduxThunk)
 );
 
+localStorage.loggedIn = false;
+
 ReactDOM.render(
   <Provider store={store}>
     <Router>
