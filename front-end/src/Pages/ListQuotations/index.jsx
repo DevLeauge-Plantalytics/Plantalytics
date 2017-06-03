@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import {loadRequestsForQuotations} from '../../Actions';
 import {withRouter} from 'react-router';
 import {Link} from 'react-router-dom';
-import EachRequest from '../../Containers/EachRequest';
+import EachRequest from '../../Containers/EachRequest/index.jsx';
 import './styles.css';
 
 class ListQuotations extends Component {

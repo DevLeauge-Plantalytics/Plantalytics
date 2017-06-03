@@ -17,18 +17,15 @@ class Map extends Component {
     this.props.loadUsers();
     this.props.getUserInfo(this.props.address)
   }
-
-  theyProfile(user) {
-    // return () => {
-    //   // console.log(this);
-    //   // console.log(user);
-    //   // this.props.history.push(`/profile/${user.id}`)
-    // }
-    this.props.history.push('/profile/1');
+  getProfile(id) {
+    if (id == localStorage.id) {
+      return `/myprofile`;
+    } else {
+      return `/profile/${id}`;
+    }
   }
   render() {
     const {users} = this.props;
-    console.log(this.props)
     return (
       <GoogleMapReact
         bootstrapURLKeys={{key: GOOGLE_MAP_KEY}}
@@ -36,17 +33,16 @@ class Map extends Component {
         defaultZoom={this.props.zoom}
       >
       {users.map(user=> (
-        <div
+        <Link
+        to={this.getProfile(user.id)}
         lat={user.latitude}
         lng={user.longitude}
-        id={user.id}
-        key={user.id}
         >
         <div
           className="mapUserMarkers"
-          onClick={this.theyProfile.bind(this)}
-          >
-        </div></div>
+          text={user.username}
+          onClick={this.getProfile}
+        ></div></Link>
       ))}
 
       </GoogleMapReact>
