@@ -18,9 +18,9 @@ class Filter extends Component {
   render(){
     return (
       <div id="inbox-filter">
-        <h3>Username</h3>
-        <input type='text' value={this.state.username} onChange={this.handleChange} name="username"/>
-        <button onClick = {() => this.props.filterByUsername(this.state.username)}/>
+        <h3>Filter by username: </h3>
+        <input  id="inputFilter" type='text' value={this.state.username} onChange={this.handleChange} name="username"/>
+        <button type="button" onClick = {() => this.props.filterByUsername(this.state.username)}>search</button>
       </div>
     )
   }

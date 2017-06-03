@@ -1,0 +1,18 @@
+#inboxMessage {
+  text-align: center;
+  margin-top: 0px;
+}
+#inbox-filter {
+  display: flex;
+  flex-direction: row;
+  border: black solid 2px;
+}
+
+#inputFilter{
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+#inbox-message{
+  border: solid black 2px;
+}
