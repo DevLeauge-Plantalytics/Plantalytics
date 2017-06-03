@@ -1,5 +1,7 @@
+import { connect } from 'react-redux';
 import React, {Component} from 'react';
 import Updatechanges from '../../Containers/Updatechanges';
+import {acceptRequest} from '../../Actions';
 
 class EachRequest extends Component {
   constructor(props) {
@@ -19,6 +21,10 @@ class EachRequest extends Component {
 
   makeChanges = () => {
     this.setState({"updateRequest" : true})
+  }
+
+  acceptRequest = (request) => {
+
   }
 
   hideChanges = () => {
@@ -60,7 +66,7 @@ class EachRequest extends Component {
               <p>No delivery requested</p>}
           </div>
           <div className="buttonsQuotations">
-            <button type="button" onClick={this.acceptRequest} >Accept the request</button>
+            <button type="button" onClick={ () => this.acceptR(request)} >Accept the request</button>
             <button type="button" onClick={this.makeChanges} >Make changes</button>
           </div>
         </div>
@@ -70,4 +76,21 @@ class EachRequest extends Component {
     )
   }
 }
-export default EachRequest;
+
+const mapStateToProps = (state) => {
+  return {
+  };
+}
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    acceptRequest: (id) => {
+      dispatch(acceptRequest(id))
+    }
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(EachRequest);
