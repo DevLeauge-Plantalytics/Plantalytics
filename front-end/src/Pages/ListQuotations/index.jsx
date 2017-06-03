@@ -22,7 +22,6 @@ class ListQuotations extends Component {
   }
 
   render(){
-    console.log(this.props.quotations);
     return (
       <div id="quotations-feed">
         <Link to={this.yourProfile()}><p className="profileLink">Profile</p></Link>
