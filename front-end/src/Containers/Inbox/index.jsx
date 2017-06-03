@@ -24,7 +24,7 @@ class Inbox extends Component {
     return (
       <div id="messagesFeed">
         <Header/>
-        <h1>Inbox</h1>
+        <h1 id="inboxMessage">Inbox</h1>
         <Filter id="filter"/>
         <div id="inbox-feed">
           { this.props.displayMessages.map(message =>
