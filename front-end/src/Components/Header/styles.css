@@ -20,11 +20,11 @@
   display: inline-block;
 }
 #main-nav-items {
+  position: absolute;
+  right: 0px;
   flex-wrap: nowrap;
-  position: relative;
-  left: 40%;
   height: 75px;
-  width: 45%;
+  width: 50%;
   margin: 0;
   text-align: center;
   display: inline-block;
@@ -34,8 +34,8 @@
   height: 90px;
   width: 90px;
   border-radius: 50px;
-  position: relative;
-  left: 35%;
+  position: absolute;
+  right: 0px;
   top: 20px;
   display: inline-block;
   background-image: url(http://www.pof.fr/images/responsive/profileImages/profileImage_nonGender-220.png);
