@@ -32,7 +32,7 @@ body {
   width: 20%;
   display: inline-block;
 }
-#your-user-info {
+#their-user-info {
   font-family: 'Futura';
   position: absolute;
   top: 25%;
@@ -40,6 +40,7 @@ body {
   border: 1px solid #999;
   width: 33%;
   text-align: center;
+  height: 350px;
   display: inline-block;
 }
 #user-profile-pic {

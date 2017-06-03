@@ -30,7 +30,7 @@ class Header extends Component {
         }
         {!this.props.loggedIn &&
           <div className="analysis-nav">
-            <p id="loggedInfo">You are currently not logged&nbsp;&nbsp;&nbsp;&nbsp;in</p>
+            <p id="loggedInfo">You are not currently logged&nbsp;&nbsp;&nbsp;&nbsp;in</p>
             <Link className="analysis-nav-link" to="/sign-up"><p className="analysis-nav-item">&nbsp;&nbsp;&nbsp;Sign-Up</p></Link>
             <p className="analysis-nav-slash">&nbsp;/&nbsp;</p>
             <Link className="analysis-nav-link" to="/login"><p className="analysis-nav-item">Login</p></Link>

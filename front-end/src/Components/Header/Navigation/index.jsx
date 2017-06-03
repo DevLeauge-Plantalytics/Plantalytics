@@ -12,6 +12,10 @@ class Navigation extends Component {
         {localStorage.loggedIn &&
           <div>
             <p className="header-nav-item">Download the App</p>
+          </div>
+        }{!localStorage.loggedIn &&
+          <div>
+            <p className="header-nav-item">Download the App</p>
             <p className="header-nav-item">Become a Supplier</p>
           </div>
         }

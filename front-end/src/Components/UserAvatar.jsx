@@ -1,5 +1,5 @@
 import React from 'react';
-
+let length = 4;
 export default ({user}) => (
   <div id="user-avatar">
     <div id="user-profile-pic"></div>
