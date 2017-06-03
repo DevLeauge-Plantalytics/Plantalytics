@@ -149,7 +149,8 @@ const updateIntTable = (req, res) => {
 };
 
 quotations.post('/', (req,res) =>{
-  if(req.body.type !== "trade" || req.body.products_price !== "0" || req.body.delivery_price !== 0 || req.body.offered_products.length !== 0 || req.body.request_products !== 0 || req.body.accepted !== true){
+  if(req.body.type !== 'trade' || req.body.products_price !== 0 || req.body.delivery_price !== 0 || req.body.offered_products.length !== 0 || req.body.request_products.length !== 0 || req.body.accepted !== true){
+    console.log("test");
     Req_Prod_Requested.findAll({where: {RequestId: req.body.Request_Id}})
     .then(data => {
       let match = 0;

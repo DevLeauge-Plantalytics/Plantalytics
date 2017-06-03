@@ -22,11 +22,7 @@ class Requests extends Component {
 
   addRequest = (body) => {
     this.props.makeRequest(body);
-    this.props.history.push('/profile');
-  }
-
-  yourProfile() {
-    return `/profile/${localStorage.id}`;
+    this.props.history.push('/myprofile');
   }
 
   handleSubmit = (event) => {
@@ -67,7 +63,7 @@ class Requests extends Component {
   render(){
     return (
       <form id="request_board" onSubmit={this.handleSubmit}>
-        <Link to={this.yourProfile()}><p className="profileLink">Profile</p></Link>
+        <Link to='/myprofile'><p className="profileLink">Profile</p></Link>
         <h1>Welcome to the trading page</h1>
         <div id="products_display">
           <div className="productsR">
