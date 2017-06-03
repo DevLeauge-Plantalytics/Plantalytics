@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import React, {Component} from 'react';
 import Updatechanges from '../../Containers/Updatechanges';
-import {acceptRequest} from '../../Actions';
+import {addQuotation} from '../../Actions';
 
 class EachRequest extends Component {
   constructor(props) {
@@ -23,8 +23,19 @@ class EachRequest extends Component {
     this.setState({"updateRequest" : true})
   }
 
-  acceptRequest = (request) => {
-
+  acceptRequest = () => {
+    console.log("hi");
+    console.log(this.props.request.id);
+    this.props.addQuotation({
+      "type": "trade",
+      "products_price": 0,
+      "delivery": false,
+      "delivery_price": 0,
+      "accepted": true,
+      "Request_Id": this.props.request.id,
+      "request_products": [],
+      "offered_products": [],
+    })
   }
 
   hideChanges = () => {
@@ -66,7 +77,7 @@ class EachRequest extends Component {
               <p>No delivery requested</p>}
           </div>
           <div className="buttonsQuotations">
-            <button type="button" onClick={ () => this.acceptR(request)} >Accept the request</button>
+            <button type="button" onClick={this.acceptR} >Accept the request</button>
             <button type="button" onClick={this.makeChanges} >Make changes</button>
           </div>
         </div>
@@ -84,8 +95,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    acceptRequest: (id) => {
-      dispatch(acceptRequest(id))
+    addQuotation: (body) => {
+      dispatch(addQuotation(body))
     }
   }
 }

@@ -149,7 +149,7 @@ const updateIntTable = (req, res) => {
 };
 
 quotations.post('/', (req,res) =>{
-
+  console.log(req.body);
   if(req.body.type !== "trade" || req.body.products_price !== "0" || req.body.delivery_price !== 0 || req.body.offered_products.length !== 0 || req.body.request_products !== 0 || req.body.accepted !== true){
     Req_Prod_Requested.findAll({where: {RequestId: req.body.Request_Id}})
     .then(data => {
@@ -193,6 +193,23 @@ quotations.post('/', (req,res) =>{
         }
       );
     })
+    .then( () => {
+      updateIntTable(req, res);
+    })
+    .catch((err) => {
+      res.status(400).send({error: err.message});
+    });
+  } else {
+    return Quotation.create(
+      {
+        "type": req.body.type,
+        "products_price": req.body.products_price,
+        "delivery": req.body.delivery,
+        "delivery_price": req.body.delivery_price,
+        "accepted": req.body.accepted,
+        "Request_Id": req.body.Request_Id,
+      }
+    )
     .then( () => {
       updateIntTable(req, res);
     })
