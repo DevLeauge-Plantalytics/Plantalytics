@@ -42,7 +42,7 @@ quotations.get('/contract-buyer/:id', (req,res) => {
       {
         model: Request,
         as:'Contract',
-        where: {Buyer: req.params.id, accepted: true}
+        where: {$or: [{Supplier: req.params.id}, {Buyer: req.params.id}], accepted: true}
       }
     ],
     where: {accepted: true}
@@ -149,7 +149,6 @@ const updateIntTable = (req, res) => {
 };
 
 quotations.post('/', (req,res) =>{
-  console.log(req.body);
   if(req.body.type !== "trade" || req.body.products_price !== "0" || req.body.delivery_price !== 0 || req.body.offered_products.length !== 0 || req.body.request_products !== 0 || req.body.accepted !== true){
     Req_Prod_Requested.findAll({where: {RequestId: req.body.Request_Id}})
     .then(data => {

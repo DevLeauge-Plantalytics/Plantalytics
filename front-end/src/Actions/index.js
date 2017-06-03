@@ -21,6 +21,7 @@ export const LOAD_REQUESTS = 'LOAD_REQUESTS';
 export const LOAD_REQUESTS_FOR_QUOTATIONS = 'LOAD_REQUESTS_FOR_QUOTATIONS';
 export const ADD_QUOTATION = 'ADD_QUOTATION';
 export const UPDATE_QUANT_QUOTATIONS = 'UPDATE_QUANT_QUOTATIONS';
+export const LOAD_TRADES_DONE = 'LOAD_TRADES_DONE';
 
 export const loadUsers = () => {
   return dispatch => {
@@ -197,3 +198,11 @@ export const updateQuantQuotation = (requestid, productid, quantity) => {
     return dispatch({type: UPDATE_QUANT_QUOTATIONS, requestid, productid, quantity});
   };
 };
+export const loadTradesDone = (id) => {
+  return dispatch => {
+    return API.getTradesDone(id)
+      .then( (trades) => {
+        return dispatch({type: LOAD_TRADES_DONE, trades});
+      });
+    };
+  };
