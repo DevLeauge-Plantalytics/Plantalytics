@@ -51,25 +51,16 @@
   width: 400px;
   flex: 2;
 }
-#mapUser {
-  background-color: coral;
-  background-image: url(https://lh4.ggpht.com/Tr5sntMif9qOPrKV_UVl7K8A_V3xQDgA7Sw_qweLUFlg76d_vGFA7q1xIKZ6IcmeGqg=w300);
-  height: 15px;
-  width: 15px;
-}
-#mapUser:hover {
-  transform: scale(1.5);
-  background-color: blue;
-}
 
 .mapUserMarkers {
-  background-color: magenta;
+  background-color: #0f8a7f;
   height: 10px;
   width: 10px;
+  border-radius: 50%;
 }
 .mapUserMarkers:hover {
   transform: scale(1.5);
-  background-color: blue;
+  background-color: #0f5a7f;
 }
 #loggedInfo {
   display: inline-block;

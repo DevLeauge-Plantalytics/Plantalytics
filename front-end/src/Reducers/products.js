@@ -1,8 +1,9 @@
 /*jshint esversion: 6*/
-import {LOAD_PRODUCTS_R, UPDATE_ARR_REQ, UPDATE_ARR_QUANT} from '../Actions';
+import {LOAD_PRODUCTS_R, UPDATE_ARR_REQ, UPDATE_ARR_QUANT, ADD_PRODUCT, GET_PRODUCTS} from '../Actions';
 const initialState = {
   productsR : [],
-  productsS : []
+  productsS : [],
+  products : []
 };
 
 const products = (state = initialState, action) => {
@@ -23,6 +24,19 @@ const products = (state = initialState, action) => {
       return Object.assign({}, state, {
         productsR: state.productsR.map( x => { if(x.id == action.id){ x.quantity = action.quantity; }return x;}),
         productsS: state.productsS.map( x => { if(x.id == action.id){ x.quantity = action.quantity; } return x;})
+      });
+
+    case ADD_PRODUCT:
+      return Object.assign({}, state, {
+        products: [action.product].concat(state.products),
+        productsS: [action.product].concat(state.productsS)
+      });
+
+    case GET_PRODUCTS:
+    console.log('hi');
+      return Object.assign({}, state, {
+        products: action.products,
+        productsS: action.products
       });
 
     default:

@@ -39,8 +39,8 @@ body {
   left: 33%;
   border: 1px solid #999;
   width: 33%;
+  height: 35%;
   text-align: center;
-  height: 350px;
   display: inline-block;
 }
 #user-profile-pic {
