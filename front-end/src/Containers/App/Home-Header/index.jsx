@@ -19,9 +19,6 @@ class HomeHeader extends Component {
   signIn() {
     localStorage.autoSup = false;
   }
-  yourProfile() {
-    return `/profile/${localStorage.id}`;
-  }
   render(){
     if (this.props.loggedIn) {
       return (
@@ -29,7 +26,7 @@ class HomeHeader extends Component {
           <img id="home-logo" src="https://t4.rbxcdn.com/4acfddda242f2996937cfc3ec905af85"/>
           <h1 id="logo-text">PLANTALYTICS</h1>
           <p onClick={this.logout} className="home-header-item">&nbsp;&nbsp;&nbsp;Logout</p>
-          <Link className="home-header-link" to={this.yourProfile()}><p className="home-header-item">&nbsp;&nbsp;&nbsp;Profile&nbsp;&nbsp;&nbsp;</p></Link>
+          <Link className="home-header-link" to="/myprofile"><p className="home-header-item">&nbsp;&nbsp;&nbsp;Profile&nbsp;&nbsp;&nbsp;</p></Link>
           <Link className="home-header-link" to="/location"><p className="home-header-item">Your Location&nbsp;&nbsp;&nbsp;</p></Link>
         </div>
       )

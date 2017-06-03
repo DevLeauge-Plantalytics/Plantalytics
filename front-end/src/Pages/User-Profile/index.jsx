@@ -12,7 +12,6 @@ import './styles.css';
 class UserProfile extends Component {
   constructor(props) {
     super(props);
-    console.log(props);
     this.title = 'No-Warning'
   }
   componentWillMount() {

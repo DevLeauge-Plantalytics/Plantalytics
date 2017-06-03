@@ -6,6 +6,7 @@ export default ({user}) => (
     <p>{user.firstname} {user.lastname}</p>
     <Link id="location-link" to="/location"><h3>{user.address}</h3></Link>
     <p>{user.zipcode}</p>
-    <button type="edit-profile">Edit Profile</button>
+    <button id="edit-profile">Edit Profile</button>
+    <button id="add-crop">Add Crop</button>
   </div>
 )

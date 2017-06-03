@@ -19,7 +19,6 @@ class Map extends Component {
   }
   getProfile(id) {
     if (id == localStorage.id) {
-      console.log('hey');
       return `/myprofile`;
     } else {
       return `/profile/${id}`;
@@ -27,7 +26,6 @@ class Map extends Component {
   }
   render() {
     const {users} = this.props;
-    console.log(this.props)
     return (
       <GoogleMapReact
         bootstrapURLKeys={{key: GOOGLE_MAP_KEY}}

@@ -13,7 +13,6 @@ class App extends Component {
     this.title = 'No-Warning';
   }
   componentDidMount() {
-    console.log('hi');
     let state = {
       username: localStorage.newUserName,
       password: localStorage.newUserPass
