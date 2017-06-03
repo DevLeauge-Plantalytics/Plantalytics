@@ -8,7 +8,7 @@ body {
   width: 100%;
   height: 50px;
   line-height: 50px;
-  background-color: #97a91a;
+  background-color: #8db500;
   z-index: 98;
 }
 #user-nav-items {
@@ -61,11 +61,11 @@ body {
   height: 350px;
   width: 350px;
 }
-#req-btn-prf {
+.req-btn-prf {
   text-decoration: none;
   color: black;
 }
-#req-btn {
+.req-btn {
   cursor: pointer;
   font-family: 'Futura';
   font-size: 18px;
@@ -76,11 +76,13 @@ body {
   background-color: #8db500;
   padding: 10px;
   color: white;
-  position: relative;
-  top: 125px;
-  margin: 0 auto;
+  margin: 50px auto;
   display: block;
 }
-#req-btn:focus {
+.req-btn:focus {
   outline: none;
+}
+#location-link {
+  text-decoration: none;
+  color: black;
 }

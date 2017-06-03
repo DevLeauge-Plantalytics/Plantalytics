@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import Header from '../../Components/Header'
 import UserAvatar from '../../Components/UserAvatar';
-import UserInfo from '../../Components/UserInfo';
+import YourUserInfo from '../../Components/YourUserInfo';
+import TheirUserInfo from '../../Components/TheirUserInfo';
 import UserNav from '../../Components/UserNav';
 import UserMap from '../../Containers/Analysis-Map';
 import {getUserById} from '../../API';
@@ -30,7 +31,7 @@ class UserProfile extends Component {
             <UserMap/>
           </div>
           <UserAvatar user={this.props.singleUser}/>
-          <UserInfo user={this.props.singleUser}/>
+          <YourUserInfo user={this.props.singleUser}/>
         </div>
       )
     } else {
@@ -39,10 +40,10 @@ class UserProfile extends Component {
           <Header/>
           <UserNav/>
           <div id="analysis-map">
-            <ReqButton/>
+            <ReqButton user={this.props.singleUser}/>
           </div>
           <UserAvatar user={this.props.singleUser}/>
-          <UserInfo user={this.props.singleUser}/>
+          <TheirUserInfo user={this.props.singleUser}/>
         </div>
       )
     }

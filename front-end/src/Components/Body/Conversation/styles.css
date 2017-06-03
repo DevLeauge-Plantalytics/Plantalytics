@@ -1,7 +1,9 @@
 #conversation {
+  position: absolute;
   border: 1px solid #333;
-  width: 75%;
-  margin: 25px auto;
+  width: 70%;
+  left: 15%;
+  top: 25%;
 }
 #conversation-feed {
   list-style: none;
