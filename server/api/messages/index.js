@@ -18,7 +18,7 @@ messages.get('/', (req,res) => {
 
 messages.get('/inbox/:id', (req,res) => {
   Message.findAll({
-    where: {$or : [{Sender: req.params.id}, {Receiver: req.params.id}]},
+    where: {Receiver: req.params.id},
     include: [
       {
         model:User,
@@ -29,6 +29,7 @@ messages.get('/inbox/:id', (req,res) => {
         as:'Listener',
       }
     ],
+    order: [['createdAt','DESC']]
   })
   .then(res.json.bind(res))
   .catch((err) => {
