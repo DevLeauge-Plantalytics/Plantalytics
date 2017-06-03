@@ -192,7 +192,6 @@ export const getRequests= (id) => {
     });
   });
 };
-
 export const getRequestsForQuotations= (id) => {
   return new Promise(function (resolve, reject) {
     makeRequest('GET', `/api/requests/supplier/${id}`)
@@ -209,6 +208,18 @@ export const postQuotation = body => {
     makeRequest('POST', `/api/quotations/`, body)
     .then (quotation => {
       resolve(JSON.parse(quotation));
+    })
+    .catch (err => {
+      reject(err);
+    });
+  });
+};
+export const getTradesDone = (id) => {
+  console.log(id);
+  return new Promise(function (resolve, reject) {
+    makeRequest('GET', `api/quotations/contract-buyer/${id}`)
+    .then (trades => {
+      resolve(JSON.parse(trades));
     })
     .catch (err => {
       reject(err);

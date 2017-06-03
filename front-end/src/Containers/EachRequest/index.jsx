@@ -23,7 +23,7 @@ class EachRequest extends Component {
     this.setState({"updateRequest" : true})
   }
 
-  acceptRequest = () => {
+  acceptR = () => {
     console.log("hi");
     console.log(this.props.request.id);
     this.props.addQuotation({
