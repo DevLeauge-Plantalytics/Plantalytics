@@ -47,8 +47,6 @@ class SignUpForm extends Component {
     });
   }
   handleSubmit = (event) => {
-    localStorage.newUserName = this.state.username;
-    localStorage.newUserPass = this.state.password;
     event.preventDefault();
     this.addUser(this.state);
   }
