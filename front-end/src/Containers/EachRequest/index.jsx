@@ -24,8 +24,6 @@ class EachRequest extends Component {
   }
 
   acceptR = () => {
-    console.log("hi");
-    console.log(this.props.request.id);
     this.props.addQuotation({
       "type": "trade",
       "products_price": 0,

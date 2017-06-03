@@ -23,7 +23,7 @@ class TradesDone extends Component {
     console.log(this.props.completed);
     return (
       <div id="trades-feed">
-        <Link to={this.yourProfile()}><p className="profileLink">Profile</p></Link>
+        <Link to='/myprofile'><p className="profileLink">Profile</p></Link>
         <h1 id="quotations-feed-title">List of trades</h1>
           { this.props.completed
             .map( trade =>  <div>
