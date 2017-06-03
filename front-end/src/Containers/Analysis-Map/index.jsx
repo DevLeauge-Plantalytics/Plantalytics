@@ -4,6 +4,7 @@ import {GOOGLE_MAP_KEY} from '../../keys';
 import {connect} from 'react-redux';
 import {loadUsers, getUserInfo} from '../../Actions';
 import {Link} from 'react-router-dom';
+import {withRouter} from 'react-router'
 
 class Map extends Component {
 
@@ -20,12 +21,10 @@ class Map extends Component {
   yourProfile() {
     return `/profile/${localStorage.id}`;
   }
-  theyProfile(event) {
-    console.log(event.target);
-  }
+
   render() {
     const {users} = this.props;
-    console.log(this.props.latitude)
+    console.log(this.props)
     return (
       <GoogleMapReact
         bootstrapURLKeys={{key: GOOGLE_MAP_KEY}}
@@ -48,7 +47,7 @@ class Map extends Component {
           lng={user.longitude}
           text={user.username}
           key={user.id}
-          onClick={this.theyProfile}
+          onClick={()=> this.props.history.push(`/profile/${user.id}`)}
           >
         </div>
       ))}
@@ -70,4 +69,4 @@ const mapDispatchToProps = dispatch => ({
   getUserInfo: address => dispatch(getUserInfo(address))
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Map)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Map))

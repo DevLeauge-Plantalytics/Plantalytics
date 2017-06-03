@@ -18,21 +18,20 @@ const requests = (state = initialState, action) => {
         requests_for_quotations: action.requests
       });
     case UPDATE_QUANT_QUOTATIONS:
-      return Object.assign({}, state, {
-        RFQ_prod_offered: state.requests_for_quotations.interTableOff
-                            .map(x => { if(x.Req_Prod_Offered.id == action.id){
-                                          x.Req_Prod_Offered.quantity = action.quantity;
-                                        }
-                                        return x;
-                                      }),
+      console.log(action.requestid);
+      console.log(action.productid);
+      console.log(action.quantity);
+      console.log(state.requests_for_quotations.filter(x => { return x.id === action.requestid;})[0]);
 
-        RFQ_prod_requested: state.requests_for_quotations.interTableReq
-                            .map(x => { if(x.Req_Prod_Requested.id == action.id){
-                                          x.Req_Prod_Requested.quantity = action.quantity;
-                                        }
-                                        return x;
-                                      }),
-                                  });
+      return Object.assign({}, state, {
+        RFQ_prod_offered: state.requests_for_quotations.filter(x => { return x.id === action.requestid;})[0].interTableOff.map( y => { if(Number(y.id) === Number(action.productid)){
+                                                              y.quantity = action.quantity;}
+                                                              return y;}),
+        RFQ_prod_requested: state.requests_for_quotations.filter(x => { return x.id === action.requestid;})[0].interTableReq.map( y => { if(Number(y.id) === Number(action.productid)){
+                                                              y.quantity = action.quantity;}
+                                                              return y;}),
+      });
+
     default:
       return state;
   }

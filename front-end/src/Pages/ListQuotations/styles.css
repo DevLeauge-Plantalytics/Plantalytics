@@ -62,14 +62,6 @@
   margin-bottom: 10px;
 }
 
-#update_quotation_form {
-  position: fixed;
-  width: 60%;
-  margin-left: 20%;
-  height: 70%;
-  background-color: white;
-  z-index: 1;
-}
 .profileLink {
   margin-left: 10%;
   text-decoration: none;

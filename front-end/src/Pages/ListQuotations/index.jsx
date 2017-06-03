@@ -3,84 +3,31 @@ import React, {Component} from 'react';
 import {loadRequestsForQuotations} from '../../Actions';
 import {withRouter} from 'react-router';
 import {Link} from 'react-router-dom';
-import Updatechanges from '../../Containers/Updatechanges';
+import EachRequest from '../../Containers/EachRequest';
 import './styles.css';
 
 class ListQuotations extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      "updateRequest" : false
-    }
+
   }
 
   componentWillMount(){
     this.props.loadRequestsForQuotations(localStorage.id);
   }
 
-  makeChanges = () => {
-    this.setState({"updateRequest" : true})
-  }
-
   yourProfile() {
     return `/profile/${localStorage.id}`;
   }
 
-  renderUpdateForm = (requests) => {
-    if(this.state.updateRequest){
-      return (<Updatechanges request={requests} />)
-    } else {
-      return;
-    }
-  }
-
   render(){
-    console.log(this.props.quotations);
     return (
       <div id="quotations-feed">
         <Link to={this.yourProfile()}><p className="profileLink">Profile</p></Link>
         <h1 id="quotations-feed-title">List of quotations</h1>
           { this.props.quotations
-            .map( requests => <div className="displayQuotations" key={requests.id} >
-                <div className="QuotationsHeader">
-                  <p> <span>Request ID:</span> {requests.id} </p>
-                  <p> <span>Purchaser:</span> {requests.Purchaser.username}</p>
-                  <p> <span>Date of the request:</span> {requests.createdAt} </p>
-                </div>
-                <div className="QuotationsContent">
-                  <div className="listProdReq">
-                    <p> <span>Products Requested by {requests.Purchaser.username}:</span></p>
-                    <ul> {requests.interTableReq.map( products =>
-                            <li>{products.Req_Prod_Requested.quantity} - {products.name}</li>
-                            )
-                          }
-                    </ul>
-                  </div>
-                  <div className="listProdOff">
-                    <p> <span>Products Offered in exchange:</span></p>
-                    <ul> {requests.interTableOff.map( products =>
-                            <li>{products.Req_Prod_Offered.quantity} - {products.name}</li>
-                            )
-                          }
-                    </ul>
-                  </div>
-                </div>
-                <div className="QuotationsFooter">
-                  <div className="Delivery">
-                    {requests.delivery &&
-                      <p>The purchaser would like delivery. His home address is {requests.Purchaser.address} </p>}
-                    {!requests.delivery &&
-                      <p>No delivery requested</p>}
-                  </div>
-                  <div className="buttonsQuotations">
-                    <button type="button" onClick={this.acceptRequest} >Accept the request</button>
-                    <button type="button" onClick={this.makeChanges} >Make changes</button>
-
-                  </div>
-                </div>
-                {this.renderUpdateForm(requests)}
-            </div> )
+            .map( request =>  <EachRequest request={request} />)
           }
       </div>
     )
