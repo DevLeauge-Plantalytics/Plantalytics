@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router';
-import {addUser, signIn} from '../../Actions';
+import {addUser} from '../../Actions';
 
 class SignUpForm extends Component {
   constructor(props) {
@@ -122,9 +122,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     addUser: user => {
       dispatch(addUser(user))
     },
-    signIn: (user) => {
-      dispatch(signIn(user))
-    }
   }
 }
 

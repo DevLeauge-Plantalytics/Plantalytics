@@ -4,7 +4,7 @@ module.exports = {
   up: function (queryInterface, Sequelize) {
       return queryInterface.bulkInsert('Messages', [{
         subject: "Hello",
-        body: "How you doing Jasmine",
+        body: "How you doing ?",
         Sender: 1,
         Receiver: 2,
         createdAt: new Date(),

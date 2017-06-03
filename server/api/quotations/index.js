@@ -2,7 +2,7 @@
 
 const express = require('express');
 const quotations = express.Router();
-const {Quotation, Request, Product, Req_Prod_Requested, Req_Prod_Offered} = require('../../models');
+const {Quotation, User, Request, Product, Req_Prod_Requested, Req_Prod_Offered} = require('../../models');
 
 quotations.get('/buyer/:id', (req,res) => {
   Quotation.findAll({
@@ -42,6 +42,24 @@ quotations.get('/contract-buyer/:id', (req,res) => {
       {
         model: Request,
         as:'Contract',
+        include: [
+          {
+            model:User,
+            as:"Purchaser"
+          },
+          {
+            model:User,
+            as:"Vendor"
+          },
+          {
+            model:Product,
+            as: "interTableOff"
+          },
+          {
+            model:Product,
+            as: "interTableReq"
+          }
+        ],
         where: {$or: [{Supplier: req.params.id}, {Buyer: req.params.id}], accepted: true}
       }
     ],
@@ -98,6 +116,7 @@ quotations.get('/', (req,res) => {
 });
 
 const updateIntTable = (req, res) => {
+  console.log("entered the update table");
   return Promise.all([
     Product.findAll({where: {id: {$in: req.body.request_products.map(p => p.id)}}}).then( (requested_products) => {
       requested_products = requested_products.map(p => {
@@ -149,7 +168,7 @@ const updateIntTable = (req, res) => {
 };
 
 quotations.post('/', (req,res) =>{
-  if(req.body.type !== 'trade' || req.body.products_price !== 0 || req.body.delivery_price !== 0 || req.body.offered_products.length !== 0 || req.body.request_products.length !== 0 || req.body.accepted !== true){
+  if(req.body.products_price !== 0 || req.body.delivery_price !== 0 || req.body.offered_products.length !== 0 || req.body.request_products.length !== 0 || req.body.accepted !== true){
     console.log("test");
     Req_Prod_Requested.findAll({where: {RequestId: req.body.Request_Id}})
     .then(data => {
@@ -174,7 +193,6 @@ quotations.post('/', (req,res) =>{
           let purchaser = request.Buyer;
           for(let i = 0; i < req.body.request_products.length; i++){
             if(data.map(x => { return x.dataValues;})[i] === undefined || data.map(x => { return x.dataValues;})[i].Owner_Id !== Number(purchaser)){
-              console.log("test");
               throw new Error("products requested must belong to the person requested");
             }
           }
@@ -210,9 +228,7 @@ quotations.post('/', (req,res) =>{
         "Request_Id": req.body.Request_Id,
       }
     )
-    .then( () => {
-      updateIntTable(req, res);
-    })
+    .then(res.json.bind(res))
     .catch((err) => {
       res.status(400).send({error: err.message});
     });

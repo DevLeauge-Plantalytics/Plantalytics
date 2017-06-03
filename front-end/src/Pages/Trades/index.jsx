@@ -24,11 +24,31 @@ class TradesDone extends Component {
     return (
       <div id="trades-feed">
         <Link to='/myprofile'><p className="profileLink">Profile</p></Link>
-        <h1 id="quotations-feed-title">List of trades</h1>
-          { this.props.completed
-            .map( trade =>  <div>
+        <h1 id="trades-feed-title">List of trades</h1>
+          { this.props.completed.map( trade =>  <div className="individual-trade">
+              <div className="TradeHeader">
+                <p> <span>Quotation id:</span> {trade.id} </p>
+                <p> <span>Request id:</span> {trade.Request_Id}</p>
+                <p> <span>Purchaser:</span> {trade.Contract.Purchaser.username}</p>
+              </div>
 
-                <h1> {trade.id} </h1>
+              <div className="TradedProducts">
+                <p> <span>Products that you will receive:</span> </p>
+                {trade.Contract.interTableOff.map( prodRec =>
+                  <div>
+                    <p> {prodRec.name} </p>
+                    <p> {prodRec.Req_Prod_Offered.quantity} </p>
+                  </div>
+                  )}
+
+                <p> <span>Products that you will offer:</span> </p>
+                {trade.Contract.interTableReq.map( prodOff =>
+                  <div>
+                    <p> {prodOff.name} </p>
+                    <p> {prodOff.Req_Prod_Requested.quantity}</p>
+                  </div>
+                  )}
+              </div>
 
               </div>)
           }
