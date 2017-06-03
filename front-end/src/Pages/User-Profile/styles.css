@@ -37,8 +37,8 @@ body {
   position: absolute;
   top: 25%;
   left: 33%;
-  border: 1px solid #999;
   width: 33%;
+  height: 35%;
   text-align: center;
   display: inline-block;
 }
@@ -49,6 +49,48 @@ body {
   height: 150px;
   width: 150px;
   margin: 25px auto;
+}
+#my-crop-list {
+  margin-top: 0;
+  list-style: none;
+}
+.my-crop-item {
+  font-family: 'Helvetica';
+  display: inline-block;
+  margin: 0 15px;
+}
+.my-crop-names {
+  display: inline-block;
+  margin: 0;
+  font-family: 'Futura';
+}
+#my-crops-title {
+  font-family: 'Futura';
+  text-align: center;
+  margin-bottom: 0;
+  text-decoration: underline;
+}
+#add-your-crop {
+  position: absolute;
+  top: 60%;
+  left: 33%;
+  width: 33%;
+  height: 10%;
+}
+.add-crop-info {
+  margin: 0 auto;
+  text-align: center;
+  display: block;
+}
+.add-crop-info:focus {
+  outline: none;
+}
+#add-crop-btn {
+  margin: 0 auto;
+  display: block;
+}
+#add-crop-btn:focus {
+  outline: none;
 }
 #local-users-map {
   height: 600px;

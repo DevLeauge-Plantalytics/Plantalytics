@@ -5,6 +5,7 @@ import UserAvatar from '../../Components/UserAvatar';
 import YourUserInfo from '../../Components/YourUserInfo';
 import UserNav from '../../Components/UserNav';
 import UserMap from '../../Containers/Analysis-Map';
+import AddCrop from '../../Containers/AddCrop';
 import {getUserById} from '../../API';
 import {getUser} from '../../Actions';
 import './styles.css';
@@ -17,7 +18,6 @@ class UserProfile extends Component {
   componentWillMount() {
       this.props.getUser(localStorage.id);
   }
-
   render(){
     return (
      <div id="your-user-profile">
@@ -28,6 +28,7 @@ class UserProfile extends Component {
        </div>
        <UserAvatar user={this.props.singleUser}/>
        <YourUserInfo user={this.props.singleUser}/>
+       <AddCrop/>
       </div>
     )
   }
