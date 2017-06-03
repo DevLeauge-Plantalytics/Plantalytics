@@ -186,7 +186,7 @@ export const loadRequestsForQuotations = (id) => {
   };
 export const addQuotation = body => {
   return dispatch => {
-    return API.postQuotation(body)
+    return API.postQuotation(JSON.stringify(body))
     .then(quotation => {
       return dispatch({type: ADD_QUOTATION, quotation});
     });

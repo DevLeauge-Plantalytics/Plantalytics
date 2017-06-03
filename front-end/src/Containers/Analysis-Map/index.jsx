@@ -44,8 +44,7 @@ class Map extends Component {
           className="mapUserMarkers"
           text={user.username}
           onClick={this.getProfile}
-          >
-        </div></Link>
+        ></div></Link>
       ))}
 
       </GoogleMapReact>

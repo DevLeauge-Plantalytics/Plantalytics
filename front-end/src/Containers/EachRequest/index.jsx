@@ -1,5 +1,7 @@
+import { connect } from 'react-redux';
 import React, {Component} from 'react';
 import Updatechanges from '../../Containers/Updatechanges';
+import {acceptRequest} from '../../Actions';
 
 class EachRequest extends Component {
   constructor(props) {
@@ -11,7 +13,7 @@ class EachRequest extends Component {
 
   renderUpdateForm = (request) => {
     if(this.state.updateRequest){
-      return (<Updatechanges request={request} />)
+      return (<Updatechanges request={request} hideChanges={this.hideChanges} />)
     } else {
       return;
     }
@@ -19,6 +21,14 @@ class EachRequest extends Component {
 
   makeChanges = () => {
     this.setState({"updateRequest" : true})
+  }
+
+  acceptRequest = (request) => {
+
+  }
+
+  hideChanges = () => {
+    this.setState({"updateRequest" : false})
   }
 
   render(){
@@ -56,14 +66,31 @@ class EachRequest extends Component {
               <p>No delivery requested</p>}
           </div>
           <div className="buttonsQuotations">
-            <button type="button" onClick={this.acceptRequest} >Accept the request</button>
+            <button type="button" onClick={ () => this.acceptR(request)} >Accept the request</button>
             <button type="button" onClick={this.makeChanges} >Make changes</button>
-
           </div>
         </div>
         {this.renderUpdateForm(request)}
+
     </div>
     )
   }
 }
-export default EachRequest;
+
+const mapStateToProps = (state) => {
+  return {
+  };
+}
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    acceptRequest: (id) => {
+      dispatch(acceptRequest(id))
+    }
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(EachRequest);
