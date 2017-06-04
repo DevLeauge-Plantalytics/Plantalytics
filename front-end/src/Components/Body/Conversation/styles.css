@@ -22,7 +22,7 @@
   border-radius: 10px;
   text-decoration-color: #999999;
   padding: 10px;
-  text-align: left;
+  text-align: right;
   margin: 10px;
 }
 .your-message {
@@ -31,7 +31,7 @@
   border-radius: 10px;
   text-decoration-color: #97A91A;
   padding: 10px;
-  text-align: right;
+  text-align: left;
   margin: 10px;
 }
 #compose-message {
