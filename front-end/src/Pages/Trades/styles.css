@@ -1,0 +1,22 @@
+#trades-feed-title{
+  text-align: center;
+}
+.individual-trade {
+  width: 85%;
+  margin-left: 7.5%;
+  border: solid black 2px;
+}
+.individual-trade span {
+  font-weight: bold;
+}
+.TradeHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border-bottom: dotted black 2px;
+}
+.TradedProducts{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}

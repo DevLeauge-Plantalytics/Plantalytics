@@ -159,11 +159,33 @@ export const getClosestData = (location) => {
     });
   });
 };
-export const getProducts= (id) => {
+export const getProducts = (id) => {
   return new Promise(function (resolve, reject) {
     makeRequest('GET', `/api/products/requests?id1=${localStorage.id}&id2=${id}`)
     .then (products => {
       resolve(JSON.parse(products));
+    })
+    .catch (err => {
+      reject(err);
+    });
+  });
+};
+export const getYourProducts = (id) => {
+  return new Promise(function (resolve, reject) {
+    makeRequest('GET', `/api/products/${id}`)
+    .then (products => {
+      resolve(JSON.parse(products));
+    })
+    .catch (err => {
+      reject(err);
+    });
+  });
+};
+export const postProduct= (body) => {
+  return new Promise(function (resolve, reject) {
+    makeRequest('POST', `/api/products/`, body)
+    .then (product => {
+      resolve(JSON.parse(product));
     })
     .catch (err => {
       reject(err);
@@ -175,6 +197,51 @@ export const postRequest= (body) => {
     makeRequest('POST', `/api/requests/`, body)
     .then (request => {
       resolve(JSON.parse(request));
+    })
+    .catch (err => {
+      reject(err);
+    });
+  });
+};
+export const getRequests= (id) => {
+  return new Promise(function (resolve, reject) {
+    makeRequest('GET', `/api/requests/buyer/${id}`)
+    .then (requests => {
+      resolve(JSON.parse(requests));
+    })
+    .catch (err => {
+      reject(err);
+    });
+  });
+};
+export const getRequestsForQuotations= (id) => {
+  return new Promise(function (resolve, reject) {
+    makeRequest('GET', `/api/requests/supplier/${id}`)
+    .then (requests => {
+      resolve(JSON.parse(requests));
+    })
+    .catch (err => {
+      reject(err);
+    });
+  });
+};
+export const postQuotation = body => {
+  return new Promise(function (resolve, reject) {
+    makeRequest('POST', `/api/quotations/`, body)
+    .then (quotation => {
+      resolve(JSON.parse(quotation));
+    })
+    .catch (err => {
+      reject(err);
+    });
+  });
+};
+export const getTradesDone = (id) => {
+  console.log(id);
+  return new Promise(function (resolve, reject) {
+    makeRequest('GET', `api/quotations/contract-buyer/${id}`)
+    .then (trades => {
+      resolve(JSON.parse(trades));
     })
     .catch (err => {
       reject(err);

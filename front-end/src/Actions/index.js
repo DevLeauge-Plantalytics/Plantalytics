@@ -17,6 +17,13 @@ export const MAKE_REQ = 'MAKE_REQ';
 export const UPDATE_ARR_REQ = 'UPDATE_ARR_REQ';
 export const UPDATE_ARR_QUANT = 'UPDATE_ARR_QUANT';
 export const SET_USER_LATLONG = 'SET_USER_LATLONG';
+export const LOAD_REQUESTS = 'LOAD_REQUESTS';
+export const LOAD_REQUESTS_FOR_QUOTATIONS = 'LOAD_REQUESTS_FOR_QUOTATIONS';
+export const ADD_QUOTATION = 'ADD_QUOTATION';
+export const UPDATE_QUANT_QUOTATIONS = 'UPDATE_QUANT_QUOTATIONS';
+export const ADD_PRODUCT = 'ADD_PRODUCT';
+export const GET_PRODUCTS = 'GET_PRODUCTS';
+export const LOAD_TRADES_DONE = 'LOAD_TRADES_DONE';
 
 export const loadUsers = () => {
   return dispatch => {
@@ -143,9 +150,10 @@ export const makeRequest = (body) => {
     .then( (request) => {
       return API.postMessage(JSON.stringify({
                                 subject: `New request from ${localStorage.username}`,
-                                body:`Hi Buddy, ${localStorage.username} needs the following products from you and will offer you the following products in exchange` ,
+                                body:`Hi, You have a new request from ${localStorage.username}. Check "Your quotations" to accept or reject the request`,
                                 Sender:Number(localStorage.id),
                                 Receiver:2,
+                                Request_Id: request[0][0].RequestId
                               }))
       .then( () => {
         return dispatch({type: MAKE_REQ, request });
@@ -163,4 +171,56 @@ export const updateQuantRequest = (id, quantity) => {
     return dispatch({type: UPDATE_ARR_QUANT, id, quantity });
   };
 };
-
+export const loadRequests = (id) => {
+  return dispatch => {
+    return API.getRequests(id)
+      .then( (requests) => {
+        return dispatch({type: LOAD_REQUESTS, requests});
+      });
+    };
+  };
+export const loadRequestsForQuotations = (id) => {
+  return dispatch => {
+    return API.getRequestsForQuotations(id)
+      .then( (requests) => {
+        return dispatch({type: LOAD_REQUESTS_FOR_QUOTATIONS, requests});
+      });
+    };
+  };
+export const addQuotation = body => {
+  return dispatch => {
+    return API.postQuotation(JSON.stringify(body))
+    .then(quotation => {
+      return dispatch({type: ADD_QUOTATION, quotation});
+    });
+  };
+};
+export const updateQuantQuotation = (requestid, productid, quantity) => {
+  return dispatch => {
+    return dispatch({type: UPDATE_QUANT_QUOTATIONS, requestid, productid, quantity});
+  };
+};
+export const addProduct = body => {
+  return dispatch => {
+    return API.postProduct(JSON.stringify(body))
+    .then(product => {
+      return dispatch({type: ADD_PRODUCT, product});
+    });
+  };
+};
+export const getProducts = id => {
+  return dispatch => {
+    return API.getYourProducts(id)
+    .then(products => {
+      return dispatch({type: GET_PRODUCTS, products});
+    });
+  };
+};
+export const loadTradesDone = (id) => {
+  return dispatch => {
+    return API.getTradesDone(id)
+      .then( (trades) => {
+        return dispatch({type: LOAD_TRADES_DONE, trades});
+      });
+    };
+  };

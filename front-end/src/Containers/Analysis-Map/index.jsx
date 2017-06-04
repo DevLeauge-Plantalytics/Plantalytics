@@ -4,6 +4,7 @@ import {GOOGLE_MAP_KEY} from '../../keys';
 import {connect} from 'react-redux';
 import {loadUsers, getUserInfo} from '../../Actions';
 import {Link} from 'react-router-dom';
+import {withRouter} from 'react-router'
 
 class Map extends Component {
 
@@ -16,41 +17,32 @@ class Map extends Component {
     this.props.loadUsers();
     this.props.getUserInfo(this.props.address)
   }
-
-  yourProfile() {
-    return `/profile/${localStorage.id}`;
-  }
-  theyProfile(event) {
-    console.log(event.target);
+  getProfile(id) {
+    if (id == localStorage.id) {
+      return `/myprofile`;
+    } else {
+      return `/profile/${id}`;
+    }
   }
   render() {
     const {users} = this.props;
-    console.log(this.props.latitude)
     return (
       <GoogleMapReact
         bootstrapURLKeys={{key: GOOGLE_MAP_KEY}}
         defaultCenter={this.props.center}
         defaultZoom={this.props.zoom}
       >
-      <Link
-        to={this.yourProfile()}
-        lat={this.props.latitude}
-        lng={this.props.longitude}>
-        <div
-        id="mapUser"
-        >
-
-        </div></Link>
       {users.map(user=> (
+        <Link
+        to={this.getProfile(user.id)}
+        lat={user.latitude}
+        lng={user.longitude}
+        >
         <div
-          id="mapUserMarkers"
-          lat={user.latitude}
-          lng={user.longitude}
+          className="mapUserMarkers"
           text={user.username}
-          key={user.id}
-          onClick={this.theyProfile}
-          >
-        </div>
+          onClick={this.getProfile}
+        ></div></Link>
       ))}
 
       </GoogleMapReact>
@@ -70,4 +62,4 @@ const mapDispatchToProps = dispatch => ({
   getUserInfo: address => dispatch(getUserInfo(address))
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Map)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Map))

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router';
-import {addUser, signIn} from '../../Actions';
+import {addUser} from '../../Actions';
 
 class SignUpForm extends Component {
   constructor(props) {
@@ -31,7 +31,7 @@ class SignUpForm extends Component {
     if (user.password === user.confirmpass) {
       if (user.agreed === true) {
         this.props.addUser(this.state);
-        this.props.history.push('/home');
+        this.props.history.push('/login');
       } else {
         alert('Please Accept the Terms of Aggreement');
       }
@@ -120,9 +120,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     addUser: user => {
       dispatch(addUser(user))
     },
-    signIn: (user) => {
-      dispatch(signIn(user))
-    }
   }
 }
 

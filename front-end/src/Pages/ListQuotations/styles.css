@@ -1,0 +1,75 @@
+#quotations-feed-title {
+  margin-top: 0px;
+  text-align: center;
+}
+.displayQuotations {
+  width: 85%;
+  margin-left: 7.5%;
+  border: solid black 2px;
+}
+.displayQuotations span {
+  font-weight: bold;
+}
+.QuotationsHeader {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  border-bottom: dotted black 2px;
+  background-color: #CDEB72;
+}
+.QuotationsContent {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+}
+.listProdReq {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  border-right: solid black 2px;
+  border-bottom: solid black 2px;
+}
+.listProdOff {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  border-bottom: solid black 2px;
+}
+.QuotationsFooter{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.Delivery p{
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+.buttonsQuotations {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  padding: 0px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.profileLink {
+  margin-left: 10%;
+  text-decoration: none;
+  color: black ;
+  margin-bottom: 0px;
+}
+.headerTrade {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+}

@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import React, {Component} from 'react';
 import {loadProducts, makeRequest, updateArrayRequest, updateQuantRequest} from '../../Actions';
+import {Link} from 'react-router-dom';
 import {withRouter} from 'react-router';
 import './styles.css';
 
@@ -10,23 +11,22 @@ class Requests extends Component {
     super(props);
     this.state = {
       buyer: Number(localStorage.id),
-      supplier: 2,
+      supplier: Number(this.props.match.params.id),
       delivery: "",
     };
   }
 
   componentWillMount(){
-    this.props.loadProducts(2);
+    this.props.loadProducts(this.props.match.params.id);
   }
 
   addRequest = (body) => {
     this.props.makeRequest(body);
-    this.props.history.push('/profile');
+    this.props.history.push('/myprofile');
   }
 
   handleSubmit = (event) => {
     event.preventDefault();
-
     this.addRequest({
       "buyer": this.state.buyer,
       "supplier": this.state.supplier,
@@ -63,6 +63,7 @@ class Requests extends Component {
   render(){
     return (
       <form id="request_board" onSubmit={this.handleSubmit}>
+        <Link to='/myprofile'><p className="profileLink">Profile</p></Link>
         <h1>Welcome to the trading page</h1>
         <div id="products_display">
           <div className="productsR">
@@ -90,7 +91,7 @@ class Requests extends Component {
           </div>
         </div>
 
-        <div>
+        <div id="need-delivery">
           <p>Do you need delivery ?</p>
           <div>
            <input type="checkbox" id="yes" name="DeliveryYes" value="yes" onClick={this.handleDeliveryYes}/>

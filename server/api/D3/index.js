@@ -34,7 +34,6 @@ D3.get('/soil', (req,res) => {
 });
 
 D3.post('/closest', (req,res) => {
-  console.log(req.body[0].latitude);
   let closestData = {};
   D3rainfall.all()
   .then((rain) => {
@@ -71,7 +70,6 @@ module.exports = D3;
 
 const findClosestData = (data, lat, long) => {
   let closestCoords;
-  console.log(data);
   let leastDist = getDistanceFromLatLonInKm(lat, long, data[0].latitude, data[0].longitude);
   for (var i = 0; i < data.length; i++) {
     if(getDistanceFromLatLonInKm(lat, long, data[i].latitude, data[i].longitude) < leastDist) {

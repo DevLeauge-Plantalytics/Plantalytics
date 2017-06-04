@@ -1,0 +1,88 @@
+body {
+  margin: 0;
+}
+#user-nav {
+  box-shadow: 0px 1px 3px #333;
+  position: absolute;
+  top: 75px;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  background-color: #8db500;
+  z-index: 98;
+}
+#user-nav-items {
+  width: 55%;
+  margin: 0 auto;
+}
+
+.user-nav-item {
+  display: inline-block;
+  font-family: 'Futura';
+  margin: 0 42.5px;
+  color: white;
+  cursor: pointer;
+}
+#user-avatar {
+  position: absolute;
+  top: 25%;
+  left: 10%;
+  text-align: center;
+  border: 1px solid #999;
+  width: 20%;
+  display: inline-block;
+}
+#their-user-info {
+  font-family: 'Futura';
+  position: absolute;
+  top: 25%;
+  left: 33%;
+  border: 1px solid #999;
+  width: 33%;
+  height: 35%;
+  text-align: center;
+  display: inline-block;
+}
+#user-profile-pic {
+  background-image: url(http://www.pof.fr/images/responsive/profileImages/profileImage_nonGender-220.png);
+  background-size: cover;
+  border-radius: 100px;
+  height: 150px;
+  width: 150px;
+  margin: 25px auto;
+}
+#local-users-map {
+  height: 600px;
+  width: 300px;
+}
+#request-btn-prof {
+  position: absolute;
+  top: 7.5%;
+  height: 350px;
+  width: 350px;
+}
+.req-btn-prf {
+  text-decoration: none;
+  color: black;
+}
+.req-btn {
+  cursor: pointer;
+  font-family: 'Futura';
+  font-size: 18px;
+  height: 100px;
+  width: 200px;
+  border: none;
+  border-radius: 15px;
+  background-color: #8db500;
+  padding: 10px;
+  color: white;
+  margin: 50px auto;
+  display: block;
+}
+.req-btn:focus {
+  outline: none;
+}
+#location-link {
+  text-decoration: none;
+  color: black;
+}

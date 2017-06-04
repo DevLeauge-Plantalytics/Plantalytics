@@ -2,7 +2,7 @@
 
 const express = require('express');
 const requests = express.Router();
-const {Request, Product, Req_Prod_Requested, Req_Prod_Offered} = require('../../models');
+const {Request, Product, Req_Prod_Requested, Req_Prod_Offered, User} = require('../../models');
 
 requests.get('/buyer/:id', (req,res) => {
   Request.all({
@@ -14,6 +14,14 @@ requests.get('/buyer/:id', (req,res) => {
       {
         model:User,
         as:"Vendor"
+      },
+      {
+        model:Product,
+        as: "interTableOff"
+      },
+      {
+        model:Product,
+        as: "interTableReq"
       }
     ],
     where: {Buyer: req.params.id},
@@ -37,6 +45,14 @@ requests.get('/supplier/:id', (req,res) => {
       {
         model:User,
         as:"Vendor"
+      },
+      {
+        model:Product,
+        as: "interTableOff"
+      },
+      {
+        model:Product,
+        as: "interTableReq"
       }
     ],
     where: {Supplier: req.params.id},
@@ -67,6 +83,14 @@ requests.get('/', (req,res) => {
   .then((requests) => {
     res.json(requests);
   })
+  .catch((err) => {
+    res.status(400).send({error: err.message});
+  });
+});
+
+requests.delete('/:id', (req,res) =>{
+  Request.destroy({where: {"id": req.params.id}})
+  .then(res.json.bind(res))
   .catch((err) => {
     res.status(400).send({error: err.message});
   });
@@ -106,13 +130,23 @@ const updateIntTable = (req, res, request) => {
         p.quantity = quantity;
         return p;
       });
-      return Promise.all(offered_products.map( rp => {
-        return Req_Prod_Offered.create({
-          quantity: rp.quantity,
-          ProductId: rp.id,
-          RequestId: request.id
-        });
-      }));
+      return Req_Prod_Offered.findAll({limit:1, where:{RequestId: req.body.Request_Id}, order: [['createdAt', 'DESC']]})
+      .then( (lastRequest) => {
+        let version = 0;
+        if(lastRequest[0] === undefined) {
+          version = 1;
+        } else {
+          version = Number(lastRequest[0].dataValues.version) + 1;
+        }
+        return Promise.all(offered_products.map( rp => {
+          return Req_Prod_Offered.create({
+            quantity: rp.quantity,
+            ProductId: rp.id,
+            RequestId: request.id,
+            version: version
+          });
+        }));
+      });
     })
   ])
   .then(res.json.bind(res))
@@ -147,6 +181,7 @@ requests.post('/', (req,res) =>{
       {
         "Buyer": req.body.buyer,
         "Supplier": req.body.supplier,
+        "delivery": req.body.delivery
       }
     );
   })
@@ -189,14 +224,6 @@ requests.put('/', (req,res) =>{
   .then( (request) => {
     updateIntTable(req, res, request);
   })
-  .catch((err) => {
-    res.status(400).send({error: err.message});
-  });
-});
-
-requests.delete('/:id', (req,res) =>{
-  Request.destroy({where: {"id": req.params.id}})
-  .then(res.json.bind(res))
   .catch((err) => {
     res.status(400).send({error: err.message});
   });

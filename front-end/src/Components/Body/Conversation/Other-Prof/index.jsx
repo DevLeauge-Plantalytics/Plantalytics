@@ -10,8 +10,8 @@ class OtherUser extends Component {
         <div id="other-user-profile-pic">
           <img src="other-profile-pic" alt="Other Profile"/>
         </div>
-        <h2 id="convo-other">Other UserName</h2>
-        <p id="convo-other-location">City Name, 21PC0D3</p>
+        <h2 id="convo-other">{this.props.user.username}</h2>
+        <p id="convo-other-location">{this.props.user.email}</p>
       </div>
     )
   }

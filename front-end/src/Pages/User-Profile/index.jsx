@@ -2,9 +2,10 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import Header from '../../Components/Header'
 import UserAvatar from '../../Components/UserAvatar';
-import UserInfo from '../../Components/UserInfo';
+import YourUserInfo from '../../Components/YourUserInfo';
 import UserNav from '../../Components/UserNav';
 import UserMap from '../../Containers/Analysis-Map';
+import AddCrop from '../../Containers/AddCrop';
 import {getUserById} from '../../API';
 import {getUser} from '../../Actions';
 import './styles.css';
@@ -15,20 +16,19 @@ class UserProfile extends Component {
     this.title = 'No-Warning'
   }
   componentWillMount() {
-    localStorage.reqId = window.location.pathname.slice(9);
-    this.props.getUser(localStorage.reqId);
+      this.props.getUser(localStorage.id);
   }
-
   render(){
     return (
-      <div id="user-profile">
+     <div id="your-user-profile">
         <Header/>
-        <UserNav/>
-        <div id="analysis-map">
-          <UserMap/>
-        </div>
-        <UserAvatar user={this.props.singleUser}/>
-        <UserInfo user={this.props.singleUser}/>
+       <UserNav/>
+       <div id="analysis-map">
+         <UserMap/>
+       </div>
+       <UserAvatar user={this.props.singleUser}/>
+       <YourUserInfo user={this.props.singleUser}/>
+       <AddCrop/>
       </div>
     )
   }
