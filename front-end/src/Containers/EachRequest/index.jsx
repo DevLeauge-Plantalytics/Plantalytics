@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import React, {Component} from 'react';
 import Updatechanges from '../../Containers/Updatechanges';
 import {addQuotation} from '../../Actions';
+import {withRouter} from 'react-router';
 
 class EachRequest extends Component {
   constructor(props) {
@@ -33,7 +34,8 @@ class EachRequest extends Component {
       "Request_Id": this.props.request.id,
       "request_products": [],
       "offered_products": [],
-    })
+    });
+    this.props.history.push('/myprofile');
   }
 
   hideChanges = () => {
@@ -75,7 +77,7 @@ class EachRequest extends Component {
               <p>No delivery requested</p>}
           </div>
           <div className="buttonsQuotations">
-            <button type="button" onClick={this.acceptR} >Accept the request</button>
+            <button type="button" onClick={this.acceptR}>Accept the request</button>
             <button type="button" onClick={this.makeChanges} >Make changes</button>
           </div>
         </div>
@@ -99,7 +101,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   }
 }
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(EachRequest);
+)(EachRequest));

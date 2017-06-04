@@ -31,7 +31,7 @@ class SignUpForm extends Component {
     if (user.password === user.confirmpass) {
       if (user.agreed === true) {
         this.props.addUser(this.state);
-        this.props.history.push('/home');
+        this.props.history.push('/login');
       } else {
         alert('Please Accept the Terms of Aggreement');
       }

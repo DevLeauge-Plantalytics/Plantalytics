@@ -25,8 +25,7 @@ const users = (state = initialState, action) => {
 
     case ADD_USER:
       return Object.assign({}, state, {
-        users: [action.user].concat(state.users),
-        loggedIn: true
+        users: [action.user].concat(state.users)
       });
 
     case UPDATE_USER:

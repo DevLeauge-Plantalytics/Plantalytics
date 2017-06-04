@@ -91,7 +91,7 @@ class Requests extends Component {
           </div>
         </div>
 
-        <div>
+        <div id="need-delivery">
           <p>Do you need delivery ?</p>
           <div>
            <input type="checkbox" id="yes" name="DeliveryYes" value="yes" onClick={this.handleDeliveryYes}/>
